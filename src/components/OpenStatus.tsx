@@ -1,47 +1,40 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const OpenStatus = () => {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [timeUntil, setTimeUntil] = useState("");
+  const [h, setH] = useState(0);
+  const [m, setM] = useState(0);
 
   useEffect(() => {
     const checkStatus = () => {
       const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const currentMinutes = hours * 60 + minutes;
-
-      // Open: 11:30 (690) to 2:00 AM next day (1560 = 26*60)
-      // So open from 690 to 1440 (midnight) OR 0 to 120
-      const openTime = 11 * 60 + 30; // 690
-      const closeTime = 2 * 60; // 120
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+      const openTime = 11 * 60 + 30;
+      const closeTime = 2 * 60;
 
       const open = currentMinutes >= openTime || currentMinutes < closeTime;
       setIsOpen(open);
 
+      let minsLeft: number;
       if (open) {
-        // Time until close (2:00 AM)
-        let minsLeft: number;
-        if (currentMinutes >= openTime) {
-          minsLeft = (24 * 60 - currentMinutes) + closeTime;
-        } else {
-          minsLeft = closeTime - currentMinutes;
-        }
-        const h = Math.floor(minsLeft / 60);
-        const m = minsLeft % 60;
-        setTimeUntil(`Closes in ${h}h ${m}m`);
+        minsLeft = currentMinutes >= openTime
+          ? (24 * 60 - currentMinutes) + closeTime
+          : closeTime - currentMinutes;
       } else {
-        const minsLeft = openTime - currentMinutes;
-        const h = Math.floor(minsLeft / 60);
-        const m = minsLeft % 60;
-        setTimeUntil(`Opens in ${h}h ${m}m`);
+        minsLeft = openTime - currentMinutes;
       }
+      setH(Math.floor(minsLeft / 60));
+      setM(minsLeft % 60);
     };
 
     checkStatus();
     const interval = setInterval(checkStatus, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  const timeLabel = isOpen ? t.status.closesIn : t.status.opensIn;
 
   return (
     <div className="inline-flex items-center gap-3 rounded-full border border-copper bg-secondary px-5 py-2.5">
@@ -58,8 +51,8 @@ const OpenStatus = () => {
         />
       </span>
       <span className="text-sm font-medium tracking-wide text-foreground">
-        {isOpen ? "Open Now" : "Closed"}{" "}
-        <span className="text-muted-foreground">· {timeUntil}</span>
+        {isOpen ? t.status.open : t.status.closed}{" "}
+        <span className="text-muted-foreground">· {timeLabel} {h}h {m}m</span>
       </span>
     </div>
   );

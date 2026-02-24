@@ -1,0 +1,64 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
+
+const ContactSection = () => {
+  const { t } = useLanguage();
+
+  const items = [
+    { icon: MapPin, label: t.contact.addressLabel, value: t.contact.address },
+    { icon: Clock, label: t.contact.hoursLabel, value: `${t.contact.hours}\n${t.contact.hoursDetail}` },
+    { icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone },
+    { icon: Mail, label: t.contact.emailLabel, value: t.contact.email },
+  ];
+
+  return (
+    <section id="contact" className="relative py-24 px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
+            {t.contact.label}
+          </p>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            {t.contact.title}{" "}
+            <span className="italic font-light">{t.contact.titleItalic}</span>
+          </h2>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item) => (
+            <div
+              key={item.label}
+              className="flex flex-col items-center gap-4 rounded-2xl border border-copper bg-card p-8 text-center transition-all hover:glow-copper"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-copper-gradient">
+                <item.icon className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+                {item.label}
+              </h3>
+              <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Embedded map */}
+        <div className="mt-12 overflow-hidden rounded-2xl border border-copper glow-copper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.5!2d28.987!3d41.0482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzUzLjUiTiAyOMKwNTknMTMuMiJF!5e0!3m2!1sen!2str!4v1"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="CELO Restaurant location"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
