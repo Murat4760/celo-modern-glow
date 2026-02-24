@@ -1,7 +1,10 @@
 import heroImage from "@/assets/hero-kebab.jpg";
 import OpenStatus from "./OpenStatus";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0">
@@ -15,7 +18,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-copper">
-          Modern Anatolian Cuisine
+          {t.hero.subtitle}
         </p>
         <h1 className="mb-6 text-6xl font-bold leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
           <span className="text-copper-gradient">CELO</span>
@@ -23,8 +26,7 @@ const HeroSection = () => {
           <span className="text-cream font-light italic">Restaurant</span>
         </h1>
         <p className="mb-8 max-w-md text-lg text-muted-foreground">
-          Where ancient Anatolian traditions meet contemporary craft.
-          Every flame tells a story.
+          {t.hero.tagline}
         </p>
         <div className="mb-8">
           <OpenStatus />
@@ -34,13 +36,13 @@ const HeroSection = () => {
             href="#menu"
             className="bg-copper-gradient rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
           >
-            View Menu
+            {t.hero.viewMenu}
           </a>
           <a
             href="#about"
             className="rounded-full border border-copper px-8 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
           >
-            Our Story
+            {t.hero.ourStory}
           </a>
         </div>
       </div>

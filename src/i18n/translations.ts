@@ -1,0 +1,252 @@
+export type Language = "en" | "tr";
+
+export const translations = {
+  en: {
+    // Nav / General
+    nav: {
+      menu: "Menu",
+      about: "Our Story",
+      contact: "Contact",
+      reserve: "Reserve",
+    },
+    // Hero
+    hero: {
+      subtitle: "Modern Anatolian Cuisine",
+      tagline: "Where ancient Anatolian traditions meet contemporary craft. Every flame tells a story.",
+      viewMenu: "View Menu",
+      ourStory: "Our Story",
+    },
+    // Open Status
+    status: {
+      open: "Open Now",
+      closed: "Closed",
+      closesIn: "Closes in",
+      opensIn: "Opens in",
+    },
+    // Chef Recommendations
+    chef: {
+      label: "Curated Selection",
+      title: "Chef's",
+      titleItalic: "Recommendations",
+      dishes: [
+        {
+          name: "Zırh Kebabı",
+          description: "Slow-cooked lamb sealed in a copper pot, roasted over charcoal for 6 hours. A centuries-old Anatolian tradition.",
+          tag: "Signature",
+        },
+        {
+          name: "Kuşbaşılı Pide",
+          description: "Hand-stretched flatbread filled with tender diced lamb, roasted peppers, and sumac butter.",
+          tag: "Popular",
+        },
+        {
+          name: "Antep Baklavası",
+          description: "40-layer filo pastry with Gaziantep pistachios, bathed in wild flower honey syrup.",
+          tag: "Dessert",
+        },
+      ],
+    },
+    // Menu page
+    menuPage: {
+      title: "Our",
+      titleItalic: "Menu",
+      label: "Full Selection",
+      categories: {
+        kebabs: "Kebabs",
+        pides: "Pide & Lahmacun",
+        starters: "Starters & Meze",
+        desserts: "Desserts",
+        drinks: "Drinks",
+      },
+    },
+    menuItems: {
+      kebabs: [
+        { name: "Zırh Kebabı", desc: "Lamb sealed in copper pot, slow-roasted 6 hours", price: "₺450" },
+        { name: "Adana Kebabı", desc: "Hand-minced spicy lamb on flat skewers", price: "₺320" },
+        { name: "Urfa Kebabı", desc: "Mild hand-minced lamb with roasted peppers", price: "₺310" },
+        { name: "Beyti Kebabı", desc: "Wrapped lamb kebab with lavash and yoghurt", price: "₺380" },
+        { name: "Kuzu Şiş", desc: "Cubed lamb marinated with thyme and sumac", price: "₺350" },
+        { name: "Tavuk Şiş", desc: "Free-range chicken skewers with lemon", price: "₺250" },
+      ],
+      pides: [
+        { name: "Kuşbaşılı Pide", desc: "Diced lamb with roasted peppers and sumac butter", price: "₺280" },
+        { name: "Kaşarlı Pide", desc: "Aged kashkaval cheese", price: "₺200" },
+        { name: "Kıymalı Pide", desc: "Spiced minced lamb", price: "₺240" },
+        { name: "Lahmacun", desc: "Thin crispy flatbread with spiced lamb", price: "₺120" },
+      ],
+      starters: [
+        { name: "Humus", desc: "Chickpea purée with tahini and olive oil", price: "₺90" },
+        { name: "Babagannuş", desc: "Smoky aubergine dip", price: "₺100" },
+        { name: "Atom", desc: "Spicy walnut and pepper spread", price: "₺95" },
+        { name: "Ezme", desc: "Spicy tomato and pepper relish", price: "₺85" },
+        { name: "Sigara Böreği", desc: "Crispy filo rolls with feta cheese", price: "₺110" },
+      ],
+      desserts: [
+        { name: "Antep Baklavası", desc: "40-layer filo with pistachios and honey syrup", price: "₺180" },
+        { name: "Künefe", desc: "Shredded filo with melted cheese and syrup", price: "₺200" },
+        { name: "Katmer", desc: "Crispy layered pastry with pistachios and cream", price: "₺170" },
+      ],
+      drinks: [
+        { name: "Turkish Tea", desc: "Double-brewed black tea in tulip glass", price: "₺30" },
+        { name: "Turkish Coffee", desc: "Traditional copper-pot brewed", price: "₺60" },
+        { name: "Ayran", desc: "Chilled salted yoghurt drink", price: "₺40" },
+        { name: "Fresh Şalgam", desc: "Fermented turnip juice", price: "₺45" },
+      ],
+    },
+    // About
+    about: {
+      label: "Our Philosophy",
+      title: "Fire, Copper &",
+      titleItalic: "Tradition",
+      text: "At CELO, we honour the ancient art of Anatolian fire cooking. Our copper pots are hand-hammered in Gaziantep, our lamb sourced from the highlands of Eastern Turkey, and our spices ground fresh each morning. Every dish is a bridge between centuries of tradition and the bold flavours of today.",
+      stats: [
+        { value: "6+", label: "Hours Slow-Cooked" },
+        { value: "1200°", label: "Charcoal Heat" },
+        { value: "100%", label: "Open Fire" },
+      ],
+    },
+    // Contact
+    contact: {
+      label: "Get in Touch",
+      title: "Visit",
+      titleItalic: "Us",
+      address: "Harbiye Mah. Cumhuriyet Cad. No:42, Şişli, Istanbul",
+      hours: "Every Day",
+      hoursDetail: "11:30 AM – 2:00 AM",
+      phone: "+90 212 555 0199",
+      email: "info@celorestaurant.com",
+      addressLabel: "Address",
+      hoursLabel: "Hours",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+    },
+    // Footer
+    footer: {
+      tagline: "Modern Anatolian cuisine in the heart of the city.",
+      hoursLabel: "Hours",
+      everyDay: "Every Day",
+      contactLabel: "Contact",
+      rights: "All rights reserved.",
+    },
+  },
+  tr: {
+    nav: {
+      menu: "Menü",
+      about: "Hikayemiz",
+      contact: "İletişim",
+      reserve: "Rezervasyon",
+    },
+    hero: {
+      subtitle: "Modern Anadolu Mutfağı",
+      tagline: "Kadim Anadolu gelenekleri çağdaş ustalıkla buluşuyor. Her ateş bir hikâye anlatır.",
+      viewMenu: "Menüyü Gör",
+      ourStory: "Hikayemiz",
+    },
+    status: {
+      open: "Açık",
+      closed: "Kapalı",
+      closesIn: "Kapanışa",
+      opensIn: "Açılışa",
+    },
+    chef: {
+      label: "Özenle Seçilmiş",
+      title: "Şefin",
+      titleItalic: "Tavsiyeleri",
+      dishes: [
+        {
+          name: "Zırh Kebabı",
+          description: "Bakır tencerede mühürlenen kuzu eti, 6 saat közde pişirilir. Yüzyıllık Anadolu geleneği.",
+          tag: "İmza",
+        },
+        {
+          name: "Kuşbaşılı Pide",
+          description: "El açması hamur, kuşbaşı kuzu eti, közlenmiş biber ve sumak yağı ile.",
+          tag: "Popüler",
+        },
+        {
+          name: "Antep Baklavası",
+          description: "40 kat yufka, Gaziantep fıstığı ve yaban çiçeği bal şerbeti ile.",
+          tag: "Tatlı",
+        },
+      ],
+    },
+    menuPage: {
+      title: "Bizim",
+      titleItalic: "Menümüz",
+      label: "Tam Seçki",
+      categories: {
+        kebabs: "Kebaplar",
+        pides: "Pide & Lahmacun",
+        starters: "Başlangıçlar & Meze",
+        desserts: "Tatlılar",
+        drinks: "İçecekler",
+      },
+    },
+    menuItems: {
+      kebabs: [
+        { name: "Zırh Kebabı", desc: "Bakır tencerede mühürlü kuzu, 6 saat közde pişirilir", price: "₺450" },
+        { name: "Adana Kebabı", desc: "El kıyması acılı kuzu eti, yassı şişte", price: "₺320" },
+        { name: "Urfa Kebabı", desc: "Közlenmiş biberli el kıyması kuzu", price: "₺310" },
+        { name: "Beyti Kebabı", desc: "Lavaşa sarılı kuzu kebap, yoğurtlu", price: "₺380" },
+        { name: "Kuzu Şiş", desc: "Kekik ve sumak marine kuşbaşı kuzu", price: "₺350" },
+        { name: "Tavuk Şiş", desc: "Limonlu serbest gezen tavuk şiş", price: "₺250" },
+      ],
+      pides: [
+        { name: "Kuşbaşılı Pide", desc: "Kuşbaşı kuzu, közlenmiş biber ve sumak yağı", price: "₺280" },
+        { name: "Kaşarlı Pide", desc: "Yıllanmış kaşar peyniri", price: "₺200" },
+        { name: "Kıymalı Pide", desc: "Baharatlı kuzu kıyma", price: "₺240" },
+        { name: "Lahmacun", desc: "İnce kıtır hamur, baharatlı kuzu kıyma", price: "₺120" },
+      ],
+      starters: [
+        { name: "Humus", desc: "Tahinli ve zeytinyağlı nohut püresi", price: "₺90" },
+        { name: "Babagannuş", desc: "Közlenmiş patlıcan ezmesi", price: "₺100" },
+        { name: "Atom", desc: "Acılı ceviz ve biber ezmesi", price: "₺95" },
+        { name: "Ezme", desc: "Acılı domates ve biber salatası", price: "₺85" },
+        { name: "Sigara Böreği", desc: "Peynirli çıtır yufka ruloları", price: "₺110" },
+      ],
+      desserts: [
+        { name: "Antep Baklavası", desc: "40 kat yufka, fıstık ve bal şerbeti", price: "₺180" },
+        { name: "Künefe", desc: "Kadayıf ile peynirli, şerbetli", price: "₺200" },
+        { name: "Katmer", desc: "Fıstıklı ve kaymaklı çıtır katmer", price: "₺170" },
+      ],
+      drinks: [
+        { name: "Çay", desc: "Demli siyah çay, ince belli bardakta", price: "₺30" },
+        { name: "Türk Kahvesi", desc: "Geleneksel cezve kahvesi", price: "₺60" },
+        { name: "Ayran", desc: "Soğuk tuzlu yoğurt içeceği", price: "₺40" },
+        { name: "Şalgam", desc: "Fermente şalgam suyu", price: "₺45" },
+      ],
+    },
+    about: {
+      label: "Felsefemiz",
+      title: "Ateş, Bakır &",
+      titleItalic: "Gelenek",
+      text: "CELO'da Anadolu'nun kadim ateşle pişirme sanatını yaşatıyoruz. Bakır kaplarımız Gaziantep'te el dövmesi, kuzumuz Doğu Anadolu yaylalarından, baharatlarımız her sabah taze çekilir. Her tabak, yüzyıllık gelenek ile bugünün cesur tatları arasında bir köprüdür.",
+      stats: [
+        { value: "6+", label: "Saat Ağır Pişirme" },
+        { value: "1200°", label: "Köz Isısı" },
+        { value: "100%", label: "Açık Ateş" },
+      ],
+    },
+    contact: {
+      label: "Bize Ulaşın",
+      title: "Bizi",
+      titleItalic: "Ziyaret Edin",
+      address: "Harbiye Mah. Cumhuriyet Cad. No:42, Şişli, İstanbul",
+      hours: "Her Gün",
+      hoursDetail: "11:30 – 02:00",
+      phone: "+90 212 555 0199",
+      email: "info@celorestaurant.com",
+      addressLabel: "Adres",
+      hoursLabel: "Çalışma Saatleri",
+      phoneLabel: "Telefon",
+      emailLabel: "E-posta",
+    },
+    footer: {
+      tagline: "Şehrin kalbinde modern Anadolu mutfağı.",
+      hoursLabel: "Çalışma Saatleri",
+      everyDay: "Her Gün",
+      contactLabel: "İletişim",
+      rights: "Tüm hakları saklıdır.",
+    },
+  },
+} as const;
