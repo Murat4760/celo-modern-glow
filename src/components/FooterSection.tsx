@@ -25,8 +25,8 @@ const FooterSection = () => {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               {t.footer.contactLabel}
             </h4>
-            <p className="text-sm text-muted-foreground">
-              info@celorestaurant.com
+            <p className="text-sm text-muted-foreground">info@celorestaurant.com
++90 530 171 34 52
               <br />
               +90 212 555 0199
             </p>
@@ -36,8 +36,8 @@ const FooterSection = () => {
           © {new Date().getFullYear()} CELO Restaurant. {t.footer.rights}
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default FooterSection;
