@@ -3,7 +3,7 @@ export type Language = "en" | "tr";
 export const translations = {
   en: {
     nav: {
-      menu: "Menu",
+      menu: "Specials",
       about: "Our Story",
       contact: "Contact",
       reserve: "Reserve",
@@ -47,7 +47,7 @@ export const translations = {
     menuPage: {
       title: "Our",
       titleItalic: "Menu",
-      label: "Full Selection",
+      label: "Our Menu",
       categories: {
         kebabs: "Kebabs",
         pides: "Pide & Lahmacun",
@@ -128,7 +128,7 @@ export const translations = {
   },
   tr: {
     nav: {
-      menu: "Menü",
+      menu: "Spesiyaller",
       about: "Hikayemiz",
       contact: "İletişim",
       reserve: "Rezervasyon",
@@ -172,7 +172,7 @@ export const translations = {
     menuPage: {
       title: "Bizim",
       titleItalic: "Menümüz",
-      label: "Tam Seçki",
+      label: "Menümüz",
       categories: {
         kebabs: "Kebaplar",
         pides: "Pide & Lahmacun",
