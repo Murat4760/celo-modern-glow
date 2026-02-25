@@ -19,6 +19,8 @@ export const translations = {
       closed: "Closed",
       closesIn: "Closes in",
       opensIn: "Opens in",
+      hourShort: "h",
+      minShort: "m",
     },
     chef: {
       label: "Curated Selection",
@@ -142,6 +144,8 @@ export const translations = {
       closed: "Kapalı",
       closesIn: "Kapanışa",
       opensIn: "Açılışa",
+      hourShort: "s",
+      minShort: "dk",
     },
     chef: {
       label: "Özenle Seçilmiş",

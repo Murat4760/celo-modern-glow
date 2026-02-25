@@ -75,7 +75,7 @@ const OpenStatus = () => {
       </span>
       <span className="text-sm font-medium tracking-wide text-foreground">
         {isOpen ? t.status.open : t.status.closed}{" "}
-        <span className="text-muted-foreground">· {timeLabel} {h}h {m}m</span>
+        <span className="text-muted-foreground">· {timeLabel} {h}{t.status.hourShort} {m}{t.status.minShort}</span>
       </span>
     </div>
   );
