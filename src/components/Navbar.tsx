@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 backdrop-blur-md bg-background/60 border-b border-copper/20">
-      <a href="#" className="text-copper-gradient text-xl font-bold font-display">
+      <a href="/" className="text-copper-gradient text-xl font-bold font-display">
         CELO
       </a>
 
