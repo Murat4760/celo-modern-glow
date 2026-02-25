@@ -4,7 +4,7 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="relative py-24 px-6">
+    <section id="about" className="relative py-24 px-5">
       <div className="mx-auto max-w-4xl text-center">
         <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
           {t.about.label}

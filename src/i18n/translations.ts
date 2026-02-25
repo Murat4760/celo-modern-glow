@@ -2,28 +2,24 @@ export type Language = "en" | "tr";
 
 export const translations = {
   en: {
-    // Nav / General
     nav: {
       menu: "Menu",
       about: "Our Story",
       contact: "Contact",
       reserve: "Reserve",
     },
-    // Hero
     hero: {
       subtitle: "Modern Anatolian Cuisine",
       tagline: "Where ancient Anatolian traditions meet contemporary craft. Every flame tells a story.",
       viewMenu: "View Menu",
       ourStory: "Our Story",
     },
-    // Open Status
     status: {
       open: "Open Now",
       closed: "Closed",
       closesIn: "Closes in",
       opensIn: "Opens in",
     },
-    // Chef Recommendations
     chef: {
       label: "Curated Selection",
       title: "Chef's",
@@ -46,7 +42,6 @@ export const translations = {
         },
       ],
     },
-    // Menu page
     menuPage: {
       title: "Our",
       titleItalic: "Menu",
@@ -93,7 +88,6 @@ export const translations = {
         { name: "Fresh Şalgam", desc: "Fermented turnip juice", price: "₺45" },
       ],
     },
-    // About
     about: {
       label: "Our Philosophy",
       title: "Fire, Copper &",
@@ -105,24 +99,25 @@ export const translations = {
         { value: "100%", label: "Open Fire" },
       ],
     },
-    // Contact
     contact: {
       label: "Get in Touch",
       title: "Visit",
       titleItalic: "Us",
-      address: "Harbiye Mah. Cumhuriyet Cad. No:42, Şişli, Istanbul",
+      address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Every Day",
       hoursDetail: "11:30 AM – 2:00 AM",
-      phone: "+90 212 555 0199",
+      hoursMonday: "Monday: 11:30 AM – 10:30 PM",
+      hoursSaturday: "Saturday: 11:00 AM – 2:00 AM",
+      phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Address",
       hoursLabel: "Hours",
       phoneLabel: "Phone",
       emailLabel: "Email",
+      rating: "4.7 ★ (653 reviews)",
     },
-    // Footer
     footer: {
-      tagline: "Modern Anatolian cuisine in the heart of the city.",
+      tagline: "Modern Anatolian cuisine in the heart of Beylikdüzü.",
       hoursLabel: "Hours",
       everyDay: "Every Day",
       contactLabel: "Contact",
@@ -231,18 +226,21 @@ export const translations = {
       label: "Bize Ulaşın",
       title: "Bizi",
       titleItalic: "Ziyaret Edin",
-      address: "Harbiye Mah. Cumhuriyet Cad. No:42, Şişli, İstanbul",
+      address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Her Gün",
       hoursDetail: "11:30 – 02:00",
-      phone: "+90 212 555 0199",
+      hoursMonday: "Pazartesi: 11:30 – 22:30",
+      hoursSaturday: "Cumartesi: 11:00 – 02:00",
+      phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Adres",
       hoursLabel: "Çalışma Saatleri",
       phoneLabel: "Telefon",
       emailLabel: "E-posta",
+      rating: "4.7 ★ (653 yorum)",
     },
     footer: {
-      tagline: "Şehrin kalbinde modern Anadolu mutfağı.",
+      tagline: "Beylikdüzü'nün kalbinde modern Anadolu mutfağı.",
       hoursLabel: "Çalışma Saatleri",
       everyDay: "Her Gün",
       contactLabel: "İletişim",

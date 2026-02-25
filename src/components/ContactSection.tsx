@@ -1,18 +1,18 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, Star } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
 
   const items = [
     { icon: MapPin, label: t.contact.addressLabel, value: t.contact.address },
-    { icon: Clock, label: t.contact.hoursLabel, value: `${t.contact.hours}\n${t.contact.hoursDetail}` },
+    { icon: Clock, label: t.contact.hoursLabel, value: `${t.contact.hours}\n${t.contact.hoursDetail}\n${t.contact.hoursMonday}\n${t.contact.hoursSaturday}` },
     { icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone },
-    { icon: Mail, label: t.contact.emailLabel, value: t.contact.email },
+    { icon: Star, label: "Google", value: t.contact.rating },
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section id="contact" className="relative py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
@@ -24,11 +24,11 @@ const ContactSection = () => {
           </h2>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
             <div
               key={item.label}
-              className="flex flex-col items-center gap-4 rounded-2xl border border-copper bg-card p-8 text-center transition-all hover:glow-copper"
+              className="flex flex-col items-center gap-4 rounded-2xl border border-copper bg-card p-6 sm:p-8 text-center transition-all hover:glow-copper"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-copper-gradient">
                 <item.icon className="h-5 w-5 text-accent-foreground" />
@@ -43,10 +43,10 @@ const ContactSection = () => {
           ))}
         </div>
 
-        {/* Embedded map */}
+        {/* Embedded map with real coordinates */}
         <div className="mt-12 overflow-hidden rounded-2xl border border-copper glow-copper">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.5!2d28.987!3d41.0482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzUzLjUiTiAyOMKwNTknMTMuMiJF!5e0!3m2!1sen!2str!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.5!2d28.6564357!3d40.9802695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f4db400989f%3A0xb8c2b44a5cd1e62a!2sCELO%20RESTAURANT!5e0!3m2!1str!2str!4v1"
             width="100%"
             height="350"
             style={{ border: 0 }}

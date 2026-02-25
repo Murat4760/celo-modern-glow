@@ -15,13 +15,13 @@ const MenuPage = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
       <Navbar />
-      <section className="px-6 py-24">
+      <section className="px-5 py-24">
         <div className="mx-auto max-w-4xl">
           <div className="mb-16 text-center">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
               {t.menuPage.label}
             </p>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               {t.menuPage.title}{" "}
               <span className="italic font-light">{t.menuPage.titleItalic}</span>
             </h1>
@@ -33,7 +33,7 @@ const MenuPage = () => {
               <button
                 key={key}
                 onClick={() => setActive(key)}
-                className={`rounded-full px-5 py-2 text-sm font-medium uppercase tracking-wider transition-all ${
+                className={`rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
                   active === key
                     ? "bg-copper-gradient text-accent-foreground"
                     : "border border-copper text-muted-foreground hover:text-foreground"
