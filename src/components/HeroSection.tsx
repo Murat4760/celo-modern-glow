@@ -16,16 +16,16 @@ const HeroSection = () => {
         <div className="overlay-dark absolute inset-0" />
       </div>
 
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-copper">
           {t.hero.subtitle}
         </p>
-        <h1 className="mb-6 text-6xl font-bold leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
           <span className="text-copper-gradient">CELO</span>
           <br />
           <span className="text-cream font-light italic">Restaurant</span>
         </h1>
-        <p className="mb-8 max-w-md text-lg text-muted-foreground">
+        <p className="mb-8 max-w-md text-base sm:text-lg text-muted-foreground">
           {t.hero.tagline}
         </p>
         <div className="mb-8">
@@ -34,13 +34,13 @@ const HeroSection = () => {
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <a
             href="#menu"
-            className="bg-copper-gradient rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
+            className="bg-copper-gradient flex h-11 items-center rounded-full px-8 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
           >
             {t.hero.viewMenu}
           </a>
           <a
             href="#about"
-            className="rounded-full border border-copper px-8 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
+            className="flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
           >
             {t.hero.ourStory}
           </a>

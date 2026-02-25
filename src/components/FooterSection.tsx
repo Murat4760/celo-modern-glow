@@ -4,9 +4,9 @@ const FooterSection = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-copper py-16 px-6">
+    <footer className="border-t border-copper py-16 px-5">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 sm:grid-cols-3">
+        <div className="grid gap-12 grid-cols-1 sm:grid-cols-3">
           <div>
             <h3 className="text-copper-gradient mb-4 text-2xl font-bold">CELO</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
@@ -18,17 +18,19 @@ const FooterSection = () => {
             <p className="text-sm text-muted-foreground">
               {t.footer.everyDay}
               <br />
-              11:30 AM – 2:00 AM
+              11:30 – 02:00
             </p>
           </div>
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               {t.footer.contactLabel}
             </h4>
-            <p className="text-sm text-muted-foreground">info@celorestaurant.com +90 530 171 34 52
-+90 530 171 34 52
+            <p className="text-sm text-muted-foreground">
+              +90 530 171 34 52
               <br />
-              +90 212 555 0199
+              Kavaklı, Oğuzhan Cd. No:22
+              <br />
+              34520 Beylikdüzü/İstanbul
             </p>
           </div>
         </div>
@@ -36,8 +38,8 @@ const FooterSection = () => {
           © {new Date().getFullYear()} CELO Restaurant. {t.footer.rights}
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 };
 
 export default FooterSection;
