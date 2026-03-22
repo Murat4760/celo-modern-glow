@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useNavigate, useLocation } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Menu, X } from "lucide-react";
 import {
@@ -13,13 +14,35 @@ import {
 const Navbar = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const links = [
-    { href: "#menu", label: t.nav.menu },
+    { href: "/#menu", label: t.nav.menu },
     { href: "/menu", label: t.menuPage.label },
-    { href: "#about", label: t.nav.about },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#contact", label: t.nav.contact },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setOpen(false);
+
+    if (href.startsWith("/#")) {
+      const hash = href.slice(1); // e.g. "#menu"
+      if (location.pathname === "/") {
+        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 backdrop-blur-md bg-background/60 border-b border-copper/20">
@@ -33,6 +56,7 @@ const Navbar = () => {
           <a
             key={link.href}
             href={link.href}
+            onClick={(e) => handleNavClick(e, link.href)}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             {link.label}
@@ -64,7 +88,7 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="flex h-11 items-center rounded-lg px-4 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 >
                   {link.label}
