@@ -118,6 +118,19 @@ export const translations = {
       emailLabel: "Email",
       rating: "4.7 ★ (653 reviews)",
     },
+    reviews: {
+      subtitle: "Guest Reviews",
+      title: "What Our",
+      titleItalic: "Guests Say",
+      items: [
+        { name: "Gizem Kafadar", stars: 5, date: "Nov 2025", text: "One of the best places for hospitality. The complimentary mezes, flavor, fast service — you won't be disappointed. We booked for 33 people and the food arrived within 10 minutes. Ali Nazik here is unmatched!" },
+        { name: "Agah Demirci", stars: 5, date: "Jan 2026", text: "Everything I ate was legendary… the tripe soup was exquisite, the lahmacun truly lives up to its name, even the complimentary çiğköfte was delicious. The sütlaç was divine." },
+        { name: "Vezir Yalçın", stars: 5, date: "Dec 2025", text: "I hadn't had such delicious lahmacun and kebab in a long time. The chicken was also excellent. Staff are polite, attentive and genuinely friendly." },
+        { name: "James Heller", stars: 5, date: "Jan 2026", text: "I rarely write reviews but this place absolutely deserves 5 stars. An incredible experience from start to finish — the flavors, the service, the atmosphere." },
+        { name: "Feriha Şeyma Efe", stars: 5, date: "Feb 2026", text: "The food was magnificent. We got the family menu for 4 and couldn't finish it — had to take leftovers! Cleanliness, presentation, flavors all full marks." },
+        { name: "Dr. Mo Sammour", stars: 4, date: "Nov 2025", text: "The atmosphere is great. They offer welcoming dishes — salad, appetizers, kibbeh and bread. The mixed kebab platter was delicious and well-presented." },
+      ],
+    },
     footer: {
       tagline: "Modern Anatolian cuisine in the heart of Beylikdüzü.",
       hoursLabel: "Hours",
