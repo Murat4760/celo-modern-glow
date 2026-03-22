@@ -33,7 +33,11 @@ const Navbar = () => {
       if (location.pathname === "/") {
         document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
       } else {
-        navigate("/" + hash);
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
       }
     } else {
       navigate(href);
