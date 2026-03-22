@@ -14,13 +14,31 @@ import {
 const Navbar = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const links = [
-    { href: "#menu", label: t.nav.menu },
+    { href: "/#menu", label: t.nav.menu },
     { href: "/menu", label: t.menuPage.label },
-    { href: "#about", label: t.nav.about },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#contact", label: t.nav.contact },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setOpen(false);
+
+    if (href.startsWith("/#")) {
+      const hash = href.slice(1); // e.g. "#menu"
+      if (location.pathname === "/") {
+        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/" + hash);
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 backdrop-blur-md bg-background/60 border-b border-copper/20">
