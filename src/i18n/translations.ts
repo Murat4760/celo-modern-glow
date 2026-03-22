@@ -256,6 +256,19 @@ export const translations = {
       emailLabel: "E-posta",
       rating: "4.7 ★ (653 yorum)",
     },
+    reviews: {
+      subtitle: "Misafir Yorumları",
+      title: "Misafirlerimiz",
+      titleItalic: "Ne Diyor?",
+      items: [
+        { name: "Gizem Kafadar", stars: 5, date: "Kas 2025", text: "İzzet-i ikram noktasında bir numara mekanlardan biridir. 33 kişilik rezervasyonda ana yemekler 10 dk içinde geldi. Ali nazik burada yeyin başka yerde yemezsiniz bence." },
+        { name: "Agah Demirci", stars: 5, date: "Oca 2026", text: "Ne yediysem hepsi efsane güzeldi... Kelle paça çorbası nefis, lahmacun gerçekten hakkını veriyor, ikram çiğköfte çok lezzetli. Sütlaç nefis." },
+        { name: "Vezir Yalçın", stars: 5, date: "Ara 2025", text: "Uzun zamandır bu kadar lezzetli lahmacun ve kebap yememiştim. Tavuk da çok başarılıydı. Çalışanlar kibar, ilgili ve gerçekten samimi." },
+        { name: "James Heller", stars: 5, date: "Oca 2026", text: "Normalde mekanlar için çok yorum yazmam ama kesinlikle 5 yıldızı hak eden bir mekan. İnanılmaz bir deneyim — lezzetler, servis, atmosfer her şey mükemmel." },
+        { name: "Feriha Şeyma Efe", stars: 5, date: "Şub 2026", text: "Yemekler şahaneydi. Aile menüsü aldık 4 kişi yiyemedik paket yaptırdık. Temizlik, düzen, lezzetler tam puan aldı." },
+        { name: "Dr. Mo Sammour", stars: 4, date: "Kas 2025", text: "Atmosfer harika. Karşılama tabakları — salata, mezeler, içli köfte ve ekmek sundular. Karışık kebap tabağı lezzetli ve güzel sunulmuştu." },
+      ],
+    },
     footer: {
       tagline: "Beylikdüzü'nün kalbinde modern Anadolu mutfağı.",
       hoursLabel: "Çalışma Saatleri",
