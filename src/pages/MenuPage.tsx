@@ -89,7 +89,7 @@ const MenuPage = () => {
         }));
     }
     // Fallback to hardcoded
-    return (t.menuItems[active] as { name: string; desc: string; price: string }[]).map(
+    return (t.menuItems[active] as readonly { name: string; desc: string; price: string }[]).map(
       (item) => ({ ...item, available: true, imageUrl: "" })
     );
   }, [sheetData, active, lang, t]);
