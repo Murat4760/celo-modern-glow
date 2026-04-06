@@ -138,6 +138,16 @@ export const translations = {
       contactLabel: "Contact",
       rights: "All rights reserved.",
     },
+    reservation: {
+      cta: "Reserve a Table",
+    },
+    menuPage: {
+      ...({} as any),
+      listView: "List View",
+      visualView: "Visual View",
+      lastUpdated: "Last updated",
+      notAvailable: "Not Available Today",
+    },
   },
   tr: {
     nav: {
@@ -275,6 +285,9 @@ export const translations = {
       everyDay: "Her Gün",
       contactLabel: "İletişim",
       rights: "Tüm hakları saklıdır.",
+    },
+    reservation: {
+      cta: "Rezervasyon Yap",
     },
   },
 } as const;
