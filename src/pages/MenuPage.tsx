@@ -1,16 +1,98 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import { Switch } from "@/components/ui/switch";
+import { Skeleton } from "@/components/ui/skeleton";
+import Papa from "papaparse";
 
 type CategoryKey = "kebabs" | "pides" | "starters" | "desserts" | "drinks";
 
-const MenuPage = () => {
-  const { t } = useLanguage();
-  const [active, setActive] = useState<CategoryKey>("kebabs");
+interface SheetRow {
+  category: string;
+  nameTr: string;
+  nameEn: string;
+  descTr: string;
+  descEn: string;
+  price: string;
+  available: boolean;
+  imageUrl: string;
+}
 
-  const categoryKeys: CategoryKey[] = ["kebabs", "pides", "starters", "desserts", "drinks"];
-  const items = t.menuItems[active];
+const CATEGORY_MAP: Record<string, CategoryKey> = {
+  Kebaplar: "kebabs",
+  "Pide & Lahmacun": "pides",
+  "Başlangıçlar & Meze": "starters",
+  Tatlılar: "desserts",
+  İçecekler: "drinks",
+};
+
+// Replace SHEET_ID with your actual Google Sheets ID
+const SHEET_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv";
+
+const MenuPage = () => {
+  const { t, lang } = useLanguage();
+  const [active, setActive] = useState<CategoryKey>("kebabs");
+  const [visualMode, setVisualMode] = useState(false);
+  const [sheetData, setSheetData] = useState<SheetRow[] | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+
+  const categoryKeys: CategoryKey[] = [
+    "kebabs",
+    "pides",
+    "starters",
+    "desserts",
+    "drinks",
+  ];
+
+  // Fetch from Google Sheets
+  useEffect(() => {
+    const fetchSheet = async () => {
+      try {
+        const res = await fetch(SHEET_CSV_URL);
+        if (!res.ok) throw new Error("fetch failed");
+        const csv = await res.text();
+        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+        const rows: SheetRow[] = (parsed.data as Record<string, string>[]).map((r) => ({
+          category: r["Category"] || "",
+          nameTr: r["Item Name TR"] || "",
+          nameEn: r["Item Name EN"] || "",
+          descTr: r["Description TR"] || "",
+          descEn: r["Description EN"] || "",
+          price: r["Price"] || "",
+          available: (r["Available"] || "TRUE").toUpperCase() !== "FALSE",
+          imageUrl: r["Image URL"] || "",
+        }));
+        setSheetData(rows);
+        setLastUpdated(new Date().toLocaleString(lang === "tr" ? "tr-TR" : "en-US"));
+      } catch {
+        // Fallback to hardcoded — leave sheetData null
+      }
+      setLoading(false);
+    };
+    fetchSheet();
+  }, [lang]);
+
+  // Build items for current category
+  const items = useMemo(() => {
+    if (sheetData) {
+      return sheetData
+        .filter((r) => CATEGORY_MAP[r.category] === active)
+        .map((r) => ({
+          name: lang === "tr" ? r.nameTr : r.nameEn,
+          desc: lang === "tr" ? r.descTr : r.descEn,
+          price: r.price,
+          available: r.available,
+          imageUrl: r.imageUrl,
+        }));
+    }
+    // Fallback to hardcoded
+    return (t.menuItems[active] as { name: string; desc: string; price: string }[]).map(
+      (item) => ({ ...item, available: true, imageUrl: "" })
+    );
+  }, [sheetData, active, lang, t]);
 
   return (
     <main className="min-h-screen bg-background pt-20">
@@ -27,13 +109,28 @@ const MenuPage = () => {
             </h1>
           </div>
 
-          {/* Category tabs */}
-          <div className="mb-12 flex flex-wrap justify-center gap-3">
+          {/* View toggle */}
+          <div className="mb-8 flex items-center justify-center gap-3">
+            <span
+              className={`text-sm ${!visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
+            >
+              {t.menuPage.listView}
+            </span>
+            <Switch checked={visualMode} onCheckedChange={setVisualMode} />
+            <span
+              className={`text-sm ${visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
+            >
+              {t.menuPage.visualView}
+            </span>
+          </div>
+
+          {/* Category tabs — horizontal scroll on mobile */}
+          <div className="mb-12 flex overflow-x-auto gap-3 pb-2 scrollbar-hide justify-start sm:justify-center sm:flex-wrap">
             {categoryKeys.map((key) => (
               <button
                 key={key}
                 onClick={() => setActive(key)}
-                className={`rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
+                className={`shrink-0 rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
                   active === key
                     ? "bg-copper-gradient text-accent-foreground"
                     : "border border-copper text-muted-foreground hover:text-foreground"
@@ -44,25 +141,101 @@ const MenuPage = () => {
             ))}
           </div>
 
-          {/* Menu items */}
-          <div className="space-y-1">
-            {items.map((item, i) => (
-              <div
-                key={i}
-                className="group flex items-baseline justify-between border-b border-border py-5 transition-colors hover:border-copper"
-              >
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-copper-gradient transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+          {/* Loading skeleton */}
+          {loading ? (
+            <div className="space-y-4">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="flex items-center justify-between py-5">
+                  <div className="space-y-2 flex-1">
+                    <Skeleton className="h-5 w-40" />
+                    <Skeleton className="h-4 w-64" />
+                  </div>
+                  <Skeleton className="h-5 w-16 ml-6" />
                 </div>
-                <span className="ml-6 shrink-0 text-lg font-bold text-copper">
-                  {item.price}
-                </span>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : visualMode ? (
+            /* Visual / Card view */
+            <div className="grid gap-6 sm:grid-cols-2">
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className={`rounded-2xl border border-border bg-card overflow-hidden transition-colors hover:border-copper/40 ${
+                    !item.available ? "opacity-50" : ""
+                  }`}
+                >
+                  {item.imageUrl ? (
+                    <img
+                      src={item.imageUrl}
+                      alt={item.name}
+                      className="h-48 w-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex h-48 items-center justify-center bg-secondary">
+                      <span className="text-4xl font-bold text-copper opacity-40">
+                        {item.name
+                          .split(" ")
+                          .map((w) => w[0])
+                          .join("")
+                          .slice(0, 3)}
+                      </span>
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {item.name}
+                      </h3>
+                      <span className="text-lg font-bold text-copper ml-3 shrink-0">
+                        {item.price}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    {!item.available && (
+                      <span className="mt-2 inline-block rounded-full bg-destructive/20 px-3 py-1 text-xs font-medium text-destructive">
+                        {t.menuPage.notAvailable}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* List view */
+            <div className="space-y-1">
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className={`group flex items-baseline justify-between border-b border-border py-5 transition-colors hover:border-copper ${
+                    !item.available ? "opacity-50" : ""
+                  }`}
+                >
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-copper-gradient transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+                    {!item.available && (
+                      <span className="mt-1 inline-block rounded-full bg-destructive/20 px-3 py-1 text-xs font-medium text-destructive">
+                        {t.menuPage.notAvailable}
+                      </span>
+                    )}
+                  </div>
+                  <span className="ml-6 shrink-0 text-lg font-bold text-copper">
+                    {item.price}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Last updated */}
+          {lastUpdated && (
+            <p className="mt-8 text-center text-xs text-muted-foreground">
+              {t.menuPage.lastUpdated}: {lastUpdated}
+            </p>
+          )}
         </div>
       </section>
       <FooterSection />
