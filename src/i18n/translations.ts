@@ -48,6 +48,10 @@ export const translations = {
       title: "Our",
       titleItalic: "Menu",
       label: "Our Menu",
+      listView: "List View",
+      visualView: "Visual View",
+      lastUpdated: "Last updated",
+      notAvailable: "Not Available Today",
       categories: {
         kebabs: "Kebabs",
         pides: "Pide & Lahmacun",
@@ -138,6 +142,9 @@ export const translations = {
       contactLabel: "Contact",
       rights: "All rights reserved.",
     },
+    reservation: {
+      cta: "Reserve a Table",
+    },
   },
   tr: {
     nav: {
@@ -186,6 +193,10 @@ export const translations = {
       title: "Bizim",
       titleItalic: "Menümüz",
       label: "Menümüz",
+      listView: "Liste Görünümü",
+      visualView: "Görsel Görünüm",
+      lastUpdated: "Son güncelleme",
+      notAvailable: "Bugün Yok",
       categories: {
         kebabs: "Kebaplar",
         pides: "Pide & Lahmacun",
@@ -275,6 +286,9 @@ export const translations = {
       everyDay: "Her Gün",
       contactLabel: "İletişim",
       rights: "Tüm hakları saklıdır.",
+    },
+    reservation: {
+      cta: "Rezervasyon Yap",
     },
   },
 } as const;

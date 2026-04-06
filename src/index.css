@@ -93,4 +93,12 @@
   .overlay-dark {
     background: linear-gradient(180deg, hsl(var(--background) / 0.3) 0%, hsl(var(--background) / 0.85) 100%);
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
