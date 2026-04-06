@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-kebab.jpg";
 import OpenStatus from "./OpenStatus";
+import ReservationModal from "./ReservationModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
@@ -20,7 +21,7 @@ const HeroSection = () => {
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-copper">
           {t.hero.subtitle}
         </p>
-        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+        <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-7xl lg:text-9xl">
           <span className="text-copper-gradient">CELO</span>
           <br />
           <span className="text-cream font-light italic">Restaurant</span>
@@ -44,6 +45,11 @@ const HeroSection = () => {
           >
             {t.hero.ourStory}
           </a>
+          <ReservationModal>
+            <button className="flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary">
+              {t.reservation.cta}
+            </button>
+          </ReservationModal>
         </div>
       </div>
 

@@ -2,17 +2,23 @@ import zirhKebab from "@/assets/zirh-kebab.jpg";
 import pide from "@/assets/pide.jpg";
 import baklava from "@/assets/baklava.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const images = [zirhKebab, pide, baklava];
 const prices = ["₺450", "₺280", "₺180"];
 
 const ChefRecommendations = () => {
   const { t } = useLanguage();
+  const { ref, visible } = useScrollAnimation();
 
   return (
     <section id="menu" className="relative py-24 px-5">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-16 text-center">
+      <div className="mx-auto max-w-6xl" ref={ref}>
+        <div
+          className={`mb-16 text-center transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
             {t.chef.label}
           </p>
@@ -21,11 +27,14 @@ const ChefRecommendations = () => {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
           {t.chef.dishes.map((dish, i) => (
             <div
               key={dish.name}
-              className="group relative overflow-hidden rounded-2xl border border-copper bg-card transition-all duration-500 hover:glow-copper"
+              className={`group relative overflow-hidden rounded-2xl border border-copper bg-card transition-all duration-700 hover:glow-copper ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: visible ? `${i * 150}ms` : "0ms" }}
             >
               <div className="relative h-64 overflow-hidden">
                 <img
