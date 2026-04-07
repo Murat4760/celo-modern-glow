@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import {
   Dialog,
@@ -26,19 +26,30 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
-const timeSlots: string[] = [];
+// All possible slots: 11:30 → 01:00 in 30-min intervals
+const ALL_SLOTS: string[] = [];
 for (let h = 11; h <= 24; h++) {
   for (const m of [0, 30]) {
-    const hour = h === 24 ? 0 : h > 24 ? h - 24 : h;
-    if (h === 11 && m === 0) continue; // start at 11:30
-    if (h > 25) break;
-    timeSlots.push(`${String(hour).padStart(2, "0")}:${String(m).padStart(2, "0")}`);
+    if (h === 11 && m === 0) continue;
+    const displayH = h === 24 ? 0 : h;
+    ALL_SLOTS.push(`${String(displayH).padStart(2, "0")}:${String(m).padStart(2, "0")}`);
   }
 }
-// add 01:00
-timeSlots.push("01:00");
+ALL_SLOTS.push("01:00");
 
 const partySizes = Array.from({ length: 20 }, (_, i) => String(i + 1)).concat(["20+"]);
+
+function isSunday(d: Date) {
+  return d.getDay() === 0;
+}
+
+/** Convert slot string to minutes since midnight (handles 00:xx and 01:00 as next-day) */
+function slotToMinutes(slot: string): number {
+  const [h, m] = slot.split(":").map(Number);
+  // 00:00, 00:30, 01:00 are after midnight → treat as 24+h
+  if (h < 2) return (24 + h) * 60 + m;
+  return h * 60 + m;
+}
 
 const ReservationModal = ({ children }: { children: React.ReactNode }) => {
   const { lang } = useLanguage();
@@ -53,12 +64,32 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
 
   const tr = lang === "tr";
 
+  const isSelectedSunday = date ? isSunday(date) : false;
+
+  const isToday = useMemo(() => {
+    if (!date) return false;
+    const now = new Date();
+    return (
+      date.getFullYear() === now.getFullYear() &&
+      date.getMonth() === now.getMonth() &&
+      date.getDate() === now.getDate()
+    );
+  }, [date]);
+
+  const { availableSlots, allSlotsPassed } = useMemo(() => {
+    if (!isToday) return { availableSlots: ALL_SLOTS, allSlotsPassed: false };
+    const now = new Date();
+    let nowMinutes = now.getHours() * 60 + now.getMinutes();
+    // If it's between midnight and 2am, treat as 24+ for comparison
+    if (now.getHours() < 2) nowMinutes += 24 * 60;
+    const filtered = ALL_SLOTS.filter((s) => slotToMinutes(s) > nowMinutes);
+    return { availableSlots: filtered, allSlotsPassed: filtered.length === 0 };
+  }, [isToday, date]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      // Replace this URL with your actual Formspree endpoint
-      // e.g. https://formspree.io/f/YOUR_FORM_ID
       await fetch("https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -86,6 +117,19 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
     setParty("");
   };
 
+  // Clear time if date changes and current time is no longer valid
+  const handleDateSelect = (d: Date | undefined) => {
+    setDate(d);
+    setTime("");
+  };
+
+  const sundayMessage = tr
+    ? "Pazar günleri kapalıyız"
+    : "We are closed on Sundays";
+  const noSlotsMessage = tr
+    ? "Bugün rezervasyon saatleri doldu"
+    : "No more reservations available today";
+
   return (
     <Dialog
       open={open}
@@ -105,14 +149,10 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
         {submitted ? (
           <div className="py-8 text-center">
             <p className="text-lg font-semibold text-foreground">
-              {tr
-                ? "Rezervasyonunuz alındı!"
-                : "Your reservation has been received!"}
+              {tr ? "Rezervasyonunuz alındı!" : "Your reservation has been received!"}
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              {tr
-                ? "En kısa sürede sizi arayacağız."
-                : "We'll call you shortly to confirm."}
+              {tr ? "En kısa sürede sizi arayacağız." : "We'll call you shortly to confirm."}
             </p>
             <Button
               onClick={() => setOpen(false)}
@@ -149,32 +189,49 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "dd/MM/yyyy") : (tr ? "Tarih Seçin" : "Pick a Date")}
+                  {date ? format(date, "dd/MM/yyyy") : tr ? "Tarih Seçin" : "Pick a Date"}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0 border-copper bg-card" align="start">
                 <Calendar
                   mode="single"
                   selected={date}
-                  onSelect={setDate}
+                  onSelect={handleDateSelect}
                   disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
                   className="p-3 pointer-events-auto"
                 />
               </PopoverContent>
             </Popover>
 
-            <Select value={time} onValueChange={setTime} required>
-              <SelectTrigger className="min-h-[44px] border-copper bg-background">
-                <SelectValue placeholder={tr ? "Saat Seçin" : "Select Time"} />
-              </SelectTrigger>
-              <SelectContent className="border-copper bg-card">
-                {timeSlots.map((t) => (
-                  <SelectItem key={t} value={t}>
-                    {t}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            {/* Sunday message */}
+            {isSelectedSunday && (
+              <p className="text-sm font-medium text-destructive text-center py-2">
+                {sundayMessage}
+              </p>
+            )}
+
+            {/* All slots passed message */}
+            {!isSelectedSunday && isToday && allSlotsPassed && (
+              <p className="text-sm font-medium text-destructive text-center py-2">
+                {noSlotsMessage}
+              </p>
+            )}
+
+            {/* Time dropdown - hidden on Sunday or when no slots */}
+            {!isSelectedSunday && !(isToday && allSlotsPassed) && (
+              <Select value={time} onValueChange={setTime} required>
+                <SelectTrigger className="min-h-[44px] border-copper bg-background">
+                  <SelectValue placeholder={tr ? "Saat Seçin" : "Select Time"} />
+                </SelectTrigger>
+                <SelectContent className="border-copper bg-card">
+                  {availableSlots.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            )}
 
             <Select value={party} onValueChange={setParty} required>
               <SelectTrigger className="min-h-[44px] border-copper bg-background">
@@ -191,14 +248,10 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
 
             <Button
               type="submit"
-              disabled={loading}
+              disabled={loading || isSelectedSunday || (isToday && allSlotsPassed)}
               className="w-full min-h-[44px] bg-copper-gradient text-accent-foreground font-semibold uppercase tracking-wider"
             >
-              {loading
-                ? "..."
-                : tr
-                ? "Rezervasyon Yap"
-                : "Reserve Now"}
+              {loading ? "..." : tr ? "Rezervasyon Yap" : "Reserve Now"}
             </Button>
           </form>
         )}
