@@ -13,29 +13,29 @@ interface MenuItemCardProps {
 }
 
 // Module-level cache: searchName (lowercased) -> resolved URL or null (failed)
-const pexelsCache = new Map<string, string | null>();
+const aiImageCache = new Map<string, string | null>();
 const inflight = new Map<string, Promise<string | null>>();
 
 const PROJECT_ID = import.meta.env.VITE_SUPABASE_PROJECT_ID as string;
 const ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
 
-async function fetchPexelsImage(query: string): Promise<string | null> {
+async function fetchAiImage(query: string): Promise<string | null> {
   const key = query.toLowerCase();
-  if (pexelsCache.has(key)) return pexelsCache.get(key)!;
+  if (aiImageCache.has(key)) return aiImageCache.get(key)!;
   if (inflight.has(key)) return inflight.get(key)!;
 
   const promise = (async () => {
     try {
-      const url = `https://${PROJECT_ID}.supabase.co/functions/v1/pexels-image?q=${encodeURIComponent(query)}`;
+      const url = `https://${PROJECT_ID}.supabase.co/functions/v1/ai-food-image?q=${encodeURIComponent(query)}`;
       const res = await fetch(url, {
         headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
       });
       if (!res.ok) throw new Error(String(res.status));
       const json = (await res.json()) as { url: string | null };
-      pexelsCache.set(key, json.url ?? null);
+      aiImageCache.set(key, json.url ?? null);
       return json.url ?? null;
     } catch {
-      pexelsCache.set(key, null);
+      aiImageCache.set(key, null);
       return null;
     } finally {
       inflight.delete(key);
@@ -56,7 +56,7 @@ const MenuItemCard = ({
   notAvailableLabel,
 }: MenuItemCardProps) => {
   const cacheKey = searchName.toLowerCase();
-  const cached = pexelsCache.get(cacheKey);
+  const cached = aiImageCache.get(cacheKey);
   const [src, setSrc] = useState<string | null>(
     imageUrl || (cached !== undefined ? cached : null),
   );
@@ -71,7 +71,7 @@ const MenuItemCard = ({
       return;
     }
     let cancelled = false;
-    fetchPexelsImage(searchName).then((url) => {
+    fetchAiImage(searchName).then((url) => {
       if (cancelled) return;
       if (url) {
         setSrc(url);
