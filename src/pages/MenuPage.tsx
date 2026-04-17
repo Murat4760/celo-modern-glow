@@ -5,6 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import { Switch } from "@/components/ui/switch";
 import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
+import MenuItemCard from "@/components/MenuItemCard";
 
 type CategoryKey = "kebabs" | "pides" | "starters" | "desserts" | "drinks";
 
