@@ -86,24 +86,31 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
     return { availableSlots: filtered, allSlotsPassed: filtered.length === 0 };
   }, [isToday, date]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name || !phone || !date || !time || !party) return;
     setLoading(true);
-    try {
-      await fetch("https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          phone,
-          date: date ? format(date, "yyyy-MM-dd") : "",
-          time,
-          partySize: party,
-        }),
-      });
-    } catch {
-      // silently handle
-    }
+
+    // Format date in Turkish locale: e.g. "18 Nisan 2026 Cumartesi"
+    const months = [
+      "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+      "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık",
+    ];
+    const days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+    const formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()} ${days[date.getDay()]}`;
+
+    const message =
+      `Merhaba CELO Restaurant 👋\n\n` +
+      `Ad: ${name}\n` +
+      `Tarih: ${formattedDate}\n` +
+      `Saat: ${time}\n` +
+      `Kişi Sayısı: ${party}\n` +
+      `Telefon: ${phone}\n\n` +
+      `Rezervasyon talebi iletiyorum, onayınızı bekliyorum.`;
+
+    const url = `https://wa.me/905301713452?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+
     setLoading(false);
     setSubmitted(true);
   };
