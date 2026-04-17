@@ -156,10 +156,12 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
         {submitted ? (
           <div className="py-8 text-center">
             <p className="text-lg font-semibold text-foreground">
-              {tr ? "Rezervasyonunuz alındı!" : "Your reservation has been received!"}
+              {tr ? "WhatsApp'a yönlendiriliyorsunuz... ✓" : "Redirecting you to WhatsApp... ✓"}
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              {tr ? "En kısa sürede sizi arayacağız." : "We'll call you shortly to confirm."}
+              {tr
+                ? "Talebiniz açılmadıysa lütfen tekrar deneyin."
+                : "If WhatsApp didn't open, please try again."}
             </p>
             <Button
               onClick={() => setOpen(false)}
