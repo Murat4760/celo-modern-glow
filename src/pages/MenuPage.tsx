@@ -7,7 +7,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
 import MenuItemCard from "@/components/MenuItemCard";
 
-type CategoryKey = "kebabs" | "pides" | "starters" | "desserts" | "drinks";
+type CategoryKey =
+  | "soups"
+  | "kebabs"
+  | "pans"
+  | "steaks"
+  | "grills"
+  | "oven"
+  | "wraps"
+  | "desserts"
+  | "drinks";
 
 interface SheetRow {
   category: string;
@@ -20,12 +29,24 @@ interface SheetRow {
   imageUrl: string;
 }
 
+// Map Sheet "Category" cell values to internal keys (Turkish names from the doc)
 const CATEGORY_MAP: Record<string, CategoryKey> = {
+  Çorbalar: "soups",
+  Corbalar: "soups",
   Kebaplar: "kebabs",
-  "Pide & Lahmacun": "pides",
-  "Başlangıçlar & Meze": "starters",
+  "Tava Çeşitleri": "pans",
+  "Tava Cesitleri": "pans",
+  Steakler: "steaks",
+  Izgaralar: "grills",
+  Izgara: "grills",
+  "Fırın Çeşitleri": "oven",
+  "Firin Cesitleri": "oven",
+  Dürümler: "wraps",
+  Durumler: "wraps",
   Tatlılar: "desserts",
+  Tatlilar: "desserts",
   İçecekler: "drinks",
+  Icecekler: "drinks",
 };
 
 // Replace SHEET_ID with your actual Google Sheets ID
@@ -41,9 +62,13 @@ const MenuPage = () => {
   const [lastUpdated, setLastUpdated] = useState<string>("");
 
   const categoryKeys: CategoryKey[] = [
+    "soups",
     "kebabs",
-    "pides",
-    "starters",
+    "pans",
+    "steaks",
+    "grills",
+    "oven",
+    "wraps",
     "desserts",
     "drinks",
   ];
