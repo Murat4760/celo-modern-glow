@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 
 interface MenuItemCardProps {
   name: string;
@@ -13,8 +12,39 @@ interface MenuItemCardProps {
   notAvailableLabel: string;
 }
 
-// Module-level cache so re-renders / category switches don't refetch the same dish.
+// Module-level cache: searchName (lowercased) -> resolved URL or null (failed)
 const pexelsCache = new Map<string, string | null>();
+const inflight = new Map<string, Promise<string | null>>();
+
+const PROJECT_ID = import.meta.env.VITE_SUPABASE_PROJECT_ID as string;
+const ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
+
+async function fetchPexelsImage(query: string): Promise<string | null> {
+  const key = query.toLowerCase();
+  if (pexelsCache.has(key)) return pexelsCache.get(key)!;
+  if (inflight.has(key)) return inflight.get(key)!;
+
+  const promise = (async () => {
+    try {
+      const url = `https://${PROJECT_ID}.supabase.co/functions/v1/pexels-image?q=${encodeURIComponent(query)}`;
+      const res = await fetch(url, {
+        headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      const json = (await res.json()) as { url: string | null };
+      pexelsCache.set(key, json.url ?? null);
+      return json.url ?? null;
+    } catch {
+      pexelsCache.set(key, null);
+      return null;
+    } finally {
+      inflight.delete(key);
+    }
+  })();
+
+  inflight.set(key, promise);
+  return promise;
+}
 
 const MenuItemCard = ({
   name,
@@ -25,65 +55,31 @@ const MenuItemCard = ({
   searchName,
   notAvailableLabel,
 }: MenuItemCardProps) => {
+  const cacheKey = searchName.toLowerCase();
+  const cached = pexelsCache.get(cacheKey);
   const [src, setSrc] = useState<string | null>(
-    imageUrl || pexelsCache.get(searchName.toLowerCase()) || null,
+    imageUrl || (cached !== undefined ? cached : null),
   );
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState<boolean>(
+    !imageUrl && cached === null,
+  );
 
   useEffect(() => {
-    if (imageUrl) return; // explicit image wins
-    const key = searchName.toLowerCase();
-    if (pexelsCache.has(key)) {
-      const cached = pexelsCache.get(key) ?? null;
-      setSrc(cached);
-      if (!cached) setFailed(true);
+    if (imageUrl) {
+      setSrc(imageUrl);
+      setFailed(false);
       return;
     }
-
     let cancelled = false;
-    (async () => {
-      try {
-        const { data, error } = await supabase.functions.invoke(
-          "pexels-image",
-          { body: null, method: "GET" } as never,
-        ).catch(() => ({ data: null, error: true }));
-
-        // supabase-js doesn't pass query params via invoke nicely; use direct fetch instead
-        if (cancelled) return;
-        if (error || !data) {
-          await fetchViaUrl(key, cancelled);
-          return;
-        }
-      } catch {
-        if (!cancelled) await fetchViaUrl(key, cancelled);
+    fetchPexelsImage(searchName).then((url) => {
+      if (cancelled) return;
+      if (url) {
+        setSrc(url);
+        setFailed(false);
+      } else {
+        setFailed(true);
       }
-    })();
-
-    async function fetchViaUrl(k: string, isCancelled: boolean) {
-      try {
-        const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
-        const anonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-        const url = `https://${projectId}.supabase.co/functions/v1/pexels-image?q=${encodeURIComponent(searchName)}`;
-        const res = await fetch(url, {
-          headers: {
-            apikey: anonKey,
-            Authorization: `Bearer ${anonKey}`,
-          },
-        });
-        if (!res.ok) throw new Error(String(res.status));
-        const json = (await res.json()) as { url: string | null };
-        if (isCancelled) return;
-        pexelsCache.set(k, json.url);
-        if (json.url) setSrc(json.url);
-        else setFailed(true);
-      } catch {
-        if (!isCancelled) {
-          pexelsCache.set(k, null);
-          setFailed(true);
-        }
-      }
-    }
-
+    });
     return () => {
       cancelled = true;
     };

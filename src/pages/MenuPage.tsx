@@ -197,7 +197,7 @@ const MenuPage = () => {
                   price={item.price}
                   available={item.available}
                   imageUrl={item.imageUrl}
-                  unsplashUrl={buildUnsplashUrl(item.nameEn)}
+                  searchName={item.nameEn}
                   notAvailableLabel={t.menuPage.notAvailable}
                 />
               ))}
