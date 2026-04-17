@@ -82,6 +82,7 @@ const MenuPage = () => {
         .filter((r) => CATEGORY_MAP[r.category] === active)
         .map((r) => ({
           name: lang === "tr" ? r.nameTr : r.nameEn,
+          nameEn: r.nameEn || r.nameTr,
           desc: lang === "tr" ? r.descTr : r.descEn,
           price: r.price,
           available: r.available,
@@ -90,9 +91,14 @@ const MenuPage = () => {
     }
     // Fallback to hardcoded
     return (t.menuItems[active] as readonly { name: string; desc: string; price: string }[]).map(
-      (item) => ({ ...item, available: true, imageUrl: "" })
+      (item) => ({ ...item, nameEn: item.name, available: true, imageUrl: "" })
     );
   }, [sheetData, active, lang, t]);
+
+  const buildUnsplashUrl = (nameEn: string) => {
+    const slug = nameEn.toLowerCase().trim().replace(/\s+/g, "-");
+    return `https://source.unsplash.com/400x300/?${encodeURIComponent(slug)},food,turkish`;
+  };
 
   return (
     <main className="min-h-screen bg-background pt-20">
