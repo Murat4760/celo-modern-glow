@@ -164,47 +164,16 @@ const MenuPage = () => {
             /* Visual / Card view */
             <div className="grid gap-6 sm:grid-cols-2">
               {items.map((item, i) => (
-                <div
+                <MenuItemCard
                   key={i}
-                  className={`rounded-2xl border border-border bg-card overflow-hidden transition-colors hover:border-copper/40 ${
-                    !item.available ? "opacity-50" : ""
-                  }`}
-                >
-                  {item.imageUrl ? (
-                    <img
-                      src={item.imageUrl}
-                      alt={item.name}
-                      className="h-48 w-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex h-48 items-center justify-center bg-secondary">
-                      <span className="text-4xl font-bold text-copper opacity-40">
-                        {item.name
-                          .split(" ")
-                          .map((w) => w[0])
-                          .join("")
-                          .slice(0, 3)}
-                      </span>
-                    </div>
-                  )}
-                  <div className="p-5">
-                    <div className="flex items-center justify-between mb-1">
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {item.name}
-                      </h3>
-                      <span className="text-lg font-bold text-copper ml-3 shrink-0">
-                        {item.price}
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                    {!item.available && (
-                      <span className="mt-2 inline-block rounded-full bg-destructive/20 px-3 py-1 text-xs font-medium text-destructive">
-                        {t.menuPage.notAvailable}
-                      </span>
-                    )}
-                  </div>
-                </div>
+                  name={item.name}
+                  desc={item.desc}
+                  price={item.price}
+                  available={item.available}
+                  imageUrl={item.imageUrl}
+                  unsplashUrl={buildUnsplashUrl(item.nameEn)}
+                  notAvailableLabel={t.menuPage.notAvailable}
+                />
               ))}
             </div>
           ) : (
