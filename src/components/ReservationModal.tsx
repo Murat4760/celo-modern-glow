@@ -206,7 +206,7 @@ const ReservationModal = ({ children }: { children: React.ReactNode }) => {
                   mode="single"
                   selected={date}
                   onSelect={handleDateSelect}
-                  disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
+                  disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0)) || d.getDay() === 0}
                   className="p-3 pointer-events-auto"
                 />
               </PopoverContent>
