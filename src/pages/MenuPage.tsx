@@ -121,10 +121,6 @@ const MenuPage = () => {
     );
   }, [sheetData, active, lang, t]);
 
-  const buildUnsplashUrl = (nameEn: string) => {
-    const slug = nameEn.toLowerCase().trim().replace(/\s+/g, "-");
-    return `https://source.unsplash.com/400x300/?${encodeURIComponent(slug)},food,turkish`;
-  };
 
   return (
     <main className="min-h-screen bg-background pt-20">
@@ -197,7 +193,7 @@ const MenuPage = () => {
                   price={item.price}
                   available={item.available}
                   imageUrl={item.imageUrl}
-                  unsplashUrl={buildUnsplashUrl(item.nameEn)}
+                  searchName={item.nameEn}
                   notAvailableLabel={t.menuPage.notAvailable}
                 />
               ))}
