@@ -1,14 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface MenuItemCardProps {
   name: string;
   desc: string;
   price: string;
   available: boolean;
-  imageUrl: string;
-  unsplashUrl: string;
+  /** Optional explicit image URL (e.g. from a Google Sheet). Takes priority. */
+  imageUrl?: string;
+  /** English item name used as the Pexels search query. */
+  searchName: string;
   notAvailableLabel: string;
 }
+
+// Module-level cache so re-renders / category switches don't refetch the same dish.
+const pexelsCache = new Map<string, string | null>();
 
 const MenuItemCard = ({
   name,
@@ -16,13 +22,72 @@ const MenuItemCard = ({
   price,
   available,
   imageUrl,
-  unsplashUrl,
+  searchName,
   notAvailableLabel,
 }: MenuItemCardProps) => {
-  // Prefer explicit Sheet image, fall back to Unsplash, then to letter placeholder
-  const initialSrc = imageUrl || unsplashUrl;
-  const [src, setSrc] = useState<string>(initialSrc);
+  const [src, setSrc] = useState<string | null>(
+    imageUrl || pexelsCache.get(searchName.toLowerCase()) || null,
+  );
   const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (imageUrl) return; // explicit image wins
+    const key = searchName.toLowerCase();
+    if (pexelsCache.has(key)) {
+      const cached = pexelsCache.get(key) ?? null;
+      setSrc(cached);
+      if (!cached) setFailed(true);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke(
+          "pexels-image",
+          { body: null, method: "GET" } as never,
+        ).catch(() => ({ data: null, error: true }));
+
+        // supabase-js doesn't pass query params via invoke nicely; use direct fetch instead
+        if (cancelled) return;
+        if (error || !data) {
+          await fetchViaUrl(key, cancelled);
+          return;
+        }
+      } catch {
+        if (!cancelled) await fetchViaUrl(key, cancelled);
+      }
+    })();
+
+    async function fetchViaUrl(k: string, isCancelled: boolean) {
+      try {
+        const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+        const anonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+        const url = `https://${projectId}.supabase.co/functions/v1/pexels-image?q=${encodeURIComponent(searchName)}`;
+        const res = await fetch(url, {
+          headers: {
+            apikey: anonKey,
+            Authorization: `Bearer ${anonKey}`,
+          },
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        const json = (await res.json()) as { url: string | null };
+        if (isCancelled) return;
+        pexelsCache.set(k, json.url);
+        if (json.url) setSrc(json.url);
+        else setFailed(true);
+      } catch {
+        if (!isCancelled) {
+          pexelsCache.set(k, null);
+          setFailed(true);
+        }
+      }
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [imageUrl, searchName]);
 
   const initials = name
     .split(" ")
@@ -31,27 +96,21 @@ const MenuItemCard = ({
     .slice(0, 3)
     .toUpperCase();
 
+  const showImage = !failed && !!src;
+
   return (
     <div
       className={`group relative overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-copper/40 ${
         !available ? "opacity-50" : ""
       }`}
     >
-      {/* Background image or placeholder */}
       <div className="relative h-48 w-full">
-        {!failed ? (
+        {showImage ? (
           <img
-            src={src}
+            src={src!}
             alt={name}
             loading="lazy"
-            onError={() => {
-              // If the explicit image failed and we have an Unsplash fallback, try it
-              if (src !== unsplashUrl && unsplashUrl) {
-                setSrc(unsplashUrl);
-              } else {
-                setFailed(true);
-              }
-            }}
+            onError={() => setFailed(true)}
             className="h-full w-full object-cover"
           />
         ) : (
@@ -61,8 +120,7 @@ const MenuItemCard = ({
             </span>
           </div>
         )}
-        {/* Dark overlay for readability of any text overlaid on the image */}
-        {!failed && (
+        {showImage && (
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
         )}
       </div>
