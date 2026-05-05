@@ -25,16 +25,22 @@ function slugify(s: string): string {
     .slice(0, 80);
 }
 
+const PROMPT_VERSION = "v2";
+
 function buildPrompt(dish: string): string {
-  // Carefully-tuned prompt for consistent, appetizing, professional food photos.
+  // Highly-detailed prompt for premium, magazine-quality Turkish food photography.
   return [
-    `A high-end professional food photograph of "${dish}", a traditional Turkish dish.`,
-    "Overhead three-quarter angle, served on rustic ceramic or copper tableware,",
-    "warm golden natural lighting, soft shallow depth of field, steam rising slightly,",
-    "garnished authentically with fresh herbs, lemon, or accompanying mezze where appropriate.",
-    "Dark moody background with subtle wooden table texture.",
-    "Editorial restaurant menu photography style, ultra detailed, sharp focus on the food.",
-    "Absolutely no text, no watermarks, no logos, no people, no hands, no cutlery in motion.",
+    `Award-winning Michelin-level editorial food photograph of "${dish}", an authentic traditional Turkish dish, presented exactly as served in a high-end Anatolian restaurant.`,
+    "Shot on a Phase One medium format camera with an 80mm macro lens at f/2.8, razor-sharp focus on the hero food, creamy bokeh falloff toward the edges.",
+    "Three-quarter overhead 45-degree angle composition following the rule of thirds.",
+    "Plated on hand-thrown rustic stoneware, hammered copper, or aged terracotta with visible texture and subtle patina.",
+    "Warm golden-hour cinematic lighting from the upper-left, soft directional shadows, gentle rim light catching glistening sauces, oils, and fresh steam wisps rising naturally.",
+    "Hyper-detailed surface textures: charred grill marks, caramelized edges, glossy sauce reflections, individual sesame or pul biber flakes, fresh parsley leaves with visible veins, beads of olive oil and lemon juice.",
+    "Authentic garnishes only: fresh flat-leaf parsley, sumac onions, grilled lemon halves, charred green peppers, warm lavash, or appropriate mezze accents where culturally correct.",
+    "Background: dark moody aged walnut wood table with subtle grain, softly out of focus, faint copper highlights, deep chiaroscuro mood.",
+    "Color palette: deep terracotta, charcoal, copper, cream, saffron, and ember-red — rich, warm, appetizing, true-to-life food colors with no oversaturation.",
+    "Ultra-realistic, photorealistic, 8k detail, natural film grain, no HDR halos, no plastic look.",
+    "Strictly forbidden: any text, captions, watermarks, logos, brand marks, people, hands, faces, fingers, motion blur, floating ingredients, surreal elements, cartoon style, or AI artifacts.",
   ].join(" ");
 }
 
@@ -66,7 +72,7 @@ Deno.serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-    const path = `${slug}.png`;
+    const path = `${slug}-${PROMPT_VERSION}.png`;
     const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${path}`;
 
     // 1) Check cache: HEAD the public URL
