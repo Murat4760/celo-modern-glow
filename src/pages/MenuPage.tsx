@@ -56,7 +56,7 @@ const SHEET_CSV_URL =
 const MenuPage = () => {
   const { t, lang } = useLanguage();
   const [active, setActive] = useState<CategoryKey>("kebabs");
-  const [visualMode, setVisualMode] = useState(false);
+  const [visualMode, setVisualMode] = useState(true);
   const [sheetData, setSheetData] = useState<SheetRow[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>("");
