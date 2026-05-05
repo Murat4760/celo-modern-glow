@@ -72,7 +72,7 @@ Deno.serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-    const path = `${slug}.png`;
+    const path = `${slug}-${PROMPT_VERSION}.png`;
     const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${path}`;
 
     // 1) Check cache: HEAD the public URL
