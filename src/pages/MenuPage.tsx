@@ -2,10 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { Switch } from "@/components/ui/switch";
 import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
-import MenuItemCard from "@/components/MenuItemCard";
 
 type CategoryKey =
   | "soups"
@@ -56,7 +54,6 @@ const SHEET_CSV_URL =
 const MenuPage = () => {
   const { t, lang } = useLanguage();
   const [active, setActive] = useState<CategoryKey>("kebabs");
-  const [visualMode, setVisualMode] = useState(true);
   const [sheetData, setSheetData] = useState<SheetRow[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>("");
@@ -137,20 +134,6 @@ const MenuPage = () => {
             </h1>
           </div>
 
-          {/* View toggle */}
-          <div className="mb-8 flex items-center justify-center gap-3">
-            <span
-              className={`text-sm ${!visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
-            >
-              {t.menuPage.listView}
-            </span>
-            <Switch checked={visualMode} onCheckedChange={setVisualMode} />
-            <span
-              className={`text-sm ${visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
-            >
-              {t.menuPage.visualView}
-            </span>
-          </div>
 
           {/* Category tabs — horizontal scroll on mobile */}
           <div className="mb-12 flex overflow-x-auto gap-3 pb-2 scrollbar-hide justify-start sm:justify-center sm:flex-wrap">
@@ -180,22 +163,6 @@ const MenuPage = () => {
                   </div>
                   <Skeleton className="h-5 w-16 ml-6" />
                 </div>
-              ))}
-            </div>
-          ) : visualMode ? (
-            /* Visual / Card view */
-            <div className="grid gap-6 sm:grid-cols-2">
-              {items.map((item, i) => (
-                <MenuItemCard
-                  key={i}
-                  name={item.name}
-                  desc={item.desc}
-                  price={item.price}
-                  available={item.available}
-                  imageUrl={item.imageUrl}
-                  searchName={item.nameEn}
-                  notAvailableLabel={t.menuPage.notAvailable}
-                />
               ))}
             </div>
           ) : (
