@@ -2,10 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { Switch } from "@/components/ui/switch";
 import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
-import MenuItemCard from "@/components/MenuItemCard";
 
 type CategoryKey =
   | "soups"
