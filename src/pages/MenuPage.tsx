@@ -165,22 +165,6 @@ const MenuPage = () => {
                 </div>
               ))}
             </div>
-          ) : visualMode ? (
-            /* Visual / Card view */
-            <div className="grid gap-6 sm:grid-cols-2">
-              {items.map((item, i) => (
-                <MenuItemCard
-                  key={i}
-                  name={item.name}
-                  desc={item.desc}
-                  price={item.price}
-                  available={item.available}
-                  imageUrl={item.imageUrl}
-                  searchName={item.nameEn}
-                  notAvailableLabel={t.menuPage.notAvailable}
-                />
-              ))}
-            </div>
           ) : (
             /* List view */
             <div className="space-y-1">
