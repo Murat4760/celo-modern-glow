@@ -134,20 +134,6 @@ const MenuPage = () => {
             </h1>
           </div>
 
-          {/* View toggle */}
-          <div className="mb-8 flex items-center justify-center gap-3">
-            <span
-              className={`text-sm ${!visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
-            >
-              {t.menuPage.listView}
-            </span>
-            <Switch checked={visualMode} onCheckedChange={setVisualMode} />
-            <span
-              className={`text-sm ${visualMode ? "text-foreground font-medium" : "text-muted-foreground"}`}
-            >
-              {t.menuPage.visualView}
-            </span>
-          </div>
 
           {/* Category tabs — horizontal scroll on mobile */}
           <div className="mb-12 flex overflow-x-auto gap-3 pb-2 scrollbar-hide justify-start sm:justify-center sm:flex-wrap">
