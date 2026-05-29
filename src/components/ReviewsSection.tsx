@@ -27,7 +27,7 @@ const ReviewsSection = () => {
                 <Star key={s} className="h-5 w-5 fill-copper text-copper" />
               ))}
             </div>
-            <span className="text-sm text-muted-foreground">4.5 / 5 · Google</span>
+            <span className="text-sm text-muted-foreground">4.6 / 5 · Google</span>
           </div>
         </div>
 

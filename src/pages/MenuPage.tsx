@@ -10,7 +10,6 @@ type CategoryKey =
   | "kebabs"
   | "pans"
   | "steaks"
-  | "grills"
   | "oven"
   | "wraps"
   | "desserts"
@@ -35,8 +34,6 @@ const CATEGORY_MAP: Record<string, CategoryKey> = {
   "Tava Çeşitleri": "pans",
   "Tava Cesitleri": "pans",
   Steakler: "steaks",
-  Izgaralar: "grills",
-  Izgara: "grills",
   "Fırın Çeşitleri": "oven",
   "Firin Cesitleri": "oven",
   Dürümler: "wraps",
@@ -63,7 +60,6 @@ const MenuPage = () => {
     "kebabs",
     "pans",
     "steaks",
-    "grills",
     "oven",
     "wraps",
     "desserts",
@@ -135,13 +131,13 @@ const MenuPage = () => {
           </div>
 
 
-          {/* Category tabs — horizontal scroll on mobile */}
-          <div className="mb-12 flex overflow-x-auto gap-3 pb-2 scrollbar-hide justify-start sm:justify-center sm:flex-wrap">
+          {/* Category tabs — wrap vertically, no horizontal scroll */}
+          <div className="mb-12 flex flex-wrap gap-3 pb-2 justify-center">
             {categoryKeys.map((key) => (
               <button
                 key={key}
                 onClick={() => setActive(key)}
-                className={`shrink-0 rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
+                className={`rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
                   active === key
                     ? "bg-copper-gradient text-accent-foreground"
                     : "border border-copper text-muted-foreground hover:text-foreground"
