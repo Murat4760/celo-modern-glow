@@ -10,7 +10,6 @@ type CategoryKey =
   | "kebabs"
   | "pans"
   | "steaks"
-  | "grills"
   | "oven"
   | "wraps"
   | "desserts"
