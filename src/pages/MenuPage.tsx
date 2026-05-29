@@ -132,12 +132,12 @@ const MenuPage = () => {
 
 
           {/* Category tabs — wrap vertically, no horizontal scroll */}
-          <div className="mb-12 flex flex-wrap gap-3 pb-2 justify-center">
+          <div className="mb-12 flex gap-3 pb-2 overflow-x-auto scrollbar-hide -mx-5 px-5 md:justify-center md:mx-0 md:px-0">
             {categoryKeys.map((key) => (
               <button
                 key={key}
                 onClick={() => setActive(key)}
-                className={`rounded-full px-5 py-2.5 min-h-[44px] text-sm font-medium uppercase tracking-wider transition-all ${
+                className={`rounded-full px-5 py-2.5 min-h-[44px] whitespace-nowrap shrink-0 text-sm font-medium uppercase tracking-wider transition-all ${
                   active === key
                     ? "bg-copper-gradient text-accent-foreground"
                     : "border border-copper text-muted-foreground hover:text-foreground"
