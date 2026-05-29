@@ -60,7 +60,6 @@ const MenuPage = () => {
     "kebabs",
     "pans",
     "steaks",
-    "grills",
     "oven",
     "wraps",
     "desserts",
