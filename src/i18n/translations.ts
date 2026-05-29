@@ -208,7 +208,7 @@ export const translations = {
         kebabs: "Kebabs",
         pans: "Tava",
         steaks: "Steaks",
-        grills: "Grills",
+        
         oven: "Oven",
         wraps: "Wraps",
         desserts: "Desserts",
