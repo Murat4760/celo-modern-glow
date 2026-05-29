@@ -1,4 +1,3 @@
-import heroImage from "@/assets/hero-kebab.jpg";
 import { Link } from "react-router-dom";
 import OpenStatus from "./OpenStatus";
 import ReservationModal from "./ReservationModal";
@@ -8,15 +7,8 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Signature kebabs at CELO Restaurant"
-          className="h-full w-full object-cover"
-        />
-        <div className="overlay-dark absolute inset-0" />
-      </div>
+    <section className="relative min-h-screen overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-background to-background" />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-copper">
