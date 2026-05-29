@@ -1,10 +1,6 @@
-import zirhKebab from "@/assets/zirh-kebab.jpg";
-import pide from "@/assets/pide.jpg";
-import baklava from "@/assets/baklava.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const images = [zirhKebab, pide, baklava];
 const prices = ["₺450", "₺280", "₺180"];
 
 const ChefRecommendations = () => {
@@ -27,37 +23,27 @@ const ChefRecommendations = () => {
           </h2>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {t.chef.dishes.map((dish, i) => (
             <div
               key={dish.name}
-              className={`group relative overflow-hidden rounded-2xl border border-copper bg-card transition-all duration-700 hover:glow-copper ${
+              className={`relative rounded-2xl border border-copper/40 bg-card p-6 transition-all duration-700 hover:border-copper ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: visible ? `${i * 150}ms` : "0ms" }}
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={images[i]}
-                  alt={dish.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-copper-gradient rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
-                    {dish.tag}
-                  </span>
-                </div>
+              <div className="mb-4">
+                <span className="bg-copper-gradient rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
+                  {dish.tag}
+                </span>
               </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-semibold">{dish.name}</h3>
-                  <span className="text-lg font-bold text-copper">{prices[i]}</span>
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {dish.description}
-                </p>
+              <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-xl font-semibold">{dish.name}</h3>
+                <span className="text-lg font-bold text-copper">{prices[i]}</span>
               </div>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {dish.description}
+              </p>
             </div>
           ))}
         </div>
