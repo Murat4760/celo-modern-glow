@@ -34,12 +34,12 @@ const HeroSection = () => {
           <OpenStatus />
         </div>
         <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#menu"
+          <Link
+            to="/menu"
             className="bg-copper-gradient flex h-11 items-center rounded-full px-8 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
           >
             {t.hero.viewMenu}
-          </a>
+          </Link>
           <a
             href="#about"
             className="flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
