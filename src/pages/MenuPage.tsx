@@ -34,8 +34,6 @@ const CATEGORY_MAP: Record<string, CategoryKey> = {
   "Tava Çeşitleri": "pans",
   "Tava Cesitleri": "pans",
   Steakler: "steaks",
-  Izgaralar: "grills",
-  Izgara: "grills",
   "Fırın Çeşitleri": "oven",
   "Firin Cesitleri": "oven",
   Dürümler: "wraps",
