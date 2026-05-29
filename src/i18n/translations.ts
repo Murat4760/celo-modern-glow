@@ -112,12 +112,6 @@ const menuItems = {
       { name: "Kuzu Lokum", desc: "250gr", price: "1.000 TL" },
       { name: "Dana Lokum", desc: "", price: "—" },
     ],
-    grills: [
-      { name: "Antrikot", desc: "280gr", price: "950 TL" },
-      { name: "Kuzu Lokum", desc: "250gr", price: "1.000 TL" },
-      { name: "Dana Lokum", desc: "", price: "—" },
-      { name: "Kuzu Pirzola", desc: "300gr", price: "1.100 TL" },
-    ],
     oven: [
       { name: "Özel Antep Lahmacun", desc: "", price: "180 TL" },
       { name: "İçli Köfte", desc: "", price: "100 TL" },
@@ -127,7 +121,6 @@ const menuItems = {
       { name: "Kuşbaşılı Pide", desc: "", price: "560 TL" },
       { name: "Kuşbaşılı Kaşarlı Pide", desc: "", price: "530 TL" },
       { name: "Karışık Pide", desc: "", price: "590 TL" },
-      { name: "Kiremit Tava (Et)", desc: "", price: "780 TL" },
     ],
     wraps: [
       { name: "Zırh Dürüm", desc: "", price: "370 TL" },
