@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-kebab.jpg";
+import { Link } from "react-router-dom";
 import OpenStatus from "./OpenStatus";
 import ReservationModal from "./ReservationModal";
 import { useLanguage } from "@/i18n/LanguageContext";
