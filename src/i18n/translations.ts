@@ -324,7 +324,7 @@ export const translations = {
         kebabs: "Kebaplar",
         pans: "Tava Çeşitleri",
         steaks: "Steakler",
-        grills: "Izgaralar",
+        
         oven: "Fırın Çeşitleri",
         wraps: "Dürümler",
         desserts: "Tatlılar",
