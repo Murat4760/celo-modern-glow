@@ -132,7 +132,7 @@ const MenuPage = () => {
 
 
           {/* Category tabs — wrap vertically, no horizontal scroll */}
-          <div className="mb-12 flex gap-3 pb-2 overflow-x-auto scrollbar-hide -mx-5 px-5 md:justify-center md:mx-0 md:px-0">
+          <div className="mb-12 flex flex-wrap gap-3 pb-2 justify-center">
             {categoryKeys.map((key) => (
               <button
                 key={key}
