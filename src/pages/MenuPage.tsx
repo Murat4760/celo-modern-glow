@@ -159,23 +159,29 @@ const MenuPage = () => {
   const selectCategory = useCallback((key: CategoryKey) => {
     setActiveCat(key);
     setOpenCats(new Set([key]));
-    // scroll to that category header under sticky controls
+    // Scroll header just under sticky controls so items appear immediately
     requestAnimationFrame(() => {
       const el = document.querySelector<HTMLElement>(`[data-cat="${key}"]`);
       if (!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY - 200;
+      const stickyOffset = 140; // navbar (64) + controls bar (~76)
+      const top = el.getBoundingClientRect().top + window.scrollY - stickyOffset;
       window.scrollTo({ top, behavior: "smooth" });
     });
   }, []);
 
   const toggleCat = (key: CategoryKey) => {
+    // Single-open behavior: opening a category closes others and scrolls to it
+    if (!openCats.has(key)) {
+      selectCategory(key);
+      return;
+    }
     setOpenCats((prev) => {
       const next = new Set(prev);
-      if (next.has(key)) next.delete(key);
-      else next.add(key);
+      next.delete(key);
       return next;
     });
   };
+
 
   const searchPlaceholder = lang === "tr" ? "Yemek ara..." : "Search dishes...";
   const emptyMsg =
