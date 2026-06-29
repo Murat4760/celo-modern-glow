@@ -1,132 +1,61 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { ChevronDown, Search } from "lucide-react";
+import { ChevronDown, Search, ImageIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { Skeleton } from "@/components/ui/skeleton";
-import Papa from "papaparse";
-import { photoFor } from "@/assets/menu";
+
 
 type CategoryKey =
+  | "starters"
   | "soups"
-  | "kebabs"
-  | "pans"
-  | "steaks"
   | "oven"
   | "wraps"
+  | "kebabs"
+  | "grills"
+  | "family"
   | "desserts"
   | "drinks";
-
-interface SheetRow {
-  category: string;
-  nameTr: string;
-  nameEn: string;
-  descTr: string;
-  descEn: string;
-  price: string;
-  available: boolean;
-  imageUrl: string;
-}
 
 interface MenuItemView {
   name: string;
   desc: string;
   price: string;
   available: boolean;
+  image?: string;
 }
 
 const CATEGORY_KEYS: CategoryKey[] = [
+  "starters",
   "soups",
-  "kebabs",
-  "pans",
-  "steaks",
   "oven",
   "wraps",
+  "kebabs",
+  "grills",
+  "family",
   "desserts",
   "drinks",
 ];
 
-const CATEGORY_MAP: Record<string, CategoryKey> = {
-  Çorbalar: "soups",
-  Corbalar: "soups",
-  Kebaplar: "kebabs",
-  "Tava Çeşitleri": "pans",
-  "Tava Cesitleri": "pans",
-  Steakler: "steaks",
-  "Fırın Çeşitleri": "oven",
-  "Firin Cesitleri": "oven",
-  Dürümler: "wraps",
-  Durumler: "wraps",
-  Tatlılar: "desserts",
-  Tatlilar: "desserts",
-  İçecekler: "drinks",
-  Icecekler: "drinks",
-};
-
-const SHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv";
-
 const MenuPage = () => {
   const { t, lang } = useLanguage();
   const [query, setQuery] = useState("");
-  const [activeCat, setActiveCat] = useState<CategoryKey>("kebabs");
-  const [openCats, setOpenCats] = useState<Set<CategoryKey>>(new Set(["kebabs"]));
-  const [sheetData, setSheetData] = useState<SheetRow[] | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [lastUpdated, setLastUpdated] = useState("");
+  const [activeCat, setActiveCat] = useState<CategoryKey>("starters");
+  const [openCats, setOpenCats] = useState<Set<CategoryKey>>(new Set(["starters"]));
 
-  // Fetch from Google Sheets (with hardcoded fallback)
-  useEffect(() => {
-    const run = async () => {
-      try {
-        const res = await fetch(SHEET_CSV_URL);
-        if (!res.ok) throw new Error("fetch failed");
-        const csv = await res.text();
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
-        const rows: SheetRow[] = (parsed.data as Record<string, string>[]).map((r) => ({
-          category: r["Category"] || "",
-          nameTr: r["Item Name TR"] || "",
-          nameEn: r["Item Name EN"] || "",
-          descTr: r["Description TR"] || "",
-          descEn: r["Description EN"] || "",
-          price: r["Price"] || "",
-          available: (r["Available"] || "TRUE").toUpperCase() !== "FALSE",
-          imageUrl: r["Image URL"] || "",
-        }));
-        setSheetData(rows);
-        setLastUpdated(new Date().toLocaleString(lang === "tr" ? "tr-TR" : "en-US"));
-      } catch {
-        // keep fallback
-      }
-      setLoading(false);
-    };
-    run();
-  }, [lang]);
-
-  // Build item list per category (sheet → fallback to i18n)
+  // Build item list per category from i18n
   const itemsByCat = useMemo<Record<CategoryKey, MenuItemView[]>>(() => {
     const result = {} as Record<CategoryKey, MenuItemView[]>;
     for (const key of CATEGORY_KEYS) {
-      if (sheetData) {
-        result[key] = sheetData
-          .filter((r) => CATEGORY_MAP[r.category] === key)
-          .map((r) => ({
-            name: lang === "tr" ? r.nameTr : r.nameEn || r.nameTr,
-            desc: lang === "tr" ? r.descTr : r.descEn,
-            price: r.price,
-            available: r.available,
-          }));
-      } else {
-        const fallback = t.menuItems[key] as readonly {
-          name: string;
-          desc: string;
-          price: string;
-        }[];
-        result[key] = fallback.map((i) => ({ ...i, available: true }));
-      }
+      const fallback = t.menuItems[key] as readonly {
+        name: string;
+        desc: string;
+        price: string;
+        image?: string;
+      }[];
+      result[key] = fallback.map((i) => ({ ...i, available: true }));
     }
     return result;
-  }, [sheetData, lang, t]);
+  }, [t]);
 
   // Search filter
   const normalizedQuery = query.trim().toLowerCase();
@@ -134,9 +63,10 @@ const MenuPage = () => {
     if (!normalizedQuery) return itemsByCat;
     const result = {} as Record<CategoryKey, MenuItemView[]>;
     for (const key of CATEGORY_KEYS) {
-      result[key] = itemsByCat[key].filter((i) =>
-        i.name.toLowerCase().includes(normalizedQuery) ||
-        i.desc.toLowerCase().includes(normalizedQuery)
+      result[key] = itemsByCat[key].filter(
+        (i) =>
+          i.name.toLowerCase().includes(normalizedQuery) ||
+          i.desc.toLowerCase().includes(normalizedQuery),
       );
     }
     return result;
@@ -144,10 +74,9 @@ const MenuPage = () => {
 
   const visibleCategories = useMemo(
     () => CATEGORY_KEYS.filter((k) => filteredItemsByCat[k].length > 0),
-    [filteredItemsByCat]
+    [filteredItemsByCat],
   );
 
-  // Auto-expand when searching; reset to active when cleared
   useEffect(() => {
     if (normalizedQuery) {
       setOpenCats(new Set(visibleCategories));
@@ -160,18 +89,16 @@ const MenuPage = () => {
   const selectCategory = useCallback((key: CategoryKey) => {
     setActiveCat(key);
     setOpenCats(new Set([key]));
-    // Scroll header just under sticky controls so items appear immediately
     requestAnimationFrame(() => {
       const el = document.querySelector<HTMLElement>(`[data-cat="${key}"]`);
       if (!el) return;
-      const stickyOffset = 140; // navbar (64) + controls bar (~76)
+      const stickyOffset = 140;
       const top = el.getBoundingClientRect().top + window.scrollY - stickyOffset;
       window.scrollTo({ top, behavior: "smooth" });
     });
   }, []);
 
   const toggleCat = (key: CategoryKey) => {
-    // Single-open behavior: opening a category closes others and scrolls to it
     if (!openCats.has(key)) {
       selectCategory(key);
       return;
@@ -183,10 +110,37 @@ const MenuPage = () => {
     });
   };
 
-
   const searchPlaceholder = lang === "tr" ? "Yemek ara..." : "Search dishes...";
-  const emptyMsg =
-    lang === "tr" ? "Sonuç bulunamadı." : "No results found.";
+  const emptyMsg = lang === "tr" ? "Sonuç bulunamadı." : "No results found.";
+
+  const renderImage = (item: MenuItemView) => {
+    const isPhoto = item.image && item.image.startsWith("/");
+    if (isPhoto) {
+      return (
+        <img
+          src={item.image}
+          alt={item.name}
+          loading="lazy"
+          className="aspect-[4/3] w-24 shrink-0 rounded-lg object-cover sm:w-28"
+        />
+      );
+    }
+    const caption =
+      item.image === "skeleton-soon"
+        ? t.menuPage.photoUpdating
+        : t.menuPage.photoSoon;
+    return (
+      <div
+        className="aspect-[4/3] w-24 shrink-0 rounded-lg bg-muted/60 border border-border/60 flex flex-col items-center justify-center text-center px-1 sm:w-28"
+        aria-label={caption}
+      >
+        <ImageIcon size={18} className="text-muted-foreground/70 mb-1" />
+        <span className="text-[10px] leading-tight text-muted-foreground">
+          {caption}
+        </span>
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen bg-background pt-20">
@@ -203,7 +157,7 @@ const MenuPage = () => {
         </h1>
       </section>
 
-      {/* Sticky controls: search + horizontal category pills */}
+      {/* Sticky controls */}
       <section className="sticky top-16 z-20 border-y border-border bg-background/95 backdrop-blur">
         <div className="mx-auto max-w-7xl px-5 py-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-center">
@@ -249,13 +203,7 @@ const MenuPage = () => {
 
       {/* Menu list */}
       <section className="mx-auto max-w-4xl px-5 py-16">
-        {loading ? (
-          <div className="space-y-4">
-            {[1, 2, 3].map((i) => (
-              <Skeleton key={i} className="h-24 w-full rounded-2xl" />
-            ))}
-          </div>
-        ) : visibleCategories.length === 0 ? (
+        {visibleCategories.length === 0 ? (
           <p className="py-20 text-center text-muted-foreground">{emptyMsg}</p>
         ) : (
           <div className="space-y-6">
@@ -296,9 +244,7 @@ const MenuPage = () => {
                       role="list"
                       aria-label={`${t.menuPage.categories[key]} menu items`}
                     >
-                      {items.map((item, i) => {
-                        const photo = photoFor(key, i);
-                        return (
+                      {items.map((item, i) => (
                         <article
                           key={i}
                           role="listitem"
@@ -306,14 +252,7 @@ const MenuPage = () => {
                             !item.available ? "opacity-50" : ""
                           }`}
                         >
-                          {photo && (
-                            <img
-                              src={photo}
-                              alt={item.name}
-                              loading="lazy"
-                              className="h-16 w-16 shrink-0 rounded-lg object-cover sm:h-20 sm:w-20"
-                            />
-                          )}
+                          {renderImage(item)}
                           <div className="flex flex-1 items-baseline justify-between gap-4">
                             <div className="flex-1">
                               <h3 className="text-base font-semibold text-foreground sm:text-lg">
@@ -330,25 +269,20 @@ const MenuPage = () => {
                                 </span>
                               )}
                             </div>
-                            <span className="shrink-0 text-base font-bold tabular-nums text-copper sm:text-lg">
-                              {item.price}
-                            </span>
+                            {item.price && (
+                              <span className="shrink-0 text-base font-bold tabular-nums text-copper sm:text-lg">
+                                {item.price}
+                              </span>
+                            )}
                           </div>
                         </article>
-                        );
-                      })}
+                      ))}
                     </div>
                   )}
                 </div>
               );
             })}
           </div>
-        )}
-
-        {lastUpdated && (
-          <p className="mt-12 text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {t.menuPage.lastUpdated}: {lastUpdated}
-          </p>
         )}
       </section>
 
