@@ -3,7 +3,7 @@ import { ChevronDown, Search, ImageIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { Skeleton } from "@/components/ui/skeleton";
+
 
 type CategoryKey =
   | "starters"
