@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
+import { photoFor } from "@/assets/menu";
 
 type CategoryKey =
   | "soups"
@@ -295,34 +296,47 @@ const MenuPage = () => {
                       role="list"
                       aria-label={`${t.menuPage.categories[key]} menu items`}
                     >
-                      {items.map((item, i) => (
+                      {items.map((item, i) => {
+                        const photo = photoFor(key, i);
+                        return (
                         <article
                           key={i}
                           role="listitem"
-                          className={`flex items-baseline justify-between gap-6 border-b border-border/50 py-4 last:border-b-0 md:[&:nth-last-child(2)]:border-b-0 ${
+                          className={`flex items-center gap-4 border-b border-border/50 py-4 last:border-b-0 md:[&:nth-last-child(2)]:border-b-0 ${
                             !item.available ? "opacity-50" : ""
                           }`}
                         >
-                          <div className="flex-1">
-                            <h3 className="text-base font-semibold text-foreground sm:text-lg">
-                              {item.name}
-                            </h3>
-                            {item.desc && (
-                              <p className="mt-1 text-sm text-muted-foreground">
-                                {item.desc}
-                              </p>
-                            )}
-                            {!item.available && (
-                              <span className="mt-1 inline-block rounded-full bg-destructive/20 px-2 py-0.5 text-xs font-medium text-destructive">
-                                {t.menuPage.notAvailable}
-                              </span>
-                            )}
+                          {photo && (
+                            <img
+                              src={photo}
+                              alt={item.name}
+                              loading="lazy"
+                              className="h-16 w-16 shrink-0 rounded-lg object-cover sm:h-20 sm:w-20"
+                            />
+                          )}
+                          <div className="flex flex-1 items-baseline justify-between gap-4">
+                            <div className="flex-1">
+                              <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                                {item.name}
+                              </h3>
+                              {item.desc && (
+                                <p className="mt-1 text-sm text-muted-foreground">
+                                  {item.desc}
+                                </p>
+                              )}
+                              {!item.available && (
+                                <span className="mt-1 inline-block rounded-full bg-destructive/20 px-2 py-0.5 text-xs font-medium text-destructive">
+                                  {t.menuPage.notAvailable}
+                                </span>
+                              )}
+                            </div>
+                            <span className="shrink-0 text-base font-bold tabular-nums text-copper sm:text-lg">
+                              {item.price}
+                            </span>
                           </div>
-                          <span className="shrink-0 text-base font-bold tabular-nums text-copper sm:text-lg">
-                            {item.price}
-                          </span>
                         </article>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>
