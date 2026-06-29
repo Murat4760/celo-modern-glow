@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { Skeleton } from "@/components/ui/skeleton";
 import Papa from "papaparse";
+import { photoFor } from "@/assets/menu";
 
 type CategoryKey =
   | "soups"
