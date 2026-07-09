@@ -55,6 +55,8 @@ const MenuPage = () => {
         desc: string;
         price: string;
         image?: string;
+        alt?: string;
+        ikram?: readonly string[];
       }[];
       result[key] = fallback.map((i) => ({ ...i, available: true }));
     }
