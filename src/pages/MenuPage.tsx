@@ -269,6 +269,16 @@ const MenuPage = () => {
                                   {item.desc}
                                 </p>
                               )}
+                              {item.ikram && item.ikram.length > 0 && (
+                                <div className="mt-2 rounded-lg border border-copper/40 bg-copper/10 px-3 py-2">
+                                  <span className="mb-1 inline-block rounded-full bg-copper-gradient px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-foreground">
+                                    İkram
+                                  </span>
+                                  <p className="text-xs leading-snug text-foreground/90">
+                                    {item.ikram.join(" · ")}
+                                  </p>
+                                </div>
+                              )}
                               {!item.available && (
                                 <span className="mt-1 inline-block rounded-full bg-destructive/20 px-2 py-0.5 text-xs font-medium text-destructive">
                                   {t.menuPage.notAvailable}
