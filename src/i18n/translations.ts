@@ -21,7 +21,7 @@ const IMG_TAVUK_SIS = "/__l5e/assets-v1/0dbc7500-e7a0-46bf-b429-bde5e838e465/tav
 const IMG_YAPRAK_KANAT = "/__l5e/assets-v1/ea7ffbda-da76-4de8-8d46-606e6f7b56bc/yaprak-kanat.png";
 const IMG_IZGARA_KOFTE = "/__l5e/assets-v1/dff45133-9ef6-4abe-877f-d3cd73580337/izgara-kofte.png";
 const IMG_YOGURTLU_KEBAP = "/__l5e/assets-v1/a009e55c-1672-4701-bce7-a879d1f734c5/yogurtlu-kebap.png";
-const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/4b168ba4-8a15-4ec2-87be-486dd70ee378/patlican-kebabi.png";
+const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/6a2af136-0457-45ce-8e51-1c8322cd678b/patlican-kebabi-v2.png";
 const IMG_ANTRIKOT = "/__l5e/assets-v1/b4cfd12d-32bd-482b-bec5-6dd4115f2f49/antrikot.png";
 const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/49945a0d-ab15-480d-bed1-c5a561a1c1fd/kuzu-pirzola.png";
 
