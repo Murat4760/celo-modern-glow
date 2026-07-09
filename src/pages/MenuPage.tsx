@@ -45,9 +45,21 @@ const MenuPage = () => {
 
   const itemsByCat = useMemo<Record<CategoryKey, MenuItemView[]>>(() => {
     const result = {} as Record<CategoryKey, MenuItemView[]>;
+    const raw = t.menuItems as unknown as Record<string, readonly Partial<MenuItemView>[]>;
     for (const key of CATEGORY_KEYS) {
-      const raw = (t.menuItems as Record<string, readonly MenuItemView[]>)[key] || [];
-      result[key] = raw.map((i) => ({ ...i, available: true }));
+      const list = raw[key] || [];
+      result[key] = list.map((i) => ({
+        name: i.name ?? "",
+        desc: i.desc ?? "",
+        price: i.price ?? "",
+        image: i.image,
+        alt: i.alt,
+        ikram: i.ikram,
+        kcal: i.kcal,
+        subheading: i.subheading,
+        standardSides: i.standardSides,
+        available: true,
+      }));
     }
     return result;
   }, [t]);
