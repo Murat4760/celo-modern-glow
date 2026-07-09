@@ -58,6 +58,7 @@ const MenuPage = () => {
         ikram: i.ikram,
         kcal: i.kcal,
         subheading: i.subheading,
+        subheadingImage: (i as MenuItemView).subheadingImage,
         standardSides: i.standardSides,
         available: true,
       }));
