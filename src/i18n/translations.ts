@@ -73,6 +73,14 @@ const menuItems = {
         alt: "Kiremitte Et servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
+      { name: "Hamburger", desc: "Gluten ve süt ürünü içerir.", price: "", image: "" },
+      {
+        name: "3'lü CELO Spesiyal",
+        desc: "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.",
+        price: "",
+        image: "/menu/celo-spesiyal.jpg",
+        alt: "3'lü CELO Spesiyal servis tabağı",
+      },
     ],
     // SECTION 4 — Izgaralar & Aile Menüleri
     grills: [
@@ -146,6 +154,8 @@ function localizeMenu(dict: MenuDict): typeof menuItems.tr {
 }
 
 const DICT_EN: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Mixed grill sharing platter: köfte, kebab, chicken shish, wings and grilled vegetables.",
+  "3'lü CELO Spesiyal servis tabağı": "3'lü CELO Special serving plate",
   "Gluten içermektedir.": "Contains gluten.",
   "Gluten içermemektedir.": "Gluten-free.",
   "Gluten içerir.": "Contains gluten.",
@@ -179,6 +189,8 @@ const DICT_EN: Record<string, string> = {
 };
 
 const DICT_AR: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "طبق مشاوٍ مشكّلة للمشاركة: كفتة، كباب، دجاج مشوي، أجنحة وخضار مشوية.",
+  "3'lü CELO Spesiyal servis tabağı": "طبق تقديم سيلو سبيشيال الثلاثي",
   "Gluten içermektedir.": "يحتوي على غلوتين.",
   "Gluten içermemektedir.": "خالٍ من الغلوتين.",
   "Gluten içerir.": "يحتوي على غلوتين.",
@@ -212,6 +224,8 @@ const DICT_AR: Record<string, string> = {
 };
 
 const DICT_RU: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Ассорти-гриль на компанию: кёфте, кебаб, куриный шиш, крылышки и овощи-гриль.",
+  "3'lü CELO Spesiyal servis tabağı": "Сервировочная тарелка 3'lü CELO Spesiyal",
   "Gluten içermektedir.": "Содержит глютен.",
   "Gluten içermemektedir.": "Без глютена.",
   "Gluten içerir.": "Содержит глютен.",
@@ -245,6 +259,8 @@ const DICT_RU: Record<string, string> = {
 };
 
 const DICT_JA: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "シェア用ミックスグリル：キョフテ、ケバブ、チキンシシ、手羽、焼き野菜。",
+  "3'lü CELO Spesiyal servis tabağı": "3'lü CELO スペシャルの盛り付け",
   "Gluten içermektedir.": "グルテンを含みます。",
   "Gluten içermemektedir.": "グルテンフリー。",
   "Gluten içerir.": "グルテンを含みます。",
@@ -278,6 +294,8 @@ const DICT_JA: Record<string, string> = {
 };
 
 const DICT_ZH: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "分享混合烧烤拼盘：肉丸、烤肉、鸡肉串、鸡翅和烤蔬菜。",
+  "3'lü CELO Spesiyal servis tabağı": "3'lü CELO Spesiyal 拼盘",
   "Gluten içermektedir.": "含麸质。",
   "Gluten içermemektedir.": "不含麸质。",
   "Gluten içerir.": "含麸质。",
@@ -311,6 +329,8 @@ const DICT_ZH: Record<string, string> = {
 };
 
 const DICT_IT: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Grigliata mista da condividere: köfte, kebab, spiedini di pollo, ali e verdure grigliate.",
+  "3'lü CELO Spesiyal servis tabağı": "Piatto di portata 3'lü CELO Spesiyal",
   "Gluten içermektedir.": "Contiene glutine.",
   "Gluten içermemektedir.": "Senza glutine.",
   "Gluten içerir.": "Contiene glutine.",
