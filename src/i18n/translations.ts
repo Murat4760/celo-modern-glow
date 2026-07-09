@@ -1,7 +1,7 @@
 export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
-const IMG_BASLANGIC_01 = "/__l5e/assets-v1/ae24e22d-27f1-4aa0-bac2-d0eb0e31086f/gavurdagi-nobg2.png";
+const IMG_BASLANGIC_01 = "/__l5e/assets-v1/b19d2dbf-77c2-4c3f-91a0-e86daac5bdbf/gavurdagi-v3.png";
 const IMG_BASLANGIC_04 = "/__l5e/assets-v1/6e730299-2252-47bc-bb76-993ab018f507/patates-tava-v3.png";
 const IMG_CORBA_01 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
 const IMG_CORBA_04 = "/__l5e/assets-v1/cdf143d8-6e90-4332-a9a5-6a0790e0a80f/mercimek-v2-nobg.png";
