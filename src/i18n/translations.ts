@@ -79,7 +79,7 @@ const menuItems = {
     grills: [
       { subheading: "Izgaralar", name: "Antrikot", kcal: 400, desc: "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_ANTRIKOT, standardSides: true },
       { name: "Kuzu Pirzola", kcal: 300, desc: "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_KUZU_PIRZOLA, standardSides: true },
-      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "skeleton" },
+      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/__l5e/assets-v1/ca1ab22b-a454-4063-b8fb-ae41b575a110/kofteli-aile.png" },
       { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "skeleton" },
     ],
     // SECTION 6 — Fırın, Dürümler, Tatlılar, İçecekler
