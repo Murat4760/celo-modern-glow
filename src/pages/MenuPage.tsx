@@ -11,6 +11,7 @@ type CategoryKey =
   | "oven"
   | "wraps"
   | "kebabs"
+  | "specials"
   | "grills"
   | "family"
   | "desserts"
@@ -22,6 +23,8 @@ interface MenuItemView {
   price: string;
   available: boolean;
   image?: string;
+  alt?: string;
+  ikram?: readonly string[];
 }
 
 const CATEGORY_KEYS: CategoryKey[] = [
@@ -30,6 +33,7 @@ const CATEGORY_KEYS: CategoryKey[] = [
   "oven",
   "wraps",
   "kebabs",
+  "specials",
   "grills",
   "family",
   "desserts",
