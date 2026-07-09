@@ -260,9 +260,19 @@ const MenuPage = () => {
                       return (
                         <div key={i} className="contents">
                           {item.subheading && (
-                            <h3 className="col-span-full mt-6 mb-2 text-xl font-semibold tracking-tight text-copper">
-                              {item.subheading}
-                            </h3>
+                            <div className="col-span-full mt-6 mb-2 flex items-center gap-4">
+                              {item.subheadingImage && (
+                                <img
+                                  src={item.subheadingImage}
+                                  alt={item.subheading}
+                                  loading="lazy"
+                                  className="h-28 w-20 shrink-0 rounded-lg object-cover sm:h-32 sm:w-24"
+                                />
+                              )}
+                              <h3 className="text-xl font-semibold tracking-tight text-copper">
+                                {item.subheading}
+                              </h3>
+                            </div>
                           )}
                           <article
                             role="listitem"
