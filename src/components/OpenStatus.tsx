@@ -13,40 +13,23 @@ const OpenStatus = () => {
       const day = now.getDay(); // 0=Sun
       const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-      // Day-specific hours from Google Maps data
-      // Mon (1): 11:30–22:30, Sat (6): 11:00–02:00, Others: 11:30–02:00
-      const isMonday = day === 1;
+      // Sat (6): 11:00–03:00, Others: 11:30–03:00 (all days close at 3:00 next day)
       const isSaturday = day === 6;
 
       const openTime = isSaturday ? 11 * 60 : 11 * 60 + 30; // 11:00 or 11:30
-      const closeTime = isMonday ? 22 * 60 + 30 : 2 * 60; // 22:30 or 02:00
+      const closeTime = 3 * 60; // 03:00 (overnight)
 
-      let open: boolean;
-      if (isMonday) {
-        // Monday: simple range, no overnight
-        open = currentMinutes >= openTime && currentMinutes < closeTime;
-      } else {
-        // Overnight: open from openTime to next day 2:00
-        open = currentMinutes >= openTime || currentMinutes < closeTime;
-      }
+      // Overnight: open from openTime to next day 03:00
+      const open = currentMinutes >= openTime || currentMinutes < closeTime;
       setIsOpen(open);
 
       let minsLeft: number;
       if (open) {
-        if (isMonday) {
-          minsLeft = closeTime - currentMinutes;
-        } else {
-          minsLeft = currentMinutes >= openTime
-            ? (24 * 60 - currentMinutes) + closeTime
-            : closeTime - currentMinutes;
-        }
+        minsLeft = currentMinutes >= openTime
+          ? (24 * 60 - currentMinutes) + closeTime
+          : closeTime - currentMinutes;
       } else {
-        if (currentMinutes >= openTime) {
-          // After close on Monday, next day opens at 11:30
-          minsLeft = (24 * 60 - currentMinutes) + 11 * 60 + 30;
-        } else {
-          minsLeft = openTime - currentMinutes;
-        }
+        minsLeft = openTime - currentMinutes;
       }
       setH(Math.floor(minsLeft / 60));
       setM(minsLeft % 60);

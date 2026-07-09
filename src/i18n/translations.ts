@@ -1,30 +1,30 @@
 export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
-const IMG_BASLANGIC_01 = "/__l5e/assets-v1/8d7fd0ef-e302-4d44-a98b-2e14fbf4e9df/gavurdagi-v4.png";
-const IMG_BASLANGIC_04 = "/__l5e/assets-v1/6e730299-2252-47bc-bb76-993ab018f507/patates-tava-v3.png";
-const IMG_CORBA_01 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
-const IMG_CORBA_04 = "/__l5e/assets-v1/cdf143d8-6e90-4332-a9a5-6a0790e0a80f/mercimek-v2-nobg.png";
-const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
-const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
-const IMG_SARMA_BEYTI = "/__l5e/assets-v1/1940414d-b4c9-4bb8-b9e9-84447284f239/sarma-beyti-v3.png";
-const IMG_SUPER_IKILI = "/__l5e/assets-v1/9300519c-5a75-4a14-98d6-fa38cf0d38fe/super-ikili-v6.png";
-const IMG_ANTEP_KURU_DOLMA = "/__l5e/assets-v1/ff3d57a6-49c0-4be3-98c3-f8b7c50b693f/antep-kuru-dolma-v3.png";
-const IMG_AYRAN_ASI = "/__l5e/assets-v1/9211f090-df50-4c33-b95e-c02e8740fc1e/ayran-asi-nobg.png";
-const IMG_KIREMITTE_ET = "/__l5e/assets-v1/a99c6e65-317e-4e63-bfeb-51c78243261d/kiremitte-et-v3.png";
-const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
-const IMG_TATLI_02 = "/__l5e/assets-v1/589173e5-d6d8-4034-b65b-a6f3a3144f71/celo-tatli-02.jpg";
-const IMG_CIGER_SIS = "/__l5e/assets-v1/19542fcc-29ff-4c2f-9f89-2a462cb3dbf5/ciger-sis.png";
-const IMG_ALI_NAZIK = "/__l5e/assets-v1/81f0d227-10c9-4ce0-b307-dda54bcb861b/ali-nazik.png";
-const IMG_ZIRH_KEBABI = "/__l5e/assets-v1/fb411f50-7b07-49cd-b1cb-a425362ade54/zirh-kebabi.png";
-const IMG_TAVUK_SIS = "/__l5e/assets-v1/0dbc7500-e7a0-46bf-b429-bde5e838e465/tavuk-sis.png";
-const IMG_YAPRAK_KANAT = "/__l5e/assets-v1/ea7ffbda-da76-4de8-8d46-606e6f7b56bc/yaprak-kanat.png";
-const IMG_IZGARA_KOFTE = "/__l5e/assets-v1/dff45133-9ef6-4abe-877f-d3cd73580337/izgara-kofte.png";
-const IMG_YOGURTLU_KEBAP = "/__l5e/assets-v1/73e0bca6-3d09-4a38-bfdd-5755f7742dcc/yogurtlu-kebap-v2.png";
-const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/4c281d23-6eaa-4084-8d33-7fe55dd5e5dd/patlican-kebabi-v5.png";
-const IMG_COP_SIS = "/__l5e/assets-v1/ebb28d02-ce35-4851-9d06-09548a5e7770/cop-sis-v3.png";
-const IMG_ANTRIKOT = "/__l5e/assets-v1/b4cfd12d-32bd-482b-bec5-6dd4115f2f49/antrikot.png";
-const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/f6c28c4d-6f33-49d8-a6a3-0154d70ac340/kuzu-pirzola-portrait.png";
+const IMG_BASLANGIC_01 = "/menu/gavurdagi-v4.png";
+const IMG_BASLANGIC_04 = "/menu/patates-tava.jpg";
+const IMG_CORBA_01 = "/menu/mercimek-nobg.png";
+const IMG_CORBA_04 = "/menu/mercimek-v2-nobg.png";
+const IMG_ANA_YEMEK_01 = "/menu/celo-ana-yemek-01.jpg";
+const IMG_KEBAP_01 = "/menu/celo-kebap-01.jpg";
+const IMG_SARMA_BEYTI = "/menu/sarma-beyti-v3.jpg";
+const IMG_SUPER_IKILI = "/menu/super-ikili-v6.png";
+const IMG_ANTEP_KURU_DOLMA = "/menu/antep-kuru-dolma.jpg";
+const IMG_AYRAN_ASI = "/menu/ayran-asi-nobg.png";
+const IMG_KIREMITTE_ET = "/menu/kiremitte-et-v3.jpg";
+const IMG_TATLI_01 = "/menu/celo-tatli-01.jpg";
+const IMG_TATLI_02 = "/menu/celo-tatli-02.jpg";
+const IMG_CIGER_SIS = "/menu/ciger-sis.jpg";
+const IMG_ALI_NAZIK = "/menu/ali-nazik.jpg";
+const IMG_ZIRH_KEBABI = "/menu/zirh-kebabi.jpg";
+const IMG_TAVUK_SIS = "/menu/tavuk-sis.jpg";
+const IMG_YAPRAK_KANAT = "/menu/yaprak-kanat.jpg";
+const IMG_IZGARA_KOFTE = "/menu/izgara-kofte.jpg";
+const IMG_YOGURTLU_KEBAP = "/menu/yogurtlu-kebap-v2.jpg";
+const IMG_PATLICAN_KEBABI = "/menu/patlican-kebabi-v5.jpg";
+const IMG_COP_SIS = "/menu/cop-sis-v3.png";
+const IMG_ANTRIKOT = "/menu/antrikot.jpg";
+const IMG_KUZU_PIRZOLA = "/menu/kuzu-pirzola-portrait.png";
 
 // image: URL → real photo; "skeleton" → grey placeholder ("Fotoğraf yakında");
 //        "skeleton-soon" → placeholder with "fotoğraf güncellenecek"
@@ -33,17 +33,20 @@ const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/f6c28c4d-6f33-49d8-a6a3-0154d70ac340/
 // subheading → renders a subsection title above the item card.
 const menuItems = {
   tr: {
-    // SECTION 1 — Başlangıçlar & Çorbalar
+    // SECTION 1 — Başlangıçlar
     starters: [
-      { subheading: "Başlangıçlar", name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
+      { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
       { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "", image: IMG_ANTEP_KURU_DOLMA },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "", price: "200 ₺", image: IMG_BASLANGIC_01 },
-      { subheading: "Çorbalar", name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
+    ],
+    // SECTION 2 — Çorbalar
+    soups: [
+      { name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
       { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_01 },
       { name: "Ayran Aşı Çorbası", desc: "Yoğurt içerir.", price: "", image: IMG_AYRAN_ASI },
     ],
-    // SECTION 2 — Ana Yemekler & Kebaplar (Ali Nazik dahil)
+    // SECTION 3 — Ana Yemekler (Ali Nazik, Sarma Beyti ve Kiremitte Et dahil)
     mains: [
       { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: IMG_ZIRH_KEBABI, standardSides: true },
       { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "900 ₺", image: IMG_PATLICAN_KEBABI, standardSides: true },
@@ -54,10 +57,6 @@ const menuItems = {
       { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "650 ₺", image: IMG_IZGARA_KOFTE, standardSides: true },
       { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "650 ₺", image: IMG_TAVUK_SIS, standardSides: true },
       { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "650 ₺", image: IMG_YAPRAK_KANAT, standardSides: true },
-    ],
-    kebabs: [],
-    // SECTION 4 — Sarma Beyti & Kiremitte Et (İkram)
-    specials: [
       {
         name: "Sarma Beyti",
         desc: "",
@@ -75,25 +74,31 @@ const menuItems = {
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
     ],
-    // SECTION 5 — Izgaralar & Aile Menüleri
+    // SECTION 4 — Izgaralar & Aile Menüleri
     grills: [
       { subheading: "Izgaralar", name: "Antrikot", kcal: 400, desc: "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_ANTRIKOT, standardSides: true },
       { name: "Kuzu Pirzola", kcal: 300, desc: "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_KUZU_PIRZOLA, standardSides: true },
-      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/__l5e/assets-v1/ca1ab22b-a454-4063-b8fb-ae41b575a110/kofteli-aile.png" },
-      { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/__l5e/assets-v1/27497c25-83ff-440d-8a29-f8eb33df758d/kebapli-aile.png" },
+      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/menu/kofteli-aile.jpg" },
+      { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/menu/kebapli-aile.jpg" },
     ],
-    // SECTION 6 — Fırın, Dürümler, Tatlılar, İçecekler
-    bakery: [
-      { subheading: "Fırın", subheadingImage: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png", name: "Özel Antep Lahmacunu", desc: "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.", price: "210 ₺", image: "" },
+    // SECTION 5 — Fırın
+    firin: [
+      { name: "Özel Antep Lahmacunu", desc: "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.", price: "210 ₺", image: "" },
       { name: "Kaşarlı Pide", desc: "Gluten ve süt ürünü içerir.", price: "470 ₺", image: "" },
       { name: "Sucuklu Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "490 ₺", image: "" },
       { name: "Kuşbaşılı Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "590 ₺", image: "" },
       { name: "Karışık Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "650 ₺", image: "" },
-      { subheading: "Dürümler", subheadingImage: "/__l5e/assets-v1/518a4e71-d4cf-4841-b227-179c3ab73341/durum.png", name: "Tavuk Dürüm", kcal: 150, desc: "Gluten içerir.", price: "440 ₺", image: "" },
+    ],
+    // SECTION 6 — Dürüm
+    durum: [
+      { name: "Tavuk Dürüm", kcal: 150, desc: "Gluten içerir.", price: "440 ₺", image: "" },
       { name: "Zırh Dürüm", kcal: 200, desc: "Gluten içerir.", price: "440 ₺", image: "" },
       { name: "Ciğer Şiş Dürüm", kcal: 175, desc: "Gluten içerir.", price: "540 ₺", image: "" },
       { name: "Çöp Şiş Dürüm", kcal: 185, desc: "Gluten içerir.", price: "540 ₺", image: "" },
-      { subheading: "Tatlılar", name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/__l5e/assets-v1/a5d87a88-f5e6-402e-8dec-6eb66b3c63d9/katmer.png" },
+    ],
+    // SECTION 7 — Tatlı
+    tatli: [
+      { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
       { name: "Fırın Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: IMG_TATLI_01 },
       { name: "Havuç Dilim Baklava", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "" },
       { name: "Tavuk Göğsü", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
@@ -101,7 +106,10 @@ const menuItems = {
       { name: "Profiterol", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
       { name: "Dondurma", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
       { name: "Aşure", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
-      { subheading: "İçecekler", name: "Pepsi (330ml)", desc: "", price: "120 ₺", image: "" },
+    ],
+    // SECTION 8 — İçecek
+    icecek: [
+      { name: "Pepsi (330ml)", desc: "", price: "120 ₺", image: "" },
       { name: "Pepsi Max (330ml)", desc: "", price: "120 ₺", image: "" },
       { name: "Yedigün", desc: "", price: "120 ₺", image: "" },
       { name: "7 Up", desc: "", price: "120 ₺", image: "" },
@@ -175,12 +183,14 @@ export const translations = {
       photoSoon: "Fotoğraf yakında",
       photoUpdating: "Fotoğraf güncellenecek",
       categories: {
-        starters: "Başlangıçlar & Çorbalar",
+        starters: "Başlangıçlar",
+        soups: "Çorbalar",
         mains: "Ana Yemekler",
-        kebabs: "Ali Nazik & Kebaplar",
-        specials: "Sarma Beyti & Kiremitte Et",
         grills: "Izgaralar & Aile Menüleri",
-        bakery: "Fırın, Dürüm, Tatlı & İçecek",
+        firin: "Fırın",
+        durum: "Dürüm",
+        tatli: "Tatlı",
+        icecek: "İçecek",
       },
     },
     menuItems: menuItemsEn,
@@ -201,9 +211,9 @@ export const translations = {
       titleItalic: "Us",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Every Day",
-      hoursDetail: "11:30 AM – 2:00 AM",
-      hoursMonday: "Monday: 11:30 AM – 10:30 PM",
-      hoursSaturday: "Saturday: 11:00 AM – 2:00 AM",
+      hoursDetail: "11:30 AM – 3:00 AM",
+      hoursMonday: "Monday: 11:30 AM – 3:00 AM",
+      hoursSaturday: "Saturday: 11:00 AM – 3:00 AM",
       phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Address",
@@ -290,12 +300,14 @@ export const translations = {
       photoSoon: "Fotoğraf yakında",
       photoUpdating: "Fotoğraf güncellenecek",
       categories: {
-        starters: "Başlangıçlar & Çorbalar",
+        starters: "Başlangıçlar",
+        soups: "Çorbalar",
         mains: "Ana Yemekler",
-        kebabs: "Ali Nazik & Kebaplar",
-        specials: "Sarma Beyti & Kiremitte Et",
         grills: "Izgaralar & Aile Menüleri",
-        bakery: "Fırın, Dürüm, Tatlı & İçecek",
+        firin: "Fırın",
+        durum: "Dürüm",
+        tatli: "Tatlı",
+        icecek: "İçecek",
       },
     },
     menuItems: menuItems.tr,
@@ -316,9 +328,9 @@ export const translations = {
       titleItalic: "Ziyaret Edin",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Her Gün",
-      hoursDetail: "11:30 – 02:00",
-      hoursMonday: "Pazartesi: 11:30 – 22:30",
-      hoursSaturday: "Cumartesi: 11:00 – 02:00",
+      hoursDetail: "11:30 – 03:00",
+      hoursMonday: "Pazartesi: 11:30 – 03:00",
+      hoursSaturday: "Cumartesi: 11:00 – 03:00",
       phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Adres",
@@ -375,8 +387,8 @@ export const translations = {
       listView: "عرض قائمة", visualView: "عرض مرئي", lastUpdated: "آخر تحديث",
       notAvailable: "غير متوفر اليوم", photoSoon: "الصورة قريباً", photoUpdating: "سيتم تحديث الصورة",
       categories: {
-        starters: "المقبلات والحساء", mains: "الأطباق الرئيسية", kebabs: "علي نازك والكباب",
-        specials: "سارما بيتي واللحم على القرميد", grills: "المشويات وقوائم العائلة", bakery: "المخبوزات، اللفائف، الحلويات والمشروبات",
+        starters: "المقبلات", soups: "الحساء", mains: "الأطباق الرئيسية",
+        grills: "المشويات وقوائم العائلة", firin: "المخبوزات", durum: "اللفائف", tatli: "الحلويات", icecek: "المشروبات",
       },
     },
     menuItems: menuItems.tr,
@@ -392,7 +404,7 @@ export const translations = {
     contact: {
       label: "تواصل معنا", title: "زُرنا", titleItalic: "",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "كل يوم", hoursDetail: "11:30 – 02:00", hoursMonday: "الاثنين: 11:30 – 22:30", hoursSaturday: "السبت: 11:00 – 02:00",
+      hours: "كل يوم", hoursDetail: "11:30 – 03:00", hoursMonday: "الاثنين: 11:30 – 03:00", hoursSaturday: "السبت: 11:00 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "العنوان", hoursLabel: "ساعات العمل", phoneLabel: "الهاتف", emailLabel: "البريد الإلكتروني",
       rating: "4.7 ★ (653 تقييم)",
@@ -432,8 +444,8 @@ export const translations = {
       listView: "Список", visualView: "Плитка", lastUpdated: "Обновлено",
       notAvailable: "Сегодня недоступно", photoSoon: "Фото скоро", photoUpdating: "Фото обновляется",
       categories: {
-        starters: "Закуски и супы", mains: "Основные блюда", kebabs: "Али Назик и кебабы",
-        specials: "Сарма Бейти и мясо на черепице", grills: "Гриль и семейные меню", bakery: "Выпечка, дюрюм, десерты и напитки",
+        starters: "Закуски", soups: "Супы", mains: "Основные блюда",
+        grills: "Гриль и семейные меню", firin: "Выпечка", durum: "Дюрюм", tatli: "Десерты", icecek: "Напитки",
       },
     },
     menuItems: menuItems.tr,
@@ -449,7 +461,7 @@ export const translations = {
     contact: {
       label: "Связаться с нами", title: "Посетите", titleItalic: "нас",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "Каждый день", hoursDetail: "11:30 – 02:00", hoursMonday: "Понедельник: 11:30 – 22:30", hoursSaturday: "Суббота: 11:00 – 02:00",
+      hours: "Каждый день", hoursDetail: "11:30 – 03:00", hoursMonday: "Понедельник: 11:30 – 03:00", hoursSaturday: "Суббота: 11:00 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "Адрес", hoursLabel: "Часы работы", phoneLabel: "Телефон", emailLabel: "Эл. почта",
       rating: "4.7 ★ (653 отзыва)",
@@ -489,8 +501,8 @@ export const translations = {
       listView: "リスト表示", visualView: "ビジュアル表示", lastUpdated: "最終更新",
       notAvailable: "本日ご用意なし", photoSoon: "写真は近日公開", photoUpdating: "写真は更新予定",
       categories: {
-        starters: "前菜とスープ", mains: "メイン料理", kebabs: "アリ・ナジクとケバブ",
-        specials: "サルマ・ベイティと石板の肉", grills: "グリルとファミリーメニュー", bakery: "ベーカリー、ラップ、デザート、飲み物",
+        starters: "前菜", soups: "スープ", mains: "メイン料理",
+        grills: "グリルとファミリーメニュー", firin: "ベーカリー", durum: "ラップ", tatli: "デザート", icecek: "飲み物",
       },
     },
     menuItems: menuItems.tr,
@@ -506,7 +518,7 @@ export const translations = {
     contact: {
       label: "お問い合わせ", title: "ご来店", titleItalic: "ください",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "毎日", hoursDetail: "11:30 – 02:00", hoursMonday: "月曜: 11:30 – 22:30", hoursSaturday: "土曜: 11:00 – 02:00",
+      hours: "毎日", hoursDetail: "11:30 – 03:00", hoursMonday: "月曜: 11:30 – 03:00", hoursSaturday: "土曜: 11:00 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "住所", hoursLabel: "営業時間", phoneLabel: "電話", emailLabel: "メール",
       rating: "4.7 ★ (653件のレビュー)",
@@ -546,8 +558,8 @@ export const translations = {
       listView: "列表视图", visualView: "图片视图", lastUpdated: "最后更新",
       notAvailable: "今日无供应", photoSoon: "图片即将上传", photoUpdating: "图片将更新",
       categories: {
-        starters: "前菜与汤品", mains: "主菜", kebabs: "阿里·纳齐克与烤肉串",
-        specials: "萨玛贝蒂与瓦上肉", grills: "烧烤与家庭套餐", bakery: "烘焙、卷饼、甜点与饮品",
+        starters: "前菜", soups: "汤品", mains: "主菜",
+        grills: "烧烤与家庭套餐", firin: "烘焙", durum: "卷饼", tatli: "甜点", icecek: "饮品",
       },
     },
     menuItems: menuItems.tr,
@@ -563,7 +575,7 @@ export const translations = {
     contact: {
       label: "联系我们", title: "欢迎", titleItalic: "光临",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "每天", hoursDetail: "11:30 – 02:00", hoursMonday: "周一: 11:30 – 22:30", hoursSaturday: "周六: 11:00 – 02:00",
+      hours: "每天", hoursDetail: "11:30 – 03:00", hoursMonday: "周一: 11:30 – 03:00", hoursSaturday: "周六: 11:00 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "地址", hoursLabel: "营业时间", phoneLabel: "电话", emailLabel: "邮箱",
       rating: "4.7 ★ (653条评价)",
@@ -603,8 +615,8 @@ export const translations = {
       listView: "Vista elenco", visualView: "Vista immagini", lastUpdated: "Ultimo aggiornamento",
       notAvailable: "Non disponibile oggi", photoSoon: "Foto in arrivo", photoUpdating: "Foto in aggiornamento",
       categories: {
-        starters: "Antipasti e zuppe", mains: "Piatti principali", kebabs: "Ali Nazik e kebab",
-        specials: "Sarma Beyti e carne su tegola", grills: "Grigliate e menu famiglia", bakery: "Forno, dürüm, dolci e bevande",
+        starters: "Antipasti", soups: "Zuppe", mains: "Piatti principali",
+        grills: "Grigliate e menu famiglia", firin: "Forno", durum: "Dürüm", tatli: "Dolci", icecek: "Bevande",
       },
     },
     menuItems: menuItems.tr,
@@ -620,7 +632,7 @@ export const translations = {
     contact: {
       label: "Contattaci", title: "Vieni a", titleItalic: "trovarci",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "Ogni giorno", hoursDetail: "11:30 – 02:00", hoursMonday: "Lunedì: 11:30 – 22:30", hoursSaturday: "Sabato: 11:00 – 02:00",
+      hours: "Ogni giorno", hoursDetail: "11:30 – 03:00", hoursMonday: "Lunedì: 11:30 – 03:00", hoursSaturday: "Sabato: 11:00 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "Indirizzo", hoursLabel: "Orari", phoneLabel: "Telefono", emailLabel: "Email",
       rating: "4.7 ★ (653 recensioni)",
