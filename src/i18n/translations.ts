@@ -73,7 +73,7 @@ const menuItems = {
         alt: "Kiremitte Et servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
-      { name: "Hamburger", desc: "Gluten ve süt ürünü içerir.", price: "", image: "" },
+      { name: "Hamburger", desc: "Gluten ve süt ürünü içerir.", price: "", image: "/menu/hamburger.jpg" },
       {
         name: "3'lü CELO Spesiyal",
         desc: "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.",
