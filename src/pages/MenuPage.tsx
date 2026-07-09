@@ -120,7 +120,8 @@ const MenuPage = () => {
 
   const renderImage = (item: MenuItemView, cat: CategoryKey) => {
     const portrait =
-      cat === "mains" || cat === "kebabs" || cat === "grills" || item.name.includes("Dürüm");
+      cat === "mains" || cat === "kebabs" || cat === "grills" ||
+      item.name.includes("Dürüm") || item.name.includes("Pide") || item.name.includes("Lahmacun");
     const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
     const shiftDown =
