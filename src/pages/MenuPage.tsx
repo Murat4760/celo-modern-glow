@@ -119,8 +119,10 @@ const MenuPage = () => {
     lang === "tr" ? "Standart yan ürünler" : "Standard sides";
 
   const renderImage = (item: MenuItemView, cat: CategoryKey) => {
+    const isFirin = typeof item.image === "string" && item.image.includes("/firin.png");
     const portrait =
-      cat === "mains" || cat === "kebabs" || cat === "grills" || item.name.includes("Dürüm");
+      cat === "mains" || cat === "kebabs" || cat === "grills" ||
+      item.name.includes("Dürüm") || isFirin;
     const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
     const shiftDown =
