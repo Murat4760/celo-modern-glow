@@ -3,8 +3,8 @@ export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
 const IMG_BASLANGIC_01 = "/__l5e/assets-v1/ae24e22d-27f1-4aa0-bac2-d0eb0e31086f/gavurdagi-nobg2.png";
 const IMG_BASLANGIC_04 = "/__l5e/assets-v1/6e730299-2252-47bc-bb76-993ab018f507/patates-tava-v3.png";
-const IMG_CORBA_01 = "/__l5e/assets-v1/dde88f63-2841-4503-811e-4aaffcb5c03a/ezogelin-nobg.png";
-const IMG_CORBA_04 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
+const IMG_CORBA_01 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
+const IMG_CORBA_04 = "/__l5e/assets-v1/cdf143d8-6e90-4332-a9a5-6a0790e0a80f/mercimek-v2-nobg.png";
 const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
 const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
 const IMG_SARMA_BEYTI = "/__l5e/assets-v1/3c54041c-02e1-4b30-91ef-ab772f065817/sarma-beyti-nobg.png";
