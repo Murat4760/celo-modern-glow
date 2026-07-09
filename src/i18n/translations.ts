@@ -1,4 +1,4 @@
-export type Language = "en" | "tr";
+export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
 const IMG_BASLANGIC_01 = "/__l5e/assets-v1/ae24e22d-27f1-4aa0-bac2-d0eb0e31086f/gavurdagi-nobg2.png";
