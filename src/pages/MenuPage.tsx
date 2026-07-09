@@ -125,7 +125,7 @@ const MenuPage = () => {
       return (
         <img
           src={item.image}
-          alt={item.name}
+          alt={item.alt || item.name}
           loading="lazy"
           className="aspect-[4/3] w-24 shrink-0 rounded-lg object-cover sm:w-28"
         />
