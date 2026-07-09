@@ -241,16 +241,6 @@ const MenuPage = () => {
                     {t.menuPage.categories[key as keyof typeof t.menuPage.categories]}
                   </h2>
 
-                  {/* İkram block on every section */}
-                  <div className="mb-8 rounded-xl border border-copper/40 bg-copper/10 px-4 py-3">
-                    <span className="mb-1 inline-block rounded-full bg-copper-gradient px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-foreground">
-                      İkram
-                    </span>
-                    <p className="text-sm leading-snug text-foreground/90">
-                      İçli Köfte · Fındık Lahmacun · Salata · Soğan Salatası ·
-                      Ezme · Çiğ Köfte · Peynir
-                    </p>
-                  </div>
 
 
                   <div className="grid gap-x-8 gap-y-2 md:grid-cols-2">
