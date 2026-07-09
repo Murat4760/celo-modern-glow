@@ -18,7 +18,7 @@ const FooterSection = () => {
             <p className="text-sm text-muted-foreground">
               {t.footer.everyDay}
               <br />
-              11:30 – 02:00
+              11:30 – 03:00
             </p>
           </div>
           <div>
