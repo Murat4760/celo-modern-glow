@@ -118,7 +118,9 @@ const MenuPage = () => {
   const sidesLabel =
     lang === "tr" ? "Standart yan ürünler" : "Standard sides";
 
-  const renderImage = (item: MenuItemView) => {
+  const renderImage = (item: MenuItemView, cat: CategoryKey) => {
+    const portrait = cat === "mains" || cat === "kebabs";
+    const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
     if (isPhoto) {
       return (
@@ -126,7 +128,7 @@ const MenuPage = () => {
           src={item.image}
           alt={item.alt || item.name}
           loading="lazy"
-          className="aspect-[4/3] w-28 shrink-0 rounded-lg object-cover sm:w-32"
+          className={`${aspectClass} w-24 shrink-0 rounded-lg object-cover sm:w-28`}
         />
       );
     }
@@ -136,7 +138,7 @@ const MenuPage = () => {
         : t.menuPage.photoSoon;
     return (
       <div
-        className="aspect-[4/3] w-28 shrink-0 rounded-lg bg-muted/60 border border-border/60 flex flex-col items-center justify-center text-center px-1 sm:w-32"
+        className={`${aspectClass} w-24 shrink-0 rounded-lg bg-muted/60 border border-border/60 flex flex-col items-center justify-center text-center px-1 sm:w-28`}
         aria-label={caption}
       >
         <ImageIcon size={18} className="text-muted-foreground/70 mb-1" />
@@ -260,18 +262,24 @@ const MenuPage = () => {
                               !item.available ? "opacity-50" : ""
                             }`}
                           >
-                            {!isDrink && renderImage(item)}
+                            {!isDrink && renderImage(item, key)}
                             <div className="flex flex-1 flex-col gap-1">
                               <div className="flex items-baseline justify-between gap-3">
                                 <h4 className="text-base font-semibold text-foreground sm:text-lg">
                                   {item.name}
                                 </h4>
-                                <span
-                                  className="shrink-0 rounded-full border border-copper/40 bg-copper/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-copper"
-                                  aria-label={askPrice}
-                                >
-                                  {askPrice}
-                                </span>
+                                {item.price ? (
+                                  <span className="shrink-0 text-base font-semibold text-copper sm:text-lg">
+                                    {item.price}
+                                  </span>
+                                ) : (
+                                  <span
+                                    className="shrink-0 rounded-full border border-copper/40 bg-copper/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-copper"
+                                    aria-label={askPrice}
+                                  >
+                                    {askPrice}
+                                  </span>
+                                )}
                               </div>
                               {item.kcal !== undefined && (
                                 <span className="inline-block w-fit rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
