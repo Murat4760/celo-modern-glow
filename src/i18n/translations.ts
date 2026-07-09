@@ -93,7 +93,7 @@ const menuItems = {
       { name: "Zırh Dürüm", kcal: 200, desc: "Gluten içerir.", price: "440 ₺", image: "skeleton" },
       { name: "Ciğer Şiş Dürüm", kcal: 175, desc: "Gluten içerir.", price: "540 ₺", image: "skeleton" },
       { name: "Çöp Şiş Dürüm", kcal: 185, desc: "Gluten içerir.", price: "540 ₺", image: "skeleton" },
-      { subheading: "Tatlılar", name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "skeleton" },
+      { subheading: "Tatlılar", name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/__l5e/assets-v1/a5d87a88-f5e6-402e-8dec-6eb66b3c63d9/katmer.png" },
       { name: "Fırın Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: IMG_TATLI_01 },
       { name: "Havuç Dilim Baklava", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "skeleton" },
       { name: "Kazandibi", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: IMG_TATLI_02 },
