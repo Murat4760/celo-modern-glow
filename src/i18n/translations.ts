@@ -47,6 +47,24 @@ const menuItems = {
       { name: "Yoğurtlu Kebap", desc: "", price: "850₺", image: "skeleton" },
       { name: "Patlıcan Kebabı (Mevsiminde)", desc: "", price: "900₺", image: "skeleton-soon" },
     ],
+    specials: [
+      {
+        name: "Sarma Beyti",
+        desc: "",
+        price: "",
+        image: IMG_SARMA_BEYTI,
+        alt: "Sarma Beyti servis tabağı",
+        ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
+      },
+      {
+        name: "Kiremitte Et",
+        desc: "",
+        price: "",
+        image: IMG_KIREMITTE_ET,
+        alt: "Kiremitte Et servis tabağı",
+        ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
+      },
+    ],
     grills: [
       { name: "Izgara Köfte", desc: "", price: "650₺", image: IMG_KEBAP_01 },
       { name: "Tavuk Şiş", desc: "", price: "560₺", image: "skeleton" },
