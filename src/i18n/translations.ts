@@ -24,7 +24,7 @@ const IMG_YOGURTLU_KEBAP = "/__l5e/assets-v1/a009e55c-1672-4701-bce7-a879d1f734c
 const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/4416a703-e07e-41bd-be3d-840a3b2ce186/patlican-kebabi-v3.png";
 const IMG_COP_SIS = "/__l5e/assets-v1/410629f6-0a60-493d-a041-4d6df06d19e7/cop-sis-v2.png";
 const IMG_ANTRIKOT = "/__l5e/assets-v1/b4cfd12d-32bd-482b-bec5-6dd4115f2f49/antrikot.png";
-const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/49945a0d-ab15-480d-bed1-c5a561a1c1fd/kuzu-pirzola.png";
+const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/4bd49b20-2ba4-40c8-9f09-00716e50a1d7/kuzu-pirzola-v2.png";
 
 // image: URL → real photo; "skeleton" → grey placeholder ("Fotoğraf yakında");
 //        "skeleton-soon" → placeholder with "fotoğraf güncellenecek"
