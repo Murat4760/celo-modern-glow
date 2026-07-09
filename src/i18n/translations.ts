@@ -47,7 +47,7 @@ const menuItems = {
     mains: [
       { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: IMG_ZIRH_KEBABI, standardSides: true },
       { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "900 ₺", image: IMG_PATLICAN_KEBABI, standardSides: true },
-      { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
+      { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_COP_SIS, standardSides: true },
       { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_CIGER_SIS, standardSides: true },
       { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: IMG_ALI_NAZIK, standardSides: true },
       { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: IMG_YOGURTLU_KEBAP, standardSides: true },
