@@ -85,10 +85,10 @@ const menuItems = {
     // SECTION 6 — Fırın, Dürümler, Tatlılar, İçecekler
     bakery: [
       { subheading: "Fırın", name: "Özel Antep Lahmacunu", desc: "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.", price: "210 ₺", image: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png" },
-      { name: "Kaşarlı Pide", desc: "Gluten ve süt ürünü içerir.", price: "470 ₺", image: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png" },
-      { name: "Sucuklu Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "490 ₺", image: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png" },
-      { name: "Kuşbaşılı Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "590 ₺", image: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png" },
-      { name: "Karışık Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "650 ₺", image: "/__l5e/assets-v1/2c6e7c74-3e2a-42af-b8f2-d96d03d5f661/firin.png" },
+      { name: "Kaşarlı Pide", desc: "Gluten ve süt ürünü içerir.", price: "470 ₺", image: "" },
+      { name: "Sucuklu Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "490 ₺", image: "" },
+      { name: "Kuşbaşılı Kaşarlı Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "590 ₺", image: "" },
+      { name: "Karışık Pide", desc: "Dana eti, gluten ve süt ürünü içerir.", price: "650 ₺", image: "" },
       { subheading: "Dürümler", name: "Tavuk Dürüm", kcal: 150, desc: "Gluten içerir.", price: "440 ₺", image: "/__l5e/assets-v1/518a4e71-d4cf-4841-b227-179c3ab73341/durum.png" },
       { name: "Zırh Dürüm", kcal: 200, desc: "Gluten içerir.", price: "440 ₺", image: "/__l5e/assets-v1/518a4e71-d4cf-4841-b227-179c3ab73341/durum.png" },
       { name: "Ciğer Şiş Dürüm", kcal: 175, desc: "Gluten içerir.", price: "540 ₺", image: "/__l5e/assets-v1/518a4e71-d4cf-4841-b227-179c3ab73341/durum.png" },
