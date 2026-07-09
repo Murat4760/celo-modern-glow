@@ -1,15 +1,15 @@
 export type Language = "en" | "tr";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
-const IMG_BASLANGIC_01 = "/__l5e/assets-v1/bbd58d78-a4ea-4a63-8a39-d7f7a8fdfbd8/gavurdagi-nobg.png";
-const IMG_BASLANGIC_04 = "/__l5e/assets-v1/d8e5a1aa-930f-48a2-9da1-4e106c5ac13a/patates-tava-nobg.png";
+const IMG_BASLANGIC_01 = "/__l5e/assets-v1/ae24e22d-27f1-4aa0-bac2-d0eb0e31086f/gavurdagi-nobg2.png";
+const IMG_BASLANGIC_04 = "/__l5e/assets-v1/3ee2a93c-67a4-4437-b7ce-4a5f7183ccbe/patates-tava-nobg2.png";
 const IMG_CORBA_01 = "/__l5e/assets-v1/dde88f63-2841-4503-811e-4aaffcb5c03a/ezogelin-nobg.png";
 const IMG_CORBA_04 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
 const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
 const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
 const IMG_SARMA_BEYTI = "/__l5e/assets-v1/97eb2143-0824-43f0-bf60-42b4bb4f6022/sarma-beyti.png";
-const IMG_SUPER_IKILI = "/__l5e/assets-v1/49ea8e77-1a38-4958-9082-680c0ebde827/super-ikili-nobg.png";
-const IMG_ANTEP_KURU_DOLMA = "/__l5e/assets-v1/24295380-d7dd-4584-950a-34acc54964ac/antep-kuru-dolma-nobg.png";
+const IMG_SUPER_IKILI = "/__l5e/assets-v1/364460e4-09c6-4601-9eae-1051a0ce9df9/super-ikili-nobg2.png";
+const IMG_ANTEP_KURU_DOLMA = "/__l5e/assets-v1/5e356fcd-ef9e-4426-bb3e-790e8e5e8ba0/antep-kuru-dolma-nobg2.png";
 const IMG_AYRAN_ASI = "/__l5e/assets-v1/9211f090-df50-4c33-b95e-c02e8740fc1e/ayran-asi-nobg.png";
 const IMG_KIREMITTE_ET = "/__l5e/assets-v1/0ccc3988-91bb-405a-ae8f-5172f95c8783/kiremitte-et.png";
 const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
