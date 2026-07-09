@@ -30,6 +30,7 @@ const menuItems = {
       { name: "Gavurdağı Salatası", desc: "", price: "", image: IMG_BASLANGIC_01 },
       { subheading: "Çorbalar", name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "", image: IMG_CORBA_04 },
       { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "", image: IMG_CORBA_01 },
+      { name: "Ayran Aşı Çorbası", desc: "Yoğurt içerir.", price: "", image: IMG_AYRAN_ASI },
     ],
     // SECTION 2 — Ana Yemekler
     mains: [
