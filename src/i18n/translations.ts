@@ -1,16 +1,16 @@
 export type Language = "en" | "tr";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
-const IMG_BASLANGIC_01 = "/__l5e/assets-v1/fdc0af55-7757-4b68-875e-9ff6b4747c7e/celo-baslangic-01.jpg";
-const IMG_BASLANGIC_04 = "/__l5e/assets-v1/50cf9d6c-3a0b-4d6d-bb56-c16f83a5e716/celo-baslangic-04.jpg";
-const IMG_CORBA_01 = "/__l5e/assets-v1/4b57b6b2-f579-45af-bdf9-6a3047c89e3b/celo-corba-01.jpg";
-const IMG_CORBA_04 = "/__l5e/assets-v1/33f8e822-5223-49a4-9efc-b0d201499d8b/celo-corba-04.jpg";
+const IMG_BASLANGIC_01 = "/__l5e/assets-v1/bbd58d78-a4ea-4a63-8a39-d7f7a8fdfbd8/gavurdagi-nobg.png";
+const IMG_BASLANGIC_04 = "/__l5e/assets-v1/d8e5a1aa-930f-48a2-9da1-4e106c5ac13a/patates-tava-nobg.png";
+const IMG_CORBA_01 = "/__l5e/assets-v1/dde88f63-2841-4503-811e-4aaffcb5c03a/ezogelin-nobg.png";
+const IMG_CORBA_04 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
 const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
 const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
 const IMG_SARMA_BEYTI = "/__l5e/assets-v1/97eb2143-0824-43f0-bf60-42b4bb4f6022/sarma-beyti.png";
-const IMG_SUPER_IKILI = "/__l5e/assets-v1/eb30e238-5159-4f68-b002-a6251cf55331/super-ikili.png";
-const IMG_ANTEP_KURU_DOLMA = "/__l5e/assets-v1/f43041b5-ac46-4eb5-aed5-bc12ace29ad4/antep-kuru-dolma.png";
-const IMG_AYRAN_ASI = "/__l5e/assets-v1/999556fc-a61e-442b-a62a-7c9784f7237b/ayran-asi.png";
+const IMG_SUPER_IKILI = "/__l5e/assets-v1/49ea8e77-1a38-4958-9082-680c0ebde827/super-ikili-nobg.png";
+const IMG_ANTEP_KURU_DOLMA = "/__l5e/assets-v1/24295380-d7dd-4584-950a-34acc54964ac/antep-kuru-dolma-nobg.png";
+const IMG_AYRAN_ASI = "/__l5e/assets-v1/9211f090-df50-4c33-b95e-c02e8740fc1e/ayran-asi-nobg.png";
 const IMG_KIREMITTE_ET = "/__l5e/assets-v1/0ccc3988-91bb-405a-ae8f-5172f95c8783/kiremitte-et.png";
 const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
 const IMG_TATLI_02 = "/__l5e/assets-v1/589173e5-d6d8-4034-b65b-a6f3a3144f71/celo-tatli-02.jpg";
