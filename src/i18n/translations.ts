@@ -125,8 +125,230 @@ const menuItems = {
   },
 } as const;
 
-// EN mirrors TR (names are Turkish proper nouns)
-const menuItemsEn = menuItems.tr;
+type MenuDict = Record<string, string>;
+
+// Keep Turkish dish names (proper nouns); translate desc/subheading/alt/ikram via dict.
+function localizeMenu(dict: MenuDict): typeof menuItems.tr {
+  const tr = (s?: string) => (s ? dict[s] ?? s : s);
+  const src = menuItems.tr as unknown as Record<string, Record<string, unknown>[]>;
+  const out: Record<string, Record<string, unknown>[]> = {};
+  for (const cat of Object.keys(src)) {
+    out[cat] = src[cat].map((it) => {
+      const next: Record<string, unknown> = { ...it };
+      if (typeof it.desc === "string") next.desc = tr(it.desc);
+      if (typeof it.subheading === "string") next.subheading = tr(it.subheading);
+      if (typeof it.alt === "string") next.alt = tr(it.alt);
+      if (Array.isArray(it.ikram)) next.ikram = (it.ikram as string[]).map((x) => tr(x));
+      return next;
+    });
+  }
+  return out as unknown as typeof menuItems.tr;
+}
+
+const DICT_EN: Record<string, string> = {
+  "Gluten içermektedir.": "Contains gluten.",
+  "Gluten içermemektedir.": "Gluten-free.",
+  "Gluten içerir.": "Contains gluten.",
+  "Gluten ve süt ürünü içerir.": "Contains gluten and dairy.",
+  "Yoğurt içerir.": "Contains yogurt.",
+  "Dana eti, gluten ve süt ürünü içerir.": "Contains beef, gluten and dairy.",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "Beef and lamb, parsley, tomato, pepper, garlic. Contains gluten.",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: beef, lamb, salt and tail fat. Allergens: no gluten or dairy.",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: beef, lamb, eggplant, salt and tail fat. Allergens: no gluten or dairy.",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: lamb, tail fat, salt. Allergens: no gluten or dairy.",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: lamb liver, tail fat, salt. Allergens: no gluten or dairy.",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "Ingredients: beef, yogurt, eggplant, garlic, salt. Allergens: no gluten, contains dairy.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "Ingredients: beef, lamb, tail fat, salt. Allergens: contains gluten and dairy.",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "Ingredients: beef, lamb, fried potatoes, salt. Allergens: contains gluten, no dairy.",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "Ingredients: beef. Allergens: no gluten or dairy.",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "Ingredients: lamb. Allergens: no gluten or dairy.",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: chicken. Allergens: no gluten or dairy.",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Half a kilo of köfte, half a kilo of wings, half a kilo of chicken shish, 4 mini lahmacun, 4 stuffed köfte, 1 L ayran, special dessert, tea and generous complimentary treats.",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Half a kilo of kebab, half a kilo of wings, half a kilo of chicken shish, 4 mini lahmacun, 4 stuffed köfte, 1 L ayran, special dessert, tea and generous complimentary treats.",
+  "Izgaralar": "Grills",
+  "Aile Menüleri": "Family Menus",
+  "Sarma Beyti servis tabağı": "Sarma Beyti serving plate",
+  "Kiremitte Et servis tabağı": "Kiremitte Et serving plate",
+  "İçli Köfte": "İçli Köfte (stuffed)",
+  "Fındık Lahmacun": "Mini Lahmacun",
+  "Salata": "Salad",
+  "Soğan Salatası": "Onion Salad",
+  "Ezme": "Ezme (spicy dip)",
+  "Çiğ Köfte": "Çiğ Köfte",
+  "Peynir": "Cheese",
+};
+
+const DICT_AR: Record<string, string> = {
+  "Gluten içermektedir.": "يحتوي على غلوتين.",
+  "Gluten içermemektedir.": "خالٍ من الغلوتين.",
+  "Gluten içerir.": "يحتوي على غلوتين.",
+  "Gluten ve süt ürünü içerir.": "يحتوي على غلوتين ومنتجات ألبان.",
+  "Yoğurt içerir.": "يحتوي على لبن (زبادي).",
+  "Dana eti, gluten ve süt ürünü içerir.": "يحتوي على لحم بقري وغلوتين ومنتجات ألبان.",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "لحم بقري وضأن، بقدونس، طماطم، فلفل، ثوم. يحتوي على غلوتين.",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: لحم بقري، لحم ضأن، ملح ودهن الذيل. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: لحم بقري، لحم ضأن، باذنجان، ملح ودهن الذيل. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: لحم ضأن، دهن الذيل، ملح. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: كبد ضأن، دهن الذيل، ملح. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "المكونات: لحم بقري، لبن، باذنجان، ثوم، ملح. مسببات الحساسية: خالٍ من الغلوتين، يحتوي على منتجات ألبان.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "المكونات: لحم بقري، لحم ضأن، دهن الذيل، ملح. مسببات الحساسية: يحتوي على غلوتين ومنتجات ألبان.",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "المكونات: لحم بقري، لحم ضأن، بطاطس مقلية، ملح. مسببات الحساسية: يحتوي على غلوتين، خالٍ من منتجات الألبان.",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "المكونات: لحم بقري. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "المكونات: لحم ضأن. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: لحم دجاج. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "نصف كيلو كفتة، نصف كيلو أجنحة، نصف كيلو دجاج مشوي، 4 لحم بعجين صغير، 4 كفتة محشية، 1 لتر عيران، حلوى خاصة، شاي ومقبلات وفيرة.",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "نصف كيلو كباب، نصف كيلو أجنحة، نصف كيلو دجاج مشوي، 4 لحم بعجين صغير، 4 كفتة محشية، 1 لتر عيران، حلوى خاصة، شاي ومقبلات وفيرة.",
+  "Izgaralar": "المشويات",
+  "Aile Menüleri": "قوائم العائلة",
+  "Sarma Beyti servis tabağı": "طبق تقديم سارما بيتي",
+  "Kiremitte Et servis tabağı": "طبق تقديم كيريميتته إت",
+  "İçli Köfte": "كفتة محشية",
+  "Fındık Lahmacun": "لحم بعجين صغير",
+  "Salata": "سلطة",
+  "Soğan Salatası": "سلطة بصل",
+  "Ezme": "عزمة (سلطة حارة)",
+  "Çiğ Köfte": "تشي كوفته",
+  "Peynir": "جبن",
+};
+
+const DICT_RU: Record<string, string> = {
+  "Gluten içermektedir.": "Содержит глютен.",
+  "Gluten içermemektedir.": "Без глютена.",
+  "Gluten içerir.": "Содержит глютен.",
+  "Gluten ve süt ürünü içerir.": "Содержит глютен и молочные продукты.",
+  "Yoğurt içerir.": "Содержит йогурт.",
+  "Dana eti, gluten ve süt ürünü içerir.": "Содержит говядину, глютен и молочные продукты.",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "Говядина и баранина, петрушка, помидоры, перец, чеснок. Содержит глютен.",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Состав: говядина, баранина, соль и курдючный жир. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Состав: говядина, баранина, баклажан, соль и курдючный жир. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Состав: баранина, курдючный жир, соль. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Состав: баранья печень, курдючный жир, соль. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "Состав: говядина, йогурт, баклажан, чеснок, соль. Аллергены: без глютена, содержит молочные продукты.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "Состав: говядина, баранина, курдючный жир, соль. Аллергены: содержит глютен и молочные продукты.",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "Состав: говядина, баранина, картофель фри, соль. Аллергены: содержит глютен, без молочных продуктов.",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "Состав: говядина. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "Состав: баранина. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "Состав: курица. Аллергены: без глютена и молочных продуктов.",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Полкило кёфте, полкило крылышек, полкило куриного шиша, 4 мини-лахмаджуна, 4 ичли кёфте, 1 л айрана, фирменный десерт, чай и щедрые угощения.",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Полкило кебаба, полкило крылышек, полкило куриного шиша, 4 мини-лахмаджуна, 4 ичли кёфте, 1 л айрана, фирменный десерт, чай и щедрые угощения.",
+  "Izgaralar": "Гриль",
+  "Aile Menüleri": "Семейные меню",
+  "Sarma Beyti servis tabağı": "Сервировочная тарелка Sarma Beyti",
+  "Kiremitte Et servis tabağı": "Сервировочная тарелка Kiremitte Et",
+  "İçli Köfte": "Ичли кёфте",
+  "Fındık Lahmacun": "Мини-лахмаджун",
+  "Salata": "Салат",
+  "Soğan Salatası": "Луковый салат",
+  "Ezme": "Эзме (острая закуска)",
+  "Çiğ Köfte": "Чи кёфте",
+  "Peynir": "Сыр",
+};
+
+const DICT_JA: Record<string, string> = {
+  "Gluten içermektedir.": "グルテンを含みます。",
+  "Gluten içermemektedir.": "グルテンフリー。",
+  "Gluten içerir.": "グルテンを含みます。",
+  "Gluten ve süt ürünü içerir.": "グルテンと乳製品を含みます。",
+  "Yoğurt içerir.": "ヨーグルトを含みます。",
+  "Dana eti, gluten ve süt ürünü içerir.": "牛肉、グルテン、乳製品を含みます。",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "牛肉と子羊肉、パセリ、トマト、ピーマン、にんにく。グルテンを含みます。",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "材料：牛肉、子羊肉、塩、尾脂。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "材料：牛肉、子羊肉、なす、塩、尾脂。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "材料：子羊肉、尾脂、塩。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "材料：子羊のレバー、尾脂、塩。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "材料：牛肉、ヨーグルト、なす、にんにく、塩。アレルゲン：グルテンなし、乳製品を含む。",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "材料：牛肉、子羊肉、尾脂、塩。アレルゲン：グルテンと乳製品を含みます。",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "材料：牛肉、子羊肉、フライドポテト、塩。アレルゲン：グルテンを含む、乳製品なし。",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "材料：牛肉。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "材料：子羊肉。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "材料：鶏肉。アレルゲン：グルテン・乳製品不使用。",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "キョフテ500g、手羽500g、チキンシシ500g、ミニラフマジュン4枚、イチリキョフテ4個、アイラン1L、特製デザート、チャイ、豊富なおもてなし。",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "ケバブ500g、手羽500g、チキンシシ500g、ミニラフマジュン4枚、イチリキョフテ4個、アイラン1L、特製デザート、チャイ、豊富なおもてなし。",
+  "Izgaralar": "グリル",
+  "Aile Menüleri": "ファミリーメニュー",
+  "Sarma Beyti servis tabağı": "サルマ・ベイティの盛り付け",
+  "Kiremitte Et servis tabağı": "キレミッテ・エトの盛り付け",
+  "İçli Köfte": "イチリキョフテ",
+  "Fındık Lahmacun": "ミニラフマジュン",
+  "Salata": "サラダ",
+  "Soğan Salatası": "オニオンサラダ",
+  "Ezme": "エズメ（辛味ディップ）",
+  "Çiğ Köfte": "チィキョフテ",
+  "Peynir": "チーズ",
+};
+
+const DICT_ZH: Record<string, string> = {
+  "Gluten içermektedir.": "含麸质。",
+  "Gluten içermemektedir.": "不含麸质。",
+  "Gluten içerir.": "含麸质。",
+  "Gluten ve süt ürünü içerir.": "含麸质和乳制品。",
+  "Yoğurt içerir.": "含酸奶。",
+  "Dana eti, gluten ve süt ürünü içerir.": "含牛肉、麸质和乳制品。",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "牛肉和羊肉、欧芹、番茄、辣椒、大蒜。含麸质。",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "配料：牛肉、羊肉、盐和羊尾油。过敏原：不含麸质和乳制品。",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "配料：牛肉、羊肉、茄子、盐和羊尾油。过敏原：不含麸质和乳制品。",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "配料：羊肉、羊尾油、盐。过敏原：不含麸质和乳制品。",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "配料：羊肝、羊尾油、盐。过敏原：不含麸质和乳制品。",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "配料：牛肉、酸奶、茄子、大蒜、盐。过敏原：不含麸质，含乳制品。",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "配料：牛肉、羊肉、羊尾油、盐。过敏原：含麸质和乳制品。",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "配料：牛肉、羊肉、炸薯条、盐。过敏原：含麸质，不含乳制品。",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "配料：牛肉。过敏原：不含麸质和乳制品。",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "配料：羊肉。过敏原：不含麸质和乳制品。",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "配料：鸡肉。过敏原：不含麸质和乳制品。",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "半公斤肉丸、半公斤鸡翅、半公斤鸡肉串、4个迷你拉赫马炯、4个夹心肉丸、1升酸奶饮、特色甜点、茶和丰盛的赠品。",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "半公斤烤肉、半公斤鸡翅、半公斤鸡肉串、4个迷你拉赫马炯、4个夹心肉丸、1升酸奶饮、特色甜点、茶和丰盛的赠品。",
+  "Izgaralar": "烧烤",
+  "Aile Menüleri": "家庭套餐",
+  "Sarma Beyti servis tabağı": "Sarma Beyti 拼盘",
+  "Kiremitte Et servis tabağı": "Kiremitte Et 拼盘",
+  "İçli Köfte": "İçli Köfte 夹心肉丸",
+  "Fındık Lahmacun": "迷你拉赫马炯",
+  "Salata": "沙拉",
+  "Soğan Salatası": "洋葱沙拉",
+  "Ezme": "Ezme 香辣酱",
+  "Çiğ Köfte": "Çiğ Köfte 生肉丸",
+  "Peynir": "奶酪",
+};
+
+const DICT_IT: Record<string, string> = {
+  "Gluten içermektedir.": "Contiene glutine.",
+  "Gluten içermemektedir.": "Senza glutine.",
+  "Gluten içerir.": "Contiene glutine.",
+  "Gluten ve süt ürünü içerir.": "Contiene glutine e latticini.",
+  "Yoğurt içerir.": "Contiene yogurt.",
+  "Dana eti, gluten ve süt ürünü içerir.": "Contiene manzo, glutine e latticini.",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "Manzo e agnello, prezzemolo, pomodoro, peperone, aglio. Contiene glutine.",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: manzo, agnello, sale e grasso della coda. Allergeni: senza glutine né latticini.",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: manzo, agnello, melanzana, sale e grasso della coda. Allergeni: senza glutine né latticini.",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: agnello, grasso della coda, sale. Allergeni: senza glutine né latticini.",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: fegato d'agnello, grasso della coda, sale. Allergeni: senza glutine né latticini.",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "Ingredienti: manzo, yogurt, melanzana, aglio, sale. Allergeni: senza glutine, contiene latticini.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "Ingredienti: manzo, agnello, grasso della coda, sale. Allergeni: contiene glutine e latticini.",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "Ingredienti: manzo, agnello, patate fritte, sale. Allergeni: contiene glutine, senza latticini.",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "Ingredienti: manzo. Allergeni: senza glutine né latticini.",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "Ingredienti: agnello. Allergeni: senza glutine né latticini.",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: pollo. Allergeni: senza glutine né latticini.",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Mezzo chilo di köfte, mezzo chilo di ali, mezzo chilo di spiedini di pollo, 4 mini lahmacun, 4 köfte ripieni, 1 L di ayran, dolce speciale, tè e ricchi omaggi.",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "Mezzo chilo di kebab, mezzo chilo di ali, mezzo chilo di spiedini di pollo, 4 mini lahmacun, 4 köfte ripieni, 1 L di ayran, dolce speciale, tè e ricchi omaggi.",
+  "Izgaralar": "Grigliate",
+  "Aile Menüleri": "Menu di famiglia",
+  "Sarma Beyti servis tabağı": "Piatto di portata Sarma Beyti",
+  "Kiremitte Et servis tabağı": "Piatto di portata Kiremitte Et",
+  "İçli Köfte": "İçli Köfte (ripieni)",
+  "Fındık Lahmacun": "Mini Lahmacun",
+  "Salata": "Insalata",
+  "Soğan Salatası": "Insalata di cipolle",
+  "Ezme": "Ezme (salsa piccante)",
+  "Çiğ Köfte": "Çiğ Köfte",
+  "Peynir": "Formaggio",
+};
+
+const menuItemsEn = localizeMenu(DICT_EN);
+const menuItemsAr = localizeMenu(DICT_AR);
+const menuItemsRu = localizeMenu(DICT_RU);
+const menuItemsJa = localizeMenu(DICT_JA);
+const menuItemsZh = localizeMenu(DICT_ZH);
+const menuItemsIt = localizeMenu(DICT_IT);
 
 export const translations = {
   en: {
@@ -180,17 +402,17 @@ export const translations = {
       visualView: "Visual View",
       lastUpdated: "Last updated",
       notAvailable: "Not Available Today",
-      photoSoon: "Fotoğraf yakında",
-      photoUpdating: "Fotoğraf güncellenecek",
+      photoSoon: "Photo coming soon",
+      photoUpdating: "Photo updating",
       categories: {
-        starters: "Başlangıçlar",
-        soups: "Çorbalar",
-        mains: "Ana Yemekler",
-        grills: "Izgaralar & Aile Menüleri",
-        firin: "Fırın",
-        durum: "Dürüm",
-        tatli: "Tatlı",
-        icecek: "İçecek",
+        starters: "Starters",
+        soups: "Soups",
+        mains: "Main Dishes",
+        grills: "Grills & Family Menus",
+        firin: "Bakery",
+        durum: "Wraps",
+        tatli: "Desserts",
+        icecek: "Beverages",
       },
     },
     menuItems: menuItemsEn,
@@ -391,7 +613,7 @@ export const translations = {
         grills: "المشويات وقوائم العائلة", firin: "المخبوزات", durum: "اللفائف", tatli: "الحلويات", icecek: "المشروبات",
       },
     },
-    menuItems: menuItems.tr,
+    menuItems: menuItemsAr,
     about: {
       label: "فلسفتنا", title: "النار، النحاس و", titleItalic: "التقاليد",
       text: "في CELO، نحيي فن الطهي الأناضولي القديم على النار. أوانينا النحاسية مطروقة يدوياً في غازي عنتاب، ولحم الضأن من مرتفعات شرق تركيا، والبهارات تُطحن طازجة كل صباح.",
@@ -448,7 +670,7 @@ export const translations = {
         grills: "Гриль и семейные меню", firin: "Выпечка", durum: "Дюрюм", tatli: "Десерты", icecek: "Напитки",
       },
     },
-    menuItems: menuItems.tr,
+    menuItems: menuItemsRu,
     about: {
       label: "Наша философия", title: "Огонь, медь и", titleItalic: "традиции",
       text: "В CELO мы храним древнее искусство анатолийской кухни на огне. Наши медные котлы кованы вручную в Газиантепе, ягнятина из горных районов Восточной Турции, а специи мелются свежими каждое утро.",
@@ -505,7 +727,7 @@ export const translations = {
         grills: "グリルとファミリーメニュー", firin: "ベーカリー", durum: "ラップ", tatli: "デザート", icecek: "飲み物",
       },
     },
-    menuItems: menuItems.tr,
+    menuItems: menuItemsJa,
     about: {
       label: "私たちの哲学", title: "炎、銅、", titleItalic: "伝統",
       text: "CELOでは、アナトリアの古代の火の料理の芸術を継承しています。銅鍋はガジアンテップで手打ち、仔羊は東トルコの高原から、スパイスは毎朝挽きたてです。",
@@ -562,7 +784,7 @@ export const translations = {
         grills: "烧烤与家庭套餐", firin: "烘焙", durum: "卷饼", tatli: "甜点", icecek: "饮品",
       },
     },
-    menuItems: menuItems.tr,
+    menuItems: menuItemsZh,
     about: {
       label: "我们的理念", title: "火焰、铜器与", titleItalic: "传统",
       text: "在 CELO,我们传承古老的安纳托利亚炉火烹饪艺术。我们的铜锅在加济安泰普手工打造,羔羊来自东土耳其高原,香料每天清晨新鲜研磨。",
@@ -619,7 +841,7 @@ export const translations = {
         grills: "Grigliate e menu famiglia", firin: "Forno", durum: "Dürüm", tatli: "Dolci", icecek: "Bevande",
       },
     },
-    menuItems: menuItems.tr,
+    menuItems: menuItemsIt,
     about: {
       label: "La nostra filosofia", title: "Fuoco, rame e", titleItalic: "tradizione",
       text: "Al CELO onoriamo l'antica arte anatolica della cottura al fuoco. I nostri tegami in rame sono martellati a mano a Gaziantep, l'agnello proviene dagli altopiani della Turchia orientale, e le spezie vengono macinate fresche ogni mattina.",
