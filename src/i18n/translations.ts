@@ -14,6 +14,16 @@ const IMG_AYRAN_ASI = "/__l5e/assets-v1/999556fc-a61e-442b-a62a-7c9784f7237b/ayr
 const IMG_KIREMITTE_ET = "/__l5e/assets-v1/0ccc3988-91bb-405a-ae8f-5172f95c8783/kiremitte-et.png";
 const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
 const IMG_TATLI_02 = "/__l5e/assets-v1/589173e5-d6d8-4034-b65b-a6f3a3144f71/celo-tatli-02.jpg";
+const IMG_CIGER_SIS = "/__l5e/assets-v1/19542fcc-29ff-4c2f-9f89-2a462cb3dbf5/ciger-sis.png";
+const IMG_ALI_NAZIK = "/__l5e/assets-v1/81f0d227-10c9-4ce0-b307-dda54bcb861b/ali-nazik.png";
+const IMG_ZIRH_KEBABI = "/__l5e/assets-v1/fb411f50-7b07-49cd-b1cb-a425362ade54/zirh-kebabi.png";
+const IMG_TAVUK_SIS = "/__l5e/assets-v1/0dbc7500-e7a0-46bf-b429-bde5e838e465/tavuk-sis.png";
+const IMG_YAPRAK_KANAT = "/__l5e/assets-v1/ea7ffbda-da76-4de8-8d46-606e6f7b56bc/yaprak-kanat.png";
+const IMG_IZGARA_KOFTE = "/__l5e/assets-v1/dff45133-9ef6-4abe-877f-d3cd73580337/izgara-kofte.png";
+const IMG_YOGURTLU_KEBAP = "/__l5e/assets-v1/a009e55c-1672-4701-bce7-a879d1f734c5/yogurtlu-kebap.png";
+const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/4b168ba4-8a15-4ec2-87be-486dd70ee378/patlican-kebabi.png";
+const IMG_ANTRIKOT = "/__l5e/assets-v1/b4cfd12d-32bd-482b-bec5-6dd4115f2f49/antrikot.png";
+const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/49945a0d-ab15-480d-bed1-c5a561a1c1fd/kuzu-pirzola.png";
 
 // image: URL → real photo; "skeleton" → grey placeholder ("Fotoğraf yakında");
 //        "skeleton-soon" → placeholder with "fotoğraf güncellenecek"
@@ -34,18 +44,18 @@ const menuItems = {
     ],
     // SECTION 2 — Ana Yemekler
     mains: [
-      { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_ANA_YEMEK_01, standardSides: true },
-      { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton-soon", standardSides: true },
+      { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_ZIRH_KEBABI, standardSides: true },
+      { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_PATLICAN_KEBABI, standardSides: true },
       { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
-      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
+      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_CIGER_SIS, standardSides: true },
     ],
     // SECTION 3 — Ali Nazik, Yoğurtlu Kebap, Izgara Köfte, Tavuk Şiş, Yaprak Kanat
     kebabs: [
-      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: "skeleton", standardSides: true },
-      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: "skeleton", standardSides: true },
-      { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "", image: IMG_KEBAP_01, standardSides: true },
-      { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
-      { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
+      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: IMG_ALI_NAZIK, standardSides: true },
+      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: IMG_YOGURTLU_KEBAP, standardSides: true },
+      { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "", image: IMG_IZGARA_KOFTE, standardSides: true },
+      { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_TAVUK_SIS, standardSides: true },
+      { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_YAPRAK_KANAT, standardSides: true },
     ],
     // SECTION 4 — Sarma Beyti & Kiremitte Et (İkram)
     specials: [
@@ -68,8 +78,8 @@ const menuItems = {
     ],
     // SECTION 5 — Izgaralar & Aile Menüleri
     grills: [
-      { subheading: "Izgaralar", name: "Antrikot", kcal: 400, desc: "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.", price: "", image: "skeleton", standardSides: true },
-      { name: "Kuzu Pirzola", kcal: 300, desc: "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.", price: "", image: "skeleton", standardSides: true },
+      { subheading: "Izgaralar", name: "Antrikot", kcal: 400, desc: "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.", price: "", image: IMG_ANTRIKOT, standardSides: true },
+      { name: "Kuzu Pirzola", kcal: 300, desc: "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.", price: "", image: IMG_KUZU_PIRZOLA, standardSides: true },
       { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "", image: "skeleton" },
       { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "", image: "skeleton" },
     ],
