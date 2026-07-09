@@ -34,12 +34,12 @@ const menuItems = {
   tr: {
     // SECTION 1 — Başlangıçlar & Çorbalar
     starters: [
-      { subheading: "Başlangıçlar", name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "", image: IMG_SUPER_IKILI },
+      { subheading: "Başlangıçlar", name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
       { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "", image: IMG_ANTEP_KURU_DOLMA },
-      { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "", image: IMG_BASLANGIC_04 },
-      { name: "Gavurdağı Salatası", desc: "", price: "", image: IMG_BASLANGIC_01 },
-      { subheading: "Çorbalar", name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "", image: IMG_CORBA_04 },
-      { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "", image: IMG_CORBA_01 },
+      { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
+      { name: "Gavurdağı Salatası", desc: "", price: "200 ₺", image: IMG_BASLANGIC_01 },
+      { subheading: "Çorbalar", name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
+      { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_01 },
       { name: "Ayran Aşı Çorbası", desc: "Yoğurt içerir.", price: "", image: IMG_AYRAN_ASI },
     ],
     // SECTION 2 — Ana Yemekler
