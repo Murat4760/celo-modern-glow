@@ -166,6 +166,7 @@ export const translations = {
         oven: "Fırın / Pide",
         wraps: "Dürümler",
         kebabs: "Kebaplar / Ana Yemekler",
+        specials: "Sarma Beyti & Kiremitte Et",
         grills: "Izgaralar",
         family: "Aile Menüsü",
         desserts: "Tatlılar",
