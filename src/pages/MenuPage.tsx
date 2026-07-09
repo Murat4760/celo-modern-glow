@@ -22,6 +22,7 @@ interface MenuItemView {
   ikram?: readonly string[];
   kcal?: number;
   subheading?: string;
+  subheadingImage?: string;
   standardSides?: boolean;
 }
 
