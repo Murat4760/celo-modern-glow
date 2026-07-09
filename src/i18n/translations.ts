@@ -7,6 +7,8 @@ const IMG_CORBA_01 = "/__l5e/assets-v1/4b57b6b2-f579-45af-bdf9-6a3047c89e3b/celo
 const IMG_CORBA_04 = "/__l5e/assets-v1/33f8e822-5223-49a4-9efc-b0d201499d8b/celo-corba-04.jpg";
 const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
 const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
+const IMG_SARMA_BEYTI = "/__l5e/assets-v1/97eb2143-0824-43f0-bf60-42b4bb4f6022/sarma-beyti.png";
+const IMG_KIREMITTE_ET = "/__l5e/assets-v1/0ccc3988-91bb-405a-ae8f-5172f95c8783/kiremitte-et.png";
 const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
 const IMG_TATLI_02 = "/__l5e/assets-v1/589173e5-d6d8-4034-b65b-a6f3a3144f71/celo-tatli-02.jpg";
 
