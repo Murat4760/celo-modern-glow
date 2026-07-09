@@ -11,6 +11,7 @@ type CategoryKey =
   | "oven"
   | "wraps"
   | "kebabs"
+  | "specials"
   | "grills"
   | "family"
   | "desserts"
@@ -22,6 +23,8 @@ interface MenuItemView {
   price: string;
   available: boolean;
   image?: string;
+  alt?: string;
+  ikram?: readonly string[];
 }
 
 const CATEGORY_KEYS: CategoryKey[] = [
@@ -30,6 +33,7 @@ const CATEGORY_KEYS: CategoryKey[] = [
   "oven",
   "wraps",
   "kebabs",
+  "specials",
   "grills",
   "family",
   "desserts",
@@ -51,6 +55,8 @@ const MenuPage = () => {
         desc: string;
         price: string;
         image?: string;
+        alt?: string;
+        ikram?: readonly string[];
       }[];
       result[key] = fallback.map((i) => ({ ...i, available: true }));
     }
@@ -119,7 +125,7 @@ const MenuPage = () => {
       return (
         <img
           src={item.image}
-          alt={item.name}
+          alt={item.alt || item.name}
           loading="lazy"
           className="aspect-[4/3] w-24 shrink-0 rounded-lg object-cover sm:w-28"
         />
@@ -262,6 +268,16 @@ const MenuPage = () => {
                                 <p className="mt-1 text-sm text-muted-foreground">
                                   {item.desc}
                                 </p>
+                              )}
+                              {item.ikram && item.ikram.length > 0 && (
+                                <div className="mt-2 rounded-lg border border-copper/40 bg-copper/10 px-3 py-2">
+                                  <span className="mb-1 inline-block rounded-full bg-copper-gradient px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-foreground">
+                                    İkram
+                                  </span>
+                                  <p className="text-xs leading-snug text-foreground/90">
+                                    {item.ikram.join(" · ")}
+                                  </p>
+                                </div>
                               )}
                               {!item.available && (
                                 <span className="mt-1 inline-block rounded-full bg-destructive/20 px-2 py-0.5 text-xs font-medium text-destructive">
