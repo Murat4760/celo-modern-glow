@@ -262,18 +262,24 @@ const MenuPage = () => {
                               !item.available ? "opacity-50" : ""
                             }`}
                           >
-                            {!isDrink && renderImage(item)}
+                            {!isDrink && renderImage(item, key)}
                             <div className="flex flex-1 flex-col gap-1">
                               <div className="flex items-baseline justify-between gap-3">
                                 <h4 className="text-base font-semibold text-foreground sm:text-lg">
                                   {item.name}
                                 </h4>
-                                <span
-                                  className="shrink-0 rounded-full border border-copper/40 bg-copper/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-copper"
-                                  aria-label={askPrice}
-                                >
-                                  {askPrice}
-                                </span>
+                                {item.price ? (
+                                  <span className="shrink-0 text-base font-semibold text-copper sm:text-lg">
+                                    {item.price}
+                                  </span>
+                                ) : (
+                                  <span
+                                    className="shrink-0 rounded-full border border-copper/40 bg-copper/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-copper"
+                                    aria-label={askPrice}
+                                  >
+                                    {askPrice}
+                                  </span>
+                                )}
                               </div>
                               {item.kcal !== undefined && (
                                 <span className="inline-block w-fit rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
