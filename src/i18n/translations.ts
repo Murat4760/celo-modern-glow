@@ -44,18 +44,18 @@ const menuItems = {
     ],
     // SECTION 2 — Ana Yemekler
     mains: [
-      { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_ANA_YEMEK_01, standardSides: true },
-      { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton-soon", standardSides: true },
+      { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_ZIRH_KEBABI, standardSides: true },
+      { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_PATLICAN_KEBABI, standardSides: true },
       { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
-      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
+      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_CIGER_SIS, standardSides: true },
     ],
     // SECTION 3 — Ali Nazik, Yoğurtlu Kebap, Izgara Köfte, Tavuk Şiş, Yaprak Kanat
     kebabs: [
-      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: "skeleton", standardSides: true },
-      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: "skeleton", standardSides: true },
-      { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "", image: IMG_KEBAP_01, standardSides: true },
-      { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
-      { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: "skeleton", standardSides: true },
+      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: IMG_ALI_NAZIK, standardSides: true },
+      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: IMG_YOGURTLU_KEBAP, standardSides: true },
+      { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "", image: IMG_IZGARA_KOFTE, standardSides: true },
+      { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_TAVUK_SIS, standardSides: true },
+      { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_YAPRAK_KANAT, standardSides: true },
     ],
     // SECTION 4 — Sarma Beyti & Kiremitte Et (İkram)
     specials: [
