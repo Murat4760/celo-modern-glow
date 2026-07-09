@@ -24,7 +24,7 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar & Çorbalar
     starters: [
       { subheading: "Başlangıçlar", name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "", image: IMG_SUPER_IKILI },
-      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "", image: "skeleton" },
+      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "", image: IMG_ANTEP_KURU_DOLMA },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "", price: "", image: IMG_BASLANGIC_01 },
       { subheading: "Çorbalar", name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "", image: IMG_CORBA_04 },
