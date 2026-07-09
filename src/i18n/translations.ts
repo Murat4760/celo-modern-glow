@@ -1,30 +1,30 @@
 export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
-const IMG_BASLANGIC_01 = "/__l5e/assets-v1/8d7fd0ef-e302-4d44-a98b-2e14fbf4e9df/gavurdagi-v4.png";
-const IMG_BASLANGIC_04 = "/menu/patates-tava.png";
-const IMG_CORBA_01 = "/__l5e/assets-v1/5dfd6ec9-effc-42f8-a709-cfc1e01bdaf7/mercimek-nobg.png";
-const IMG_CORBA_04 = "/__l5e/assets-v1/cdf143d8-6e90-4332-a9a5-6a0790e0a80f/mercimek-v2-nobg.png";
-const IMG_ANA_YEMEK_01 = "/__l5e/assets-v1/cc5fa363-cfe2-4529-b22a-66ddfdbb0644/celo-ana-yemek-01.jpg";
-const IMG_KEBAP_01 = "/__l5e/assets-v1/c87e426b-579c-434d-abb0-df3bca05a70e/celo-kebap-01.jpg";
-const IMG_SARMA_BEYTI = "/__l5e/assets-v1/1940414d-b4c9-4bb8-b9e9-84447284f239/sarma-beyti-v3.png";
-const IMG_SUPER_IKILI = "/__l5e/assets-v1/9300519c-5a75-4a14-98d6-fa38cf0d38fe/super-ikili-v6.png";
-const IMG_ANTEP_KURU_DOLMA = "/menu/antep-kuru-dolma.png";
-const IMG_AYRAN_ASI = "/__l5e/assets-v1/9211f090-df50-4c33-b95e-c02e8740fc1e/ayran-asi-nobg.png";
-const IMG_KIREMITTE_ET = "/__l5e/assets-v1/a99c6e65-317e-4e63-bfeb-51c78243261d/kiremitte-et-v3.png";
-const IMG_TATLI_01 = "/__l5e/assets-v1/a15273a7-6190-497c-836f-7db20071f9a8/celo-tatli-01.jpg";
-const IMG_TATLI_02 = "/__l5e/assets-v1/589173e5-d6d8-4034-b65b-a6f3a3144f71/celo-tatli-02.jpg";
-const IMG_CIGER_SIS = "/menu/ciger-sis.png";
-const IMG_ALI_NAZIK = "/menu/ali-nazik.png";
-const IMG_ZIRH_KEBABI = "/menu/zirh-kebabi.png";
-const IMG_TAVUK_SIS = "/menu/tavuk-sis.png";
-const IMG_YAPRAK_KANAT = "/menu/yaprak-kanat.png";
-const IMG_IZGARA_KOFTE = "/menu/izgara-kofte.png";
-const IMG_YOGURTLU_KEBAP = "/__l5e/assets-v1/73e0bca6-3d09-4a38-bfdd-5755f7742dcc/yogurtlu-kebap-v2.png";
-const IMG_PATLICAN_KEBABI = "/__l5e/assets-v1/4c281d23-6eaa-4084-8d33-7fe55dd5e5dd/patlican-kebabi-v5.png";
-const IMG_COP_SIS = "/__l5e/assets-v1/ebb28d02-ce35-4851-9d06-09548a5e7770/cop-sis-v3.png";
-const IMG_ANTRIKOT = "/menu/antrikot.png";
-const IMG_KUZU_PIRZOLA = "/__l5e/assets-v1/f6c28c4d-6f33-49d8-a6a3-0154d70ac340/kuzu-pirzola-portrait.png";
+const IMG_BASLANGIC_01 = "/menu/gavurdagi-v4.png";
+const IMG_BASLANGIC_04 = "/menu/patates-tava.jpg";
+const IMG_CORBA_01 = "/menu/mercimek-nobg.png";
+const IMG_CORBA_04 = "/menu/mercimek-v2-nobg.png";
+const IMG_ANA_YEMEK_01 = "/menu/celo-ana-yemek-01.jpg";
+const IMG_KEBAP_01 = "/menu/celo-kebap-01.jpg";
+const IMG_SARMA_BEYTI = "/menu/sarma-beyti-v3.jpg";
+const IMG_SUPER_IKILI = "/menu/super-ikili-v6.png";
+const IMG_ANTEP_KURU_DOLMA = "/menu/antep-kuru-dolma.jpg";
+const IMG_AYRAN_ASI = "/menu/ayran-asi-nobg.png";
+const IMG_KIREMITTE_ET = "/menu/kiremitte-et-v3.jpg";
+const IMG_TATLI_01 = "/menu/celo-tatli-01.jpg";
+const IMG_TATLI_02 = "/menu/celo-tatli-02.jpg";
+const IMG_CIGER_SIS = "/menu/ciger-sis.jpg";
+const IMG_ALI_NAZIK = "/menu/ali-nazik.jpg";
+const IMG_ZIRH_KEBABI = "/menu/zirh-kebabi.jpg";
+const IMG_TAVUK_SIS = "/menu/tavuk-sis.jpg";
+const IMG_YAPRAK_KANAT = "/menu/yaprak-kanat.jpg";
+const IMG_IZGARA_KOFTE = "/menu/izgara-kofte.jpg";
+const IMG_YOGURTLU_KEBAP = "/menu/yogurtlu-kebap-v2.jpg";
+const IMG_PATLICAN_KEBABI = "/menu/patlican-kebabi-v5.jpg";
+const IMG_COP_SIS = "/menu/cop-sis-v3.png";
+const IMG_ANTRIKOT = "/menu/antrikot.jpg";
+const IMG_KUZU_PIRZOLA = "/menu/kuzu-pirzola-portrait.png";
 
 // image: URL → real photo; "skeleton" → grey placeholder ("Fotoğraf yakında");
 //        "skeleton-soon" → placeholder with "fotoğraf güncellenecek"
@@ -78,8 +78,8 @@ const menuItems = {
     grills: [
       { subheading: "Izgaralar", name: "Antrikot", kcal: 400, desc: "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_ANTRIKOT, standardSides: true },
       { name: "Kuzu Pirzola", kcal: 300, desc: "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.", price: "1200 ₺", image: IMG_KUZU_PIRZOLA, standardSides: true },
-      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/__l5e/assets-v1/ca1ab22b-a454-4063-b8fb-ae41b575a110/kofteli-aile.png" },
-      { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/__l5e/assets-v1/27497c25-83ff-440d-8a29-f8eb33df758d/kebapli-aile.png" },
+      { subheading: "Aile Menüleri", name: "Köfteli Aile Menüsü", desc: "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/menu/kofteli-aile.jpg" },
+      { name: "Kebaplı Aile Menüsü", desc: "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.", price: "1990 ₺", image: "/menu/kebapli-aile.jpg" },
     ],
     // SECTION 5 — Fırın
     firin: [
@@ -98,7 +98,7 @@ const menuItems = {
     ],
     // SECTION 7 — Tatlı
     tatli: [
-      { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/__l5e/assets-v1/a5d87a88-f5e6-402e-8dec-6eb66b3c63d9/katmer.png" },
+      { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
       { name: "Fırın Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: IMG_TATLI_01 },
       { name: "Havuç Dilim Baklava", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "" },
       { name: "Tavuk Göğsü", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
