@@ -119,7 +119,7 @@ const MenuPage = () => {
     lang === "tr" ? "Standart yan ürünler" : "Standard sides";
 
   const renderImage = (item: MenuItemView, cat: CategoryKey) => {
-    const portrait = cat === "mains" || cat === "kebabs";
+    const portrait = cat === "mains" || cat === "kebabs" || cat === "grills";
     const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
     if (isPhoto) {
