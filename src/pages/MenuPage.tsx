@@ -258,7 +258,7 @@ const MenuPage = () => {
                             !item.available ? "opacity-50" : ""
                           }`}
                         >
-                          {renderImage(item)}
+                          {key !== "drinks" && renderImage(item)}
                           <div className="flex flex-1 items-baseline justify-between gap-4">
                             <div className="flex-1">
                               <h3 className="text-base font-semibold text-foreground sm:text-lg">
