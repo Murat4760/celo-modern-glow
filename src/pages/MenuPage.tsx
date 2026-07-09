@@ -118,7 +118,9 @@ const MenuPage = () => {
   const sidesLabel =
     lang === "tr" ? "Standart yan ürünler" : "Standard sides";
 
-  const renderImage = (item: MenuItemView) => {
+  const renderImage = (item: MenuItemView, cat: CategoryKey) => {
+    const portrait = cat === "mains" || cat === "kebabs";
+    const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
     if (isPhoto) {
       return (
@@ -126,7 +128,7 @@ const MenuPage = () => {
           src={item.image}
           alt={item.alt || item.name}
           loading="lazy"
-          className="aspect-[4/3] w-28 shrink-0 rounded-lg object-cover sm:w-32"
+          className={`${aspectClass} w-24 shrink-0 rounded-lg object-cover sm:w-28`}
         />
       );
     }
@@ -136,7 +138,7 @@ const MenuPage = () => {
         : t.menuPage.photoSoon;
     return (
       <div
-        className="aspect-[4/3] w-28 shrink-0 rounded-lg bg-muted/60 border border-border/60 flex flex-col items-center justify-center text-center px-1 sm:w-32"
+        className={`${aspectClass} w-24 shrink-0 rounded-lg bg-muted/60 border border-border/60 flex flex-col items-center justify-center text-center px-1 sm:w-28`}
         aria-label={caption}
       >
         <ImageIcon size={18} className="text-muted-foreground/70 mb-1" />
