@@ -123,12 +123,15 @@ const MenuPage = () => {
       cat === "mains" || cat === "kebabs" || cat === "grills" || item.name.includes("Dürüm");
     const aspectClass = portrait ? "aspect-[3/4]" : "aspect-[4/3]";
     const isPhoto = item.image && item.image.startsWith("/");
+    const shiftDown =
+      item.name.includes("Süper İkili") || item.name.includes("Patates Tava");
     if (isPhoto) {
       return (
         <img
           src={item.image}
           alt={item.alt || item.name}
           loading="lazy"
+          style={shiftDown ? { objectPosition: "center 20%" } : undefined}
           className={`${aspectClass} w-24 shrink-0 rounded-lg object-cover sm:w-28`}
         />
       );
