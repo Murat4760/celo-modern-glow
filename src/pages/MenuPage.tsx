@@ -40,7 +40,7 @@ const CATEGORY_KEYS: CategoryKey[] = [
 ];
 
 const STANDARD_SIDES =
-  "Salata · Bulgur Pilavı · Soslu Soğan · Çiğköfte · Peynir · Karamelize Soğan · Ayran Aşı";
+  "Salata · Bulgur Pilavı · Soslu Soğan · Çiğköfte · Peynir · Karamelize Soğan · Ezme";
 
 const MenuPage = () => {
   const { t, lang } = useLanguage();
