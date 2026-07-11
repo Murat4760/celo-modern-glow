@@ -16,8 +16,11 @@ const HeroSection = () => {
         <img
           src="/logo.png"
           alt="CELO Restaurant"
-          className="mb-6 h-40 w-auto sm:h-48 md:h-56 lg:h-64"
+          className="mb-4 h-40 w-auto sm:h-48 md:h-56 lg:h-64"
         />
+        <span className="mb-6 inline-flex items-center rounded-full border border-copper bg-secondary px-6 py-2 text-xs font-semibold uppercase tracking-wider text-copper">
+          {t.hero.slogan}
+        </span>
         <p className="mb-8 max-w-md text-base sm:text-lg text-muted-foreground">
           {t.hero.tagline}
         </p>

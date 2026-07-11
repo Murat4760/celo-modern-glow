@@ -731,6 +731,7 @@ export const translations = {
     },
     hero: {
       subtitle: "Modern Anatolian Cuisine",
+      slogan: "We Don't Feed You What We Wouldn't Eat",
       tagline: "Where ancient Anatolian traditions meet contemporary craft. Every flame tells a story.",
       viewMenu: "View Menu",
       ourStory: "Our Story",
@@ -850,6 +851,7 @@ export const translations = {
     },
     hero: {
       subtitle: "Modern Anadolu Mutfağı",
+      slogan: "Yemediğimizi Yedirmeyiz",
       tagline: "Kadim Anadolu gelenekleri çağdaş ustalıkla buluşuyor. Her ateş bir hikâye anlatır.",
       viewMenu: "Menüyü Gör",
       ourStory: "Hikayemiz",
@@ -965,6 +967,7 @@ export const translations = {
     nav: { menu: "الأطباق المميزة", about: "قصتنا", contact: "اتصل بنا" },
     hero: {
       subtitle: "المطبخ الأناضولي الحديث",
+      slogan: "لا نُطعمكم ما لا نأكله نحن",
       tagline: "حيث تلتقي التقاليد الأناضولية القديمة بالحرفية المعاصرة. كل شعلة تحكي قصة.",
       viewMenu: "عرض القائمة",
       ourStory: "قصتنا",
@@ -1032,6 +1035,7 @@ export const translations = {
     nav: { menu: "Спецпредложения", about: "Наша история", contact: "Контакты" },
     hero: {
       subtitle: "Современная анатолийская кухня",
+      slogan: "Мы не кормим вас тем, что не съели бы сами",
       tagline: "Где древние анатолийские традиции встречаются с современным мастерством. Каждый огонь рассказывает историю.",
       viewMenu: "Смотреть меню", ourStory: "Наша история",
     },
@@ -1096,6 +1100,7 @@ export const translations = {
     nav: { menu: "スペシャル", about: "私たちの物語", contact: "お問い合わせ" },
     hero: {
       subtitle: "モダン・アナトリア料理",
+      slogan: "自分たちが食べないものはお客様にも食べさせない",
       tagline: "古代アナトリアの伝統と現代の技が出会う。すべての炎が物語を語る。",
       viewMenu: "メニューを見る", ourStory: "私たちの物語",
     },
@@ -1160,6 +1165,7 @@ export const translations = {
     nav: { menu: "特色菜", about: "我们的故事", contact: "联系我们" },
     hero: {
       subtitle: "现代安纳托利亚料理",
+      slogan: "我们不会让您吃我们自己不吃的东西",
       tagline: "古老的安纳托利亚传统与当代工艺相遇。每一簇火焰都诉说着一个故事。",
       viewMenu: "查看菜单", ourStory: "我们的故事",
     },
@@ -1224,6 +1230,7 @@ export const translations = {
     nav: { menu: "Specialità", about: "La nostra storia", contact: "Contatti" },
     hero: {
       subtitle: "Cucina Anatolica Moderna",
+      slogan: "Non Facciamo Mangiare Ciò Che Noi Stessi Non Mangeremmo",
       tagline: "Dove le antiche tradizioni anatoliche incontrano l'arte contemporanea. Ogni fiamma racconta una storia.",
       viewMenu: "Vedi il menu", ourStory: "La nostra storia",
     },
