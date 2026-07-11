@@ -12,7 +12,6 @@ const IMG_SUPER_IKILI = "/menu/super-ikili-v6.png";
 const IMG_ANTEP_KURU_DOLMA = "/menu/antep-kuru-dolma.jpg";
 const IMG_AYRAN_ASI = "/menu/ayran-asi-nobg.png";
 const IMG_KIREMITTE_ET = "/menu/kiremitte-et-v3.jpg";
-const IMG_TATLI_01 = "/menu/celo-tatli-01.jpg";
 const IMG_TATLI_02 = "/menu/celo-tatli-02.jpg";
 const IMG_CIGER_SIS = "/menu/ciger-sis.jpg";
 const IMG_ALI_NAZIK = "/menu/ali-nazik.jpg";
@@ -107,7 +106,7 @@ const menuItems = {
     // SECTION 7 — Tatlı
     tatli: [
       { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
-      { name: "Fırın Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: IMG_TATLI_01 },
+      { name: "Fırın Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
       { name: "Havuç Dilim Baklava", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "" },
       { name: "Tavuk Göğsü", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "" },
       { name: "Kabak Tatlısı (mevsiminde)", desc: "Gluten ve süt ürünü içerir.", price: "", image: "" },
