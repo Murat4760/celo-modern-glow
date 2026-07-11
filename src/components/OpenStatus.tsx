@@ -10,26 +10,41 @@ const OpenStatus = () => {
   useEffect(() => {
     const checkStatus = () => {
       const now = new Date();
-      const day = now.getDay(); // 0=Sun
+      const day = now.getDay(); // 0=Sun ... 1=Mon ... 6=Sat
       const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-      // Sat (6): 11:00–03:00, Others: 11:30–03:00 (all days close at 3:00 next day)
-      const isSaturday = day === 6;
+      // Open every day 11:30–03:00 (overnight), except closed all day Monday.
+      const openTime = 11 * 60 + 30; // 11:30
+      const closeTime = 3 * 60; // 03:00 (overnight, next day)
 
-      const openTime = isSaturday ? 11 * 60 : 11 * 60 + 30; // 11:00 or 11:30
-      const closeTime = 3 * 60; // 03:00 (overnight)
+      const MONDAY = 1;
+      const closedToday = day === MONDAY;
+      const closedYesterday = (day + 6) % 7 === MONDAY;
 
-      // Overnight: open from openTime to next day 03:00
-      const open = currentMinutes >= openTime || currentMinutes < closeTime;
+      // currentMinutes < closeTime: still the previous day's overnight tail.
+      // currentMinutes >= openTime: today's own opening window has started.
+      // In between (closeTime–openTime): always closed (off hours).
+      let open: boolean;
+      if (currentMinutes < closeTime) {
+        open = !closedYesterday;
+      } else if (currentMinutes >= openTime) {
+        open = !closedToday;
+      } else {
+        open = false;
+      }
       setIsOpen(open);
 
       let minsLeft: number;
       if (open) {
-        minsLeft = currentMinutes >= openTime
-          ? (24 * 60 - currentMinutes) + closeTime
-          : closeTime - currentMinutes;
+        minsLeft = currentMinutes < closeTime
+          ? closeTime - currentMinutes
+          : (24 * 60 - currentMinutes) + closeTime;
+      } else if (currentMinutes < openTime) {
+        minsLeft = closedToday
+          ? (24 * 60 - currentMinutes) + openTime
+          : openTime - currentMinutes;
       } else {
-        minsLeft = openTime - currentMinutes;
+        minsLeft = (24 * 60 - currentMinutes) + openTime;
       }
       setH(Math.floor(minsLeft / 60));
       setM(minsLeft % 60);

@@ -19,6 +19,8 @@ const FooterSection = () => {
               {t.footer.everyDay}
               <br />
               11:30 – 03:00
+              <br />
+              {t.contact.hoursMonday}
             </p>
           </div>
           <div>

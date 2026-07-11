@@ -8,7 +8,7 @@ const ContactSection = () => {
 
   const items = [
     { icon: MapPin, label: t.contact.addressLabel, value: t.contact.address },
-    { icon: Clock, label: t.contact.hoursLabel, value: `${t.contact.hours}\n${t.contact.hoursDetail}\n${t.contact.hoursMonday}\n${t.contact.hoursSaturday}` },
+    { icon: Clock, label: t.contact.hoursLabel, value: `${t.contact.hours}\n${t.contact.hoursDetail}\n${t.contact.hoursMonday}` },
     { icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone },
     { icon: Star, label: "Google", value: t.contact.rating },
   ];
