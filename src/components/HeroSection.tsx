@@ -41,6 +41,14 @@ const HeroSection = () => {
             {t.hero.ourStory}
           </a>
         </div>
+        <a
+          href="https://search.google.com/local/writereview?ftid=0x14b55f4db400989f:0xb8c2b44a5cd1e62a"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
+        >
+          {t.about.reviewCta} 😊
+        </a>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">

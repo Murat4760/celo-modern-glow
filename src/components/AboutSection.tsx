@@ -47,14 +47,6 @@ const AboutSection = () => {
                 </footer>
               </blockquote>
             ))}
-            <a
-              href="https://search.google.com/local/writereview?ftid=0x14b55f4db400989f:0xb8c2b44a5cd1e62a"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-sm font-semibold text-copper transition-colors hover:opacity-80"
-            >
-              {t.about.reviewCta} 😊
-            </a>
           </div>
 
           <div className="order-1 grid grid-cols-2 gap-4 md:order-2">
