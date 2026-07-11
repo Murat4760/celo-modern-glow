@@ -36,7 +36,7 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar
     starters: [
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
-      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "", image: IMG_ANTEP_KURU_DOLMA },
+      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_ANTEP_KURU_DOLMA },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
@@ -44,40 +44,40 @@ const menuItems = {
     soups: [
       { name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
       { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_01 },
-      { name: "Ayran Aşı Çorbası", desc: "Yoğurt içerir.", price: "", image: IMG_AYRAN_ASI },
+      { name: "Ayran Aşı Çorbası", desc: "Yoğurt içerir.", price: "200 ₺", image: IMG_AYRAN_ASI },
     ],
     // SECTION 3 — Ana Yemekler (Ali Nazik, Sarma Beyti ve Kiremitte Et dahil)
     mains: [
       { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: IMG_ZIRH_KEBABI, standardSides: true },
       { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "900 ₺", image: IMG_PATLICAN_KEBABI, standardSides: true },
-      { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_COP_SIS, standardSides: true },
-      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "", image: IMG_CIGER_SIS, standardSides: true },
-      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "", image: IMG_ALI_NAZIK, standardSides: true },
-      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "", image: IMG_YOGURTLU_KEBAP, standardSides: true },
+      { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "850 ₺", image: IMG_COP_SIS, standardSides: true },
+      { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "850 ₺", image: IMG_CIGER_SIS, standardSides: true },
+      { name: "Ali Nazik", kcal: 475, desc: "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.", price: "900 ₺", image: IMG_ALI_NAZIK, standardSides: true },
+      { name: "Yoğurtlu Kebap", kcal: 475, desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.", price: "800 ₺", image: IMG_YOGURTLU_KEBAP, standardSides: true },
       { name: "Izgara Köfte", kcal: 425, desc: "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.", price: "650 ₺", image: IMG_IZGARA_KOFTE, standardSides: true },
       { name: "Tavuk Şiş", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "650 ₺", image: IMG_TAVUK_SIS, standardSides: true },
       { name: "Yaprak Kanat", kcal: 300, desc: "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "650 ₺", image: IMG_YAPRAK_KANAT, standardSides: true },
       {
         name: "Sarma Beyti",
-        desc: "",
-        price: "",
+        desc: "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.",
+        price: "850 ₺",
         image: IMG_SARMA_BEYTI,
         alt: "Sarma Beyti servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
       {
         name: "Kiremitte Et",
-        desc: "",
-        price: "",
+        desc: "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.",
+        price: "750 ₺",
         image: IMG_KIREMITTE_ET,
         alt: "Kiremitte Et servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
-      { name: "Hamburger", desc: "Gluten ve süt ürünü içerir.", price: "", image: "/menu/hamburger.jpg" },
+      { name: "Hamburger", desc: "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.", price: "395 ₺", image: "/menu/hamburger.jpg" },
       {
         name: "3'lü CELO Spesiyal",
-        desc: "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.",
-        price: "",
+        desc: "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.",
+        price: "2950 ₺",
         image: "/menu/celo-spesiyal.jpg",
         alt: "3'lü CELO Spesiyal servis tabağı",
       },
@@ -155,6 +155,10 @@ function localizeMenu(dict: MenuDict): typeof menuItems.tr {
 
 const DICT_EN: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Mixed grill sharing platter: köfte, kebab, chicken shish, wings and grilled vegetables.",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Mixed grill sharing platter for 3: köfte, kebab, chicken shish, wings and seasonal grilled vegetables together.",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Ingredients: seasoned minced beef köfte wrapped in thin lavash and char-grilled — a Southeastern-style beyti, served with butter and a special tomato sauce. Allergens: contains gluten and dairy.",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "Ingredients: diced beef baked on a clay tile with onion, pepper and tomato, cooked in its own juices — a house specialty kebab. Allergens: no gluten or dairy.",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "Ingredients: grilled beef patty with lettuce, tomato, pickles and house sauce, served with french fries. Allergens: contains gluten and dairy.",
   "3'lü CELO Spesiyal servis tabağı": "3'lü CELO Special serving plate",
   "Gluten içermektedir.": "Contains gluten.",
   "Gluten içermemektedir.": "Gluten-free.",
@@ -190,6 +194,10 @@ const DICT_EN: Record<string, string> = {
 
 const DICT_AR: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "طبق مشاوٍ مشكّلة للمشاركة: كفتة، كباب، دجاج مشوي، أجنحة وخضار مشوية.",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "طبق مشاوٍ مشكّلة للمشاركة بين 3 أشخاص: كفتة، كباب، دجاج مشوي، أجنحة وخضار الموسم المشوية معًا.",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "المكونات: كفتة من لحم بقري مفروم متبل ملفوفة بخبز اللفاف الرقيق ومشوية على الفحم — بيتي على الطريقة الجنوب شرقية، تُقدَّم مع الزبدة وصلصة الطماطم الخاصة. مسببات الحساسية: يحتوي على غلوتين ومنتجات ألبان.",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "المكونات: قطع لحم بقري مكعبة تُخبز على صفيحة القرميد مع البصل والفلفل والطماطم وتُطهى بعصارتها الخاصة — كباب خاص بالمطعم. مسببات الحساسية: خالٍ من الغلوتين ومنتجات الألبان.",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "المكونات: قرص لحم بقري مشوي مع الخس والطماطم والمخلل والصلصة الخاصة، يُقدَّم مع البطاطس المقلية. مسببات الحساسية: يحتوي على غلوتين ومنتجات ألبان.",
   "3'lü CELO Spesiyal servis tabağı": "طبق تقديم سيلو سبيشيال الثلاثي",
   "Gluten içermektedir.": "يحتوي على غلوتين.",
   "Gluten içermemektedir.": "خالٍ من الغلوتين.",
@@ -225,6 +233,10 @@ const DICT_AR: Record<string, string> = {
 
 const DICT_RU: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Ассорти-гриль на компанию: кёфте, кебаб, куриный шиш, крылышки и овощи-гриль.",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Ассорти-гриль на компанию из 3 человек: кёфте, кебаб, куриный шиш, крылышки и сезонные овощи-гриль вместе.",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Состав: приправленные котлеты из рубленой говядины, завёрнутые в тонкий лаваш и обжаренные на углях — бейти по-юго-восточному, подаётся со сливочным маслом и фирменным томатным соусом. Аллергены: содержит глютен и молочные продукты.",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "Состав: кусочки говядины, запечённые на керамической плитке с луком, перцем и помидорами, томлёные в собственном соку — фирменный кебаб. Аллергены: без глютена и молочных продуктов.",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "Состав: жареная говяжья котлета с салатом, помидором, маринованным огурцом и фирменным соусом, подаётся с картофелем фри. Аллергены: содержит глютен и молочные продукты.",
   "3'lü CELO Spesiyal servis tabağı": "Сервировочная тарелка 3'lü CELO Spesiyal",
   "Gluten içermektedir.": "Содержит глютен.",
   "Gluten içermemektedir.": "Без глютена.",
@@ -260,6 +272,10 @@ const DICT_RU: Record<string, string> = {
 
 const DICT_JA: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "シェア用ミックスグリル：キョフテ、ケバブ、チキンシシ、手羽、焼き野菜。",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3人でシェアできるミックスグリル盛り合わせ：キョフテ、ケバブ、チキンシシ、手羽、季節の焼き野菜を一皿に。",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "材料：香辛料で味付けした牛ひき肉のキョフテを薄いラワシュで包み炭火焼きにした、南東部スタイルのベイティ。バターと特製トマトソースを添えて提供。アレルゲン：グルテンと乳製品を含みます。",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "材料：角切り牛肉を玉ねぎ、ピーマン、トマトと共に素焼きの瓦皿(キレミット)で焼き上げ、素材の旨味で仕上げた自家製ケバブ。アレルゲン：グルテン・乳製品不使用。",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "材料：グリルで焼いた牛肉パティにレタス、トマト、ピクルス、特製ソースを合わせ、フライドポテトを添えたハンバーガー。アレルゲン：グルテンと乳製品を含みます。",
   "3'lü CELO Spesiyal servis tabağı": "3'lü CELO スペシャルの盛り付け",
   "Gluten içermektedir.": "グルテンを含みます。",
   "Gluten içermemektedir.": "グルテンフリー。",
@@ -295,6 +311,10 @@ const DICT_JA: Record<string, string> = {
 
 const DICT_ZH: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "分享混合烧烤拼盘：肉丸、烤肉、鸡肉串、鸡翅和烤蔬菜。",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3人份分享混合烧烤拼盘:肉丸、烤肉、鸡肉串、鸡翅和时令烤蔬菜汇聚一盘。",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "配料：用香料调味的牛肉末肉丸,用薄面饼(拉瓦什)包裹后炭烤而成的东南部风味贝伊蒂,配黄油和特制番茄酱一起享用。过敏原:含麸质和乳制品。",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "配料：牛肉丁与洋葱、辣椒和番茄一起放入陶瓦盘中烤制,以自身汁水焖熟而成的特色烤肉。过敏原:不含麸质和乳制品。",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "配料：炭烤牛肉饼配生菜、番茄、酸黄瓜和特制酱料,配炸薯条一起享用的汉堡。过敏原:含麸质和乳制品。",
   "3'lü CELO Spesiyal servis tabağı": "3'lü CELO Spesiyal 拼盘",
   "Gluten içermektedir.": "含麸质。",
   "Gluten içermemektedir.": "不含麸质。",
@@ -330,6 +350,10 @@ const DICT_ZH: Record<string, string> = {
 
 const DICT_IT: Record<string, string> = {
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Grigliata mista da condividere: köfte, kebab, spiedini di pollo, ali e verdure grigliate.",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Grigliata mista da condividere in 3: köfte, kebab, spiedini di pollo, ali e verdure grigliate di stagione insieme.",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Ingredienti: polpette di manzo macinato speziato avvolte in lavash sottile e grigliate sulla brace — un beyti in stile sud-orientale, servito con burro e salsa di pomodoro speciale. Allergeni: contiene glutine e latticini.",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "Ingredienti: bocconcini di manzo cotti su piastra di terracotta con cipolla, peperone e pomodoro, cotti nel proprio sugo — un kebab della casa. Allergeni: senza glutine né latticini.",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "Ingredienti: hamburger di manzo grigliato con lattuga, pomodoro, sottaceti e salsa speciale, servito con patatine fritte. Allergeni: contiene glutine e latticini.",
   "3'lü CELO Spesiyal servis tabağı": "Piatto di portata 3'lü CELO Spesiyal",
   "Gluten içermektedir.": "Contiene glutine.",
   "Gluten içermemektedir.": "Senza glutine.",
