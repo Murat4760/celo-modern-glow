@@ -406,7 +406,6 @@ export const translations = {
       menu: "Specials",
       about: "Our Story",
       contact: "Contact",
-      reserve: "Reserve",
     },
     hero: {
       subtitle: "Modern Anatolian Cuisine",
@@ -433,14 +432,14 @@ export const translations = {
           tag: "Signature",
         },
         {
-          name: "Kuşbaşılı Pide",
-          description: "Hand-stretched flatbread filled with tender diced lamb, roasted peppers, and sumac butter.",
-          tag: "Popular",
+          name: "3'lü CELO Spesiyal",
+          description: "A generous sharing platter of grilled köfte, kebab, chicken shish and wings — CELO's signature spread for the whole table.",
+          tag: "Sharing Platter",
         },
         {
-          name: "Künefe",
-          description: "Shredded filo pastry layered with melted cheese, baked golden and bathed in warm syrup.",
-          tag: "Dessert",
+          name: "Ali Nazik",
+          description: "Chargrilled beef laid over smoky eggplant purée and garlicky yogurt — a Gaziantep classic, finished tableside.",
+          tag: "Regional Classic",
         },
       ],
     },
@@ -514,16 +513,12 @@ export const translations = {
       contactLabel: "Contact",
       rights: "All rights reserved.",
     },
-    reservation: {
-      cta: "Reserve a Table",
-    },
   },
   tr: {
     nav: {
       menu: "Spesiyaller",
       about: "Hikayemiz",
       contact: "İletişim",
-      reserve: "Rezervasyon",
     },
     hero: {
       subtitle: "Modern Anadolu Mutfağı",
@@ -550,14 +545,14 @@ export const translations = {
           tag: "İmza",
         },
         {
-          name: "Kuşbaşılı Pide",
-          description: "El açması hamur, kuşbaşı kuzu eti, közlenmiş biber ve sumak yağı ile.",
-          tag: "Popüler",
+          name: "3'lü CELO Spesiyal",
+          description: "Köfte, kebap, tavuk şiş ve kanadın bir araya geldiği, tüm masaya yetecek bol paylaşımlık ızgara tabağı.",
+          tag: "Paylaşımlık",
         },
         {
-          name: "Künefe",
-          description: "Kadayıf arasında eritilmiş peynir, fırında altın sarısı pişirilir, sıcak şerbet ile servis edilir.",
-          tag: "Tatlı",
+          name: "Ali Nazik",
+          description: "Köz patlıcan püresi ve sarımsaklı yoğurdun üzerine konan ızgara dana eti — Gaziantep'in klasik lezzeti.",
+          tag: "Şefin Seçimi",
         },
       ],
     },
@@ -631,12 +626,9 @@ export const translations = {
       contactLabel: "İletişim",
       rights: "Tüm hakları saklıdır.",
     },
-    reservation: {
-      cta: "Rezervasyon Yap",
-    },
   },
   ar: {
-    nav: { menu: "الأطباق المميزة", about: "قصتنا", contact: "اتصل بنا", reserve: "احجز" },
+    nav: { menu: "الأطباق المميزة", about: "قصتنا", contact: "اتصل بنا" },
     hero: {
       subtitle: "المطبخ الأناضولي الحديث",
       tagline: "حيث تلتقي التقاليد الأناضولية القديمة بالحرفية المعاصرة. كل شعلة تحكي قصة.",
@@ -650,8 +642,8 @@ export const translations = {
       titleItalic: "الشيف",
       dishes: [
         { name: "Zırh Kebabı", description: "لحم ضأن مطهو ببطء في قدر نحاسي، مشوي على الفحم لمدة 6 ساعات. تقليد أناضولي عريق.", tag: "الطبق المميز" },
-        { name: "Kuşbaşılı Pide", description: "خبز مسطح محشو بلحم الضأن المقطع والفلفل المشوي وزبدة السماق.", tag: "الأكثر طلباً" },
-        { name: "Künefe", description: "عجينة كنافة مع جبن مذاب، مخبوزة ذهبية ومغموسة في شراب دافئ.", tag: "حلوى" },
+        { name: "3'lü CELO Spesiyal", description: "طبق مشاوٍ غني للمشاركة يجمع الكفتة والكباب ودجاج الشيش والأجنحة — تشكيلة سيلو المميزة لكل الطاولة.", tag: "طبق للمشاركة" },
+        { name: "Ali Nazik", description: "لحم بقري مشوي على بوريه الباذنجان المدخن واللبن بالثوم — طبق كلاسيكي من عنتاب.", tag: "طبق كلاسيكي" },
       ],
     },
     menuPage: {
@@ -693,10 +685,9 @@ export const translations = {
       ],
     },
     footer: { tagline: "المطبخ الأناضولي الحديث في قلب بيليكدوزو.", hoursLabel: "ساعات العمل", everyDay: "كل يوم", contactLabel: "اتصل بنا", rights: "جميع الحقوق محفوظة." },
-    reservation: { cta: "احجز طاولة" },
   },
   ru: {
-    nav: { menu: "Спецпредложения", about: "Наша история", contact: "Контакты", reserve: "Бронирование" },
+    nav: { menu: "Спецпредложения", about: "Наша история", contact: "Контакты" },
     hero: {
       subtitle: "Современная анатолийская кухня",
       tagline: "Где древние анатолийские традиции встречаются с современным мастерством. Каждый огонь рассказывает историю.",
@@ -707,8 +698,8 @@ export const translations = {
       label: "Отборная подборка", title: "Рекомендации", titleItalic: "шефа",
       dishes: [
         { name: "Zırh Kebabı", description: "Медленно томлёная ягнятина в медном котле, жаренная на углях 6 часов. Многовековая анатолийская традиция.", tag: "Фирменное" },
-        { name: "Kuşbaşılı Pide", description: "Лепёшка ручной работы с нежной ягнятиной, жареным перцем и сумаховым маслом.", tag: "Популярное" },
-        { name: "Künefe", description: "Тесто кадаиф с расплавленным сыром, запечённое до золотистого цвета в тёплом сиропе.", tag: "Десерт" },
+        { name: "3'lü CELO Spesiyal", description: "Щедрое ассорти-гриль на компанию: кёфте, кебаб, куриный шиш и крылышки — фирменный набор CELO на весь стол.", tag: "Для компании" },
+        { name: "Ali Nazik", description: "Жареная говядина на пюре из копчёного баклажана с чесночным йогуртом — классика Газиантепа.", tag: "Классика региона" },
       ],
     },
     menuPage: {
@@ -750,10 +741,9 @@ export const translations = {
       ],
     },
     footer: { tagline: "Современная анатолийская кухня в сердце Бейликдюзю.", hoursLabel: "Часы работы", everyDay: "Каждый день", contactLabel: "Контакты", rights: "Все права защищены." },
-    reservation: { cta: "Забронировать стол" },
   },
   ja: {
-    nav: { menu: "スペシャル", about: "私たちの物語", contact: "お問い合わせ", reserve: "予約" },
+    nav: { menu: "スペシャル", about: "私たちの物語", contact: "お問い合わせ" },
     hero: {
       subtitle: "モダン・アナトリア料理",
       tagline: "古代アナトリアの伝統と現代の技が出会う。すべての炎が物語を語る。",
@@ -764,8 +754,8 @@ export const translations = {
       label: "厳選", title: "シェフの", titleItalic: "おすすめ",
       dishes: [
         { name: "Zırh Kebabı", description: "銅鍋で封じ込めた仔羊肉を、炭火で6時間じっくりロースト。何世紀にもわたるアナトリアの伝統。", tag: "看板料理" },
-        { name: "Kuşbaşılı Pide", description: "手延べの生地に柔らかい仔羊肉、焼きピーマン、スマックバターを合わせて。", tag: "人気" },
-        { name: "Künefe", description: "とろけるチーズを重ねたカダイフ生地を黄金色に焼き上げ、温かいシロップで。", tag: "デザート" },
+        { name: "3'lü CELO Spesiyal", description: "キョフテ、ケバブ、チキンシシ、手羽が一皿に揃う、みんなでシェアできるCELO自慢のグリル盛り合わせ。", tag: "シェアプレート" },
+        { name: "Ali Nazik", description: "燻製なすのピューレとにんにくヨーグルトの上にグリルした牛肉をのせた、ガズィアンテプの定番料理。", tag: "郷土の定番" },
       ],
     },
     menuPage: {
@@ -807,10 +797,9 @@ export const translations = {
       ],
     },
     footer: { tagline: "ベイリクデュズの中心にあるモダン・アナトリア料理。", hoursLabel: "営業時間", everyDay: "毎日", contactLabel: "お問い合わせ", rights: "All rights reserved." },
-    reservation: { cta: "テーブル予約" },
   },
   zh: {
-    nav: { menu: "特色菜", about: "我们的故事", contact: "联系我们", reserve: "预订" },
+    nav: { menu: "特色菜", about: "我们的故事", contact: "联系我们" },
     hero: {
       subtitle: "现代安纳托利亚料理",
       tagline: "古老的安纳托利亚传统与当代工艺相遇。每一簇火焰都诉说着一个故事。",
@@ -821,8 +810,8 @@ export const translations = {
       label: "精选", title: "主厨", titleItalic: "推荐",
       dishes: [
         { name: "Zırh Kebabı", description: "羔羊肉在铜锅中慢炖,再用炭火烤6小时。传承数百年的安纳托利亚传统。", tag: "招牌" },
-        { name: "Kuşbaşılı Pide", description: "手擀薄饼配嫩羔羊丁、烤红椒和漆树粉黄油。", tag: "人气" },
-        { name: "Künefe", description: "细面饼夹融化奶酪,烤至金黄,浸入温热糖浆。", tag: "甜点" },
+        { name: "3'lü CELO Spesiyal", description: "肉丸、烤肉、鸡肉串和鸡翅汇聚一盘,足够全桌分享的CELO招牌烧烤拼盘。", tag: "分享拼盘" },
+        { name: "Ali Nazik", description: "炭烤牛肉铺在烟熏茄泥和蒜香酸奶之上——加济安泰普的经典风味。", tag: "地区经典" },
       ],
     },
     menuPage: {
@@ -864,10 +853,9 @@ export const translations = {
       ],
     },
     footer: { tagline: "位于贝利克杜祖中心的现代安纳托利亚料理。", hoursLabel: "营业时间", everyDay: "每天", contactLabel: "联系我们", rights: "版权所有。" },
-    reservation: { cta: "预订餐位" },
   },
   it: {
-    nav: { menu: "Specialità", about: "La nostra storia", contact: "Contatti", reserve: "Prenota" },
+    nav: { menu: "Specialità", about: "La nostra storia", contact: "Contatti" },
     hero: {
       subtitle: "Cucina Anatolica Moderna",
       tagline: "Dove le antiche tradizioni anatoliche incontrano l'arte contemporanea. Ogni fiamma racconta una storia.",
@@ -878,8 +866,8 @@ export const translations = {
       label: "Selezione curata", title: "Consigli", titleItalic: "dello Chef",
       dishes: [
         { name: "Zırh Kebabı", description: "Agnello cotto lentamente sigillato in un tegame di rame, arrostito sulla brace per 6 ore. Un'antica tradizione anatolica.", tag: "Signature" },
-        { name: "Kuşbaşılı Pide", description: "Pane piatto steso a mano con agnello a cubetti, peperoni arrostiti e burro al sommacco.", tag: "Popolare" },
-        { name: "Künefe", description: "Pasta filo sfilacciata con formaggio fuso, cotta al forno e bagnata nello sciroppo caldo.", tag: "Dessert" },
+        { name: "3'lü CELO Spesiyal", description: "Una ricca grigliata da condividere con köfte, kebab, spiedini di pollo e ali — la selezione speciale di CELO per tutta la tavolata.", tag: "Da condividere" },
+        { name: "Ali Nazik", description: "Manzo grigliato adagiato su purea di melanzane affumicate e yogurt all'aglio — un classico di Gaziantep.", tag: "Classico regionale" },
       ],
     },
     menuPage: {
@@ -921,6 +909,5 @@ export const translations = {
       ],
     },
     footer: { tagline: "Cucina anatolica moderna nel cuore di Beylikdüzü.", hoursLabel: "Orari", everyDay: "Ogni giorno", contactLabel: "Contatti", rights: "Tutti i diritti riservati." },
-    reservation: { cta: "Prenota un tavolo" },
   },
 } as const;

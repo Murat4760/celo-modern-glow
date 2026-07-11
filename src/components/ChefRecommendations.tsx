@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const prices = ["₺450", "₺280", "₺180"];
 
 const ChefRecommendations = () => {
   const { t } = useLanguage();
   const { ref, visible } = useScrollAnimation();
+
+  const allMenuItems = Object.values(
+    t.menuItems as unknown as Record<string, readonly { name: string; price: string }[]>
+  ).flat();
+  const priceFor = (name: string) =>
+    allMenuItems.find((item) => item.name === name)?.price ?? "";
 
   return (
     <section id="menu" className="relative py-24 px-5">
@@ -25,7 +30,8 @@ const ChefRecommendations = () => {
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {t.chef.dishes.map((dish, i) => (
-            <div
+            <Link
+              to="/menu"
               key={dish.name}
               className={`relative rounded-2xl border border-copper/40 bg-card p-6 transition-all duration-700 hover:border-copper ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -39,12 +45,12 @@ const ChefRecommendations = () => {
               </div>
               <div className="mb-3 flex items-center justify-between">
                 <h3 className="text-xl font-semibold">{dish.name}</h3>
-                <span className="text-lg font-bold text-copper">{prices[i]}</span>
+                <span className="text-lg font-bold text-copper">{priceFor(dish.name)}</span>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {dish.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

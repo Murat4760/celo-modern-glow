@@ -5,8 +5,8 @@ const WhatsAppButton = () => {
   const { lang } = useLanguage();
   const message =
     lang === "tr"
-      ? "Merhaba, rezervasyon yapmak istiyorum."
-      : "Hello, I'd like to make a reservation.";
+      ? "Merhaba, bir sorum var."
+      : "Hello, I have a question.";
   const url = `https://wa.me/905301713452?text=${encodeURIComponent(message)}`;
 
   return (

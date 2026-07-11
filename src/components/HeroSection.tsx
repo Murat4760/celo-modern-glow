@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import OpenStatus from "./OpenStatus";
-import ReservationModal from "./ReservationModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
@@ -38,11 +37,6 @@ const HeroSection = () => {
           >
             {t.hero.ourStory}
           </a>
-          <ReservationModal>
-            <button className="flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary">
-              {t.reservation.cta}
-            </button>
-          </ReservationModal>
         </div>
       </div>
 
