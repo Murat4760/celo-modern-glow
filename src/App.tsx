@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CallButton from "@/components/CallButton";
+import GetDirectionsButton from "@/components/GetDirectionsButton";
 import Index from "./pages/Index";
 import MenuPage from "./pages/MenuPage";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
         </BrowserRouter>
         <WhatsAppButton />
         <CallButton />
+        <GetDirectionsButton />
       </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>

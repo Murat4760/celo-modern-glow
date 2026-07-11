@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
-import { Search, ImageIcon } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { ImageIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -44,9 +45,11 @@ const STANDARD_SIDES =
 
 const MenuPage = () => {
   const { t, lang } = useLanguage();
-  const [query, setQuery] = useState("");
+  const [searchParams] = useSearchParams();
   const [activeCat, setActiveCat] = useState<CategoryKey>("starters");
+  const [highlightedItem, setHighlightedItem] = useState<string | null>(null);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+  const itemRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const itemsByCat = useMemo<Record<CategoryKey, MenuItemView[]>>(() => {
     const result = {} as Record<CategoryKey, MenuItemView[]>;
@@ -70,24 +73,22 @@ const MenuPage = () => {
     return result;
   }, [t]);
 
-  const normalizedQuery = query.trim().toLowerCase();
-  const filteredItemsByCat = useMemo<Record<CategoryKey, MenuItemView[]>>(() => {
-    if (!normalizedQuery) return itemsByCat;
-    const result = {} as Record<CategoryKey, MenuItemView[]>;
-    for (const key of CATEGORY_KEYS) {
-      result[key] = itemsByCat[key].filter(
-        (i) =>
-          i.name.toLowerCase().includes(normalizedQuery) ||
-          i.desc.toLowerCase().includes(normalizedQuery),
-      );
-    }
-    return result;
-  }, [itemsByCat, normalizedQuery]);
-
   const visibleCategories = useMemo(
-    () => CATEGORY_KEYS.filter((k) => filteredItemsByCat[k].length > 0),
-    [filteredItemsByCat],
+    () => CATEGORY_KEYS.filter((k) => itemsByCat[k].length > 0),
+    [itemsByCat],
   );
+
+  // Deep-link support: /menu?item=<dish name> scrolls to and highlights that item.
+  useEffect(() => {
+    const target = searchParams.get("item");
+    if (!target) return;
+    const timeout = setTimeout(() => {
+      itemRefs.current[target]?.scrollIntoView({ behavior: "smooth", block: "center" });
+      setHighlightedItem(target);
+      setTimeout(() => setHighlightedItem(null), 2500);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [searchParams, itemsByCat]);
 
   // Scrollspy: highlight active category based on which section is closest to viewport top
   useEffect(() => {
@@ -118,8 +119,6 @@ const MenuPage = () => {
     window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
   }, []);
 
-  const searchPlaceholder = lang === "tr" ? "Yemek ara..." : "Search dishes...";
-  const emptyMsg = lang === "tr" ? "Sonuç bulunamadı." : "No results found.";
   const askPrice = lang === "tr" ? "fiyat sor" : "ask price";
   const sidesLabel =
     lang === "tr" ? "Standart yan ürünler" : "Standard sides";
@@ -178,26 +177,12 @@ const MenuPage = () => {
       <section className="sticky top-16 z-20 border-y border-border bg-background/95 backdrop-blur">
         <div className="mx-auto max-w-7xl px-5 py-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-center">
-            <div className="relative flex-1 md:max-w-sm">
-              <Search
-                size={16}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-              />
-              <input
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={searchPlaceholder}
-                aria-label={searchPlaceholder}
-                className="w-full rounded-full border border-input bg-card py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-copper focus:outline-none"
-              />
-            </div>
             <div
               className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide"
               role="tablist"
               aria-label="Menu categories"
             >
-              {(normalizedQuery ? visibleCategories : CATEGORY_KEYS).map((key) => (
+              {CATEGORY_KEYS.map((key) => (
                 <button
                   key={key}
                   type="button"
@@ -220,12 +205,9 @@ const MenuPage = () => {
 
       {/* Long-scroll menu */}
       <section className="mx-auto max-w-4xl px-5 py-12">
-        {visibleCategories.length === 0 ? (
-          <p className="py-20 text-center text-muted-foreground">{emptyMsg}</p>
-        ) : (
-          <div className="space-y-16">
+        <div className="space-y-16">
             {visibleCategories.map((key) => {
-              const items = filteredItemsByCat[key];
+              const items = itemsByCat[key];
               return (
                 <section
                   key={key}
@@ -267,8 +249,15 @@ const MenuPage = () => {
                           )}
                           <article
                             role="listitem"
-                            className={`flex items-start gap-4 border-b border-border/50 py-4 ${
+                            ref={(el) => {
+                              itemRefs.current[item.name] = el;
+                            }}
+                            className={`flex items-start gap-4 rounded-lg border-b border-border/50 py-4 transition-colors duration-500 ${
                               !item.available ? "opacity-50" : ""
+                            } ${
+                              highlightedItem === item.name
+                                ? "bg-copper/10 ring-2 ring-copper"
+                                : ""
                             }`}
                           >
                             {!isDrink && renderImage(item, key)}
@@ -317,8 +306,7 @@ const MenuPage = () => {
                 </section>
               );
             })}
-          </div>
-        )}
+        </div>
       </section>
 
       <FooterSection />

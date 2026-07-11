@@ -31,7 +31,7 @@ const ChefRecommendations = () => {
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {t.chef.dishes.map((dish, i) => (
             <Link
-              to="/menu"
+              to={`/menu?item=${encodeURIComponent(dish.name)}`}
               key={dish.name}
               className={`relative rounded-2xl border border-copper/40 bg-card p-6 transition-all duration-700 hover:border-copper ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"

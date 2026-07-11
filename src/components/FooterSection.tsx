@@ -8,7 +8,7 @@ const FooterSection = () => {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 grid-cols-1 sm:grid-cols-3">
           <div>
-            <h3 className="text-copper-gradient mb-4 text-2xl font-bold">CELO</h3>
+            <img src="/logo.png" alt="CELO Restaurant" className="mb-4 h-12 w-auto" />
             <p className="text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
           </div>
           <div>
