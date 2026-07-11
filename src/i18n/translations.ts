@@ -126,7 +126,7 @@ const menuItems = {
       { name: "Ice Tea", desc: "", price: "120 ₺", image: "" },
       { name: "Uludağ Gazoz (330ml)", desc: "", price: "120 ₺", image: "" },
       { name: "Adana Şalgamı", desc: "", price: "120 ₺", image: "" },
-      { name: "Açık Ayran", desc: "", price: "120 ₺", image: "" },
+      { name: "Açık Ayran", desc: "", price: "90 ₺", image: "" },
       { name: "Kapalı Ayran (230ml)", desc: "", price: "90 ₺", image: "" },
       { name: "Şayran (330ml)", desc: "", price: "90 ₺", image: "" },
     ],
@@ -795,14 +795,11 @@ export const translations = {
       text: "CELO Restaurant has carried on a family tradition of flavour since 1979. Our expert chefs prepare every dish with care, using the freshest ingredients across a wide range of kebab specialities made to satisfy every palate.",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "Carrying on the tradition our late father Turan Dilbaz Şükrü Akkoyun began, we've been serving as Celo Restaurant since 1979. In the Eastern provinces especially, people cook and enjoy nearly every part of the animal. In this city — famous for the Adana and Urfa kebab houses you find at every corner of Istanbul's busy streets — our palate-tingling Adana Kebab is known as a flavour whose fame has crossed the country's borders to reach the world.",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "To bring this father's-trade tradition, going on since 1979, to you, our valued guests, in the best possible way, we serve the Avcılar, Parseller and Beylikdüzü Yakuplu areas. All our products are made from halal ingredients, with no chemicals or additives whatsoever. That's why we can proudly say we live up to our motto, 'We don't feed you what we wouldn't eat ourselves.' At Celo Restaurant, we don't just serve delicious food — we bring the richness and warmth of traditional Turkish cuisine to your table. Hosting our guests and giving them an unforgettable dining experience is our greatest joy.",
+          text: "Carrying on the tradition our late father Turan Dilbaz Şükrü Akkoyun began, we've been serving as Celo Restaurant since 1979. In the Eastern provinces especially, people cook and enjoy nearly every part of the animal. In this city — famous for the Adana and Urfa kebab houses you find at every corner of Istanbul's busy streets — our palate-tingling Adana Kebab is known as a flavour whose fame has crossed the country's borders to reach the world. To bring this family tradition to you, our valued guests, in the best possible way, we serve the Avcılar, Parseller and Beylikdüzü Yakuplu areas. All our products are made from halal ingredients, with no chemicals or additives whatsoever. That's why we can proudly say we live up to our motto, 'We don't feed you what we wouldn't eat ourselves.' At Celo Restaurant, we don't just serve delicious food — we bring the richness and warmth of traditional Turkish cuisine to your table. Hosting our guests and giving them an unforgettable dining experience is our greatest joy.",
         },
       ],
+      reviewCta: "We look forward to your review",
       stats: [
         { value: "1979", label: "Since" },
         { value: "3", label: "Locations" },
@@ -816,7 +813,6 @@ export const translations = {
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Every Day",
       hoursDetail: "11:30 AM – 3:00 AM",
-      hoursMonday: "Monday: Closed",
       phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Address",
@@ -918,14 +914,11 @@ export const translations = {
       text: "Celo Restaurant, 1979 yılından bu yana babadan gelen bir lezzet geleneğini sürdürüyor. Uzman şeflerimizin özenle hazırladığı yemekler, en taze malzemelerle yapılan geniş kebap çeşitleriyle damak zevkinize hitap ediyor.",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "Geçmişten günümüze, rahmetli babamız Turan Dilbaz Şükrü Akkoyun'un başlattığı lezzet geleneğini sürdürerek, 1979 yılından bu yana Celo Restaurant olarak hizmet veriyoruz. Özellikle Doğu illerinde yaşayan vatandaşlar, hayvanın neredeyse her kısmını pişirip afiyetle tüketirler. İstanbul'un kalabalık sokaklarında adım başı karşımıza çıkan Adana ve Urfa kebapçılarıyla ünlü bu şehirde, damak çatlatan Adana Kebabımız, ününü ülke sınırlarını aşarak dünyaya duyurmuş bir lezzet olarak biliniyor.",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "1979'dan beri süregelen bu baba mesleği geleneğini, siz değerli misafirlerimize en iyi şekilde sunmak için Avcılar, Parseller ve Beylikdüzü Yakuplu bölgelerinde hizmet veriyoruz. Tüm ürünlerimiz helal malzemelerden üretilmiş olup, hiçbirinde kimyasal veya katkı maddesi bulunmamaktadır. Bu yüzden gururla söyleyebiliriz ki, 'Yemediğimizi yedirmeyiz' sloganımızı haklılıkla kullanıyoruz. Celo Restaurant olarak, sadece lezzetli yemekler sunmuyor, aynı zamanda geleneksel Türk mutfağının zenginliğini ve samimiyetini de masanıza getiriyoruz. Misafirlerimizi ağırlamaktan ve onlara unutulmaz bir yeme deneyimi yaşatmaktan büyük mutluluk duyuyoruz.",
+          text: "Geçmişten günümüze, rahmetli babamız Turan Dilbaz Şükrü Akkoyun'un başlattığı lezzet geleneğini sürdürerek, 1979 yılından bu yana Celo Restaurant olarak hizmet veriyoruz. Özellikle Doğu illerinde yaşayan vatandaşlar, hayvanın neredeyse her kısmını pişirip afiyetle tüketirler. İstanbul'un kalabalık sokaklarında adım başı karşımıza çıkan Adana ve Urfa kebapçılarıyla ünlü bu şehirde, damak çatlatan Adana Kebabımız, ününü ülke sınırlarını aşarak dünyaya duyurmuş bir lezzet olarak biliniyor. Bu baba mesleği geleneğini siz değerli misafirlerimize en iyi şekilde sunmak için Avcılar, Parseller ve Beylikdüzü Yakuplu bölgelerinde hizmet veriyoruz. Tüm ürünlerimiz helal malzemelerden üretilmiş olup, hiçbirinde kimyasal veya katkı maddesi bulunmamaktadır. Bu yüzden gururla söyleyebiliriz ki, 'Yemediğimizi yedirmeyiz' sloganımızı haklılıkla kullanıyoruz. Celo Restaurant olarak, sadece lezzetli yemekler sunmuyor, aynı zamanda geleneksel Türk mutfağının zenginliğini ve samimiyetini de masanıza getiriyoruz. Misafirlerimizi ağırlamaktan ve onlara unutulmaz bir yeme deneyimi yaşatmaktan büyük mutluluk duyuyoruz.",
         },
       ],
+      reviewCta: "Yorumunuzu bekleriz",
       stats: [
         { value: "1979", label: "Yılından Beri" },
         { value: "3", label: "Şube" },
@@ -939,7 +932,6 @@ export const translations = {
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
       hours: "Her Gün",
       hoursDetail: "11:30 – 03:00",
-      hoursMonday: "Pazartesi: Kapalı",
       phone: "+90 530 171 34 52",
       email: "info@celorestaurant.com",
       addressLabel: "Adres",
@@ -1004,14 +996,11 @@ export const translations = {
       text: "يواصل مطعم سيلو تقليداً عائلياً في النكهة منذ عام 1979. يُعِدّ طهاتنا الخبراء كل طبق بعناية، باستخدام أطزج المكونات ضمن تشكيلة واسعة من أطباق الكباب التي تُرضي كل الأذواق.",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "استمراراً لتقليد بدأه والدنا الراحل توران ديلباز شكرو آكويون، نقدم خدماتنا كمطعم سيلو منذ عام 1979. خصوصاً في الولايات الشرقية، يطهو الناس ويتناولون كل جزء تقريباً من الحيوان. وفي هذه المدينة المعروفة بمحال الأضنة والأورفا في كل زاوية من شوارع إسطنبول المزدحمة، يُعرف كباب الأضنة لدينا، الذي يُشعل شهيتك، بأنه نكهة تجاوزت شهرتها حدود البلاد لتصل إلى العالم.",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "لتقديم هذا التقليد المهني العائلي المستمر منذ عام 1979 بأفضل شكل لضيوفنا الأعزاء، نخدم مناطق أفجلار وبارسلر وبيليكدوزو ياكوبلو. جميع منتجاتنا مصنوعة من مكونات حلال، دون أي مواد كيميائية أو إضافات. لذلك يمكننا أن نقول بفخر إننا نستحق شعارنا 'لا نُطعمكم ما لا نأكله نحن'. في مطعم سيلو، لا نقدّم فقط أطباقاً لذيذة، بل نجلب إلى مائدتكم أيضاً ثراء ودفء المطبخ التركي التقليدي. تسعدنا استضافة ضيوفنا ومنحهم تجربة طعام لا تُنسى.",
+          text: "استمراراً لتقليد بدأه والدنا الراحل توران ديلباز شكرو آكويون، نقدم خدماتنا كمطعم سيلو منذ عام 1979. خصوصاً في الولايات الشرقية، يطهو الناس ويتناولون كل جزء تقريباً من الحيوان. وفي هذه المدينة المعروفة بمحال الأضنة والأورفا في كل زاوية من شوارع إسطنبول المزدحمة، يُعرف كباب الأضنة لدينا، الذي يُشعل شهيتك، بأنه نكهة تجاوزت شهرتها حدود البلاد لتصل إلى العالم. ولتقديم هذا التقليد العائلي بأفضل شكل لضيوفنا الأعزاء، نخدم مناطق أفجلار وبارسلر وبيليكدوزو ياكوبلو. جميع منتجاتنا مصنوعة من مكونات حلال، دون أي مواد كيميائية أو إضافات. لذلك يمكننا أن نقول بفخر إننا نستحق شعارنا 'لا نُطعمكم ما لا نأكله نحن'. في مطعم سيلو، لا نقدّم فقط أطباقاً لذيذة، بل نجلب إلى مائدتكم أيضاً ثراء ودفء المطبخ التركي التقليدي. تسعدنا استضافة ضيوفنا ومنحهم تجربة طعام لا تُنسى.",
         },
       ],
+      reviewCta: "بانتظار تقييمكم",
       stats: [
         { value: "1979", label: "منذ عام" },
         { value: "3", label: "فروع" },
@@ -1021,7 +1010,7 @@ export const translations = {
     contact: {
       label: "تواصل معنا", title: "زُرنا", titleItalic: "",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "كل يوم", hoursDetail: "11:30 – 03:00", hoursMonday: "الاثنين: مغلق",
+      hours: "كل يوم", hoursDetail: "11:30 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "العنوان", hoursLabel: "ساعات العمل", phoneLabel: "الهاتف", emailLabel: "البريد الإلكتروني",
       rating: "4.7 ★ (653 تقييم)",
@@ -1071,14 +1060,11 @@ export const translations = {
       text: "Ресторан CELO продолжает семейную традицию вкуса с 1979 года. Наши опытные повара тщательно готовят каждое блюдо из самых свежих продуктов — широкий выбор кебабов на любой вкус.",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "Продолжая традицию, начатую нашим покойным отцом Тураном Дилбазом Шюкрю Аккойуном, мы работаем как ресторан CELO с 1979 года. Особенно в восточных провинциях люди готовят и с удовольствием едят практически каждую часть животного. В этом городе, известном кебабными Аданы и Урфы на каждом углу многолюдных улиц Стамбула, наш будоражащий вкус кебаб Адана известен как блюдо, слава о котором вышла далеко за пределы страны.",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "Чтобы наилучшим образом донести эту семейную традицию, существующую с 1979 года, до вас, наших дорогих гостей, мы работаем в районах Авджылар, Парселлер и Бейликдюзю Якуплу. Вся наша продукция изготовлена из халяльных ингредиентов, без каких-либо химикатов и добавок. Поэтому мы можем с гордостью сказать, что заслуживаем девиз 'Мы не кормим вас тем, что не съели бы сами'. В ресторане CELO мы не просто подаём вкусную еду — мы приносим на ваш стол богатство и душевность традиционной турецкой кухни. Принимать гостей и дарить им незабываемые впечатления от еды — наша главная радость.",
+          text: "Продолжая традицию, начатую нашим покойным отцом Тураном Дилбазом Шюкрю Аккойуном, мы работаем как ресторан CELO с 1979 года. Особенно в восточных провинциях люди готовят и с удовольствием едят практически каждую часть животного. В этом городе, известном кебабными Аданы и Урфы на каждом углу многолюдных улиц Стамбула, наш будоражащий вкус кебаб Адана известен как блюдо, слава о котором вышла далеко за пределы страны. Чтобы наилучшим образом донести эту семейную традицию до вас, наших дорогих гостей, мы работаем в районах Авджылар, Парселлер и Бейликдюзю Якуплу. Вся наша продукция изготовлена из халяльных ингредиентов, без каких-либо химикатов и добавок. Поэтому мы можем с гордостью сказать, что заслуживаем девиз 'Мы не кормим вас тем, что не съели бы сами'. В ресторане CELO мы не просто подаём вкусную еду — мы приносим на ваш стол богатство и душевность традиционной турецкой кухни. Принимать гостей и дарить им незабываемые впечатления от еды — наша главная радость.",
         },
       ],
+      reviewCta: "Ждём ваш отзыв",
       stats: [
         { value: "1979", label: "С года" },
         { value: "3", label: "Филиала" },
@@ -1088,7 +1074,7 @@ export const translations = {
     contact: {
       label: "Связаться с нами", title: "Посетите", titleItalic: "нас",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "Каждый день", hoursDetail: "11:30 – 03:00", hoursMonday: "Понедельник: Закрыто",
+      hours: "Каждый день", hoursDetail: "11:30 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "Адрес", hoursLabel: "Часы работы", phoneLabel: "Телефон", emailLabel: "Эл. почта",
       rating: "4.7 ★ (653 отзыва)",
@@ -1138,14 +1124,11 @@ export const translations = {
       text: "CELOレストランは1979年から続く家族の味の伝統を受け継いでいます。熟練シェフが最も新鮮な食材を使い、あらゆる好みに応える幅広いケバブ料理を丁寧に仕上げています。",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "亡き父トゥラン・ディルバズ・シュクル・アッコユンが始めた味の伝統を受け継ぎ、1979年よりCELOレストランとして営業しています。特に東部の地方では、動物のほぼすべての部位を調理していただく習慣があります。イスタンブールの賑やかな通りのいたるところでアダナやウルファのケバブ店を目にするこの街で、私たちの舌を刺激するアダナ・ケバブは、その名声が国境を越えて世界に知られる味として知られています。",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "1979年から続くこの家業の伝統を、大切なお客様に最良の形でお届けするため、アヴジュラル、パルセルレル、ベイリクデュズ・ヤクプルの各地域で営業しています。すべての商品はハラール食材から作られ、化学物質や添加物は一切使用していません。だからこそ私たちは誇りを持って『自分たちが食べないものはお客様にも食べさせない』というモットーにふさわしいと言えます。CELOレストランは、美味しい料理を提供するだけでなく、伝統的なトルコ料理の豊かさと温かさをテーブルにお届けします。お客様をおもてなしし、忘れられない食事の体験をしていただくことが私たちの最大の喜びです。",
+          text: "亡き父トゥラン・ディルバズ・シュクル・アッコユンが始めた味の伝統を受け継ぎ、1979年よりCELOレストランとして営業しています。特に東部の地方では、動物のほぼすべての部位を調理していただく習慣があります。イスタンブールの賑やかな通りのいたるところでアダナやウルファのケバブ店を目にするこの街で、私たちの舌を刺激するアダナ・ケバブは、その名声が国境を越えて世界に知られる味として知られています。この家業の伝統を、大切なお客様に最良の形でお届けするため、アヴジュラル、パルセルレル、ベイリクデュズ・ヤクプルの各地域で営業しています。すべての商品はハラール食材から作られ、化学物質や添加物は一切使用していません。だからこそ私たちは誇りを持って『自分たちが食べないものはお客様にも食べさせない』というモットーにふさわしいと言えます。CELOレストランは、美味しい料理を提供するだけでなく、伝統的なトルコ料理の豊かさと温かさをテーブルにお届けします。お客様をおもてなしし、忘れられない食事の体験をしていただくことが私たちの最大の喜びです。",
         },
       ],
+      reviewCta: "皆様のレビューをお待ちしております",
       stats: [
         { value: "1979", label: "創業" },
         { value: "3", label: "店舗" },
@@ -1155,7 +1138,7 @@ export const translations = {
     contact: {
       label: "お問い合わせ", title: "ご来店", titleItalic: "ください",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "毎日", hoursDetail: "11:30 – 03:00", hoursMonday: "月曜日: 定休日",
+      hours: "毎日", hoursDetail: "11:30 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "住所", hoursLabel: "営業時間", phoneLabel: "電話", emailLabel: "メール",
       rating: "4.7 ★ (653件のレビュー)",
@@ -1205,14 +1188,11 @@ export const translations = {
       text: "CELO餐厅自1979年起延续着家族的美味传统。我们经验丰富的厨师精心烹制每一道菜肴,选用最新鲜的食材,呈现丰富多样、满足各种口味的烤肉料理。",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "传承已故父亲图兰·迪尔巴兹·舒克鲁·阿科云开创的美味传统,自1979年起我们以CELO餐厅的名义营业至今。尤其在东部省份,人们会烹饪并津津有味地享用动物几乎每一个部位。在这座以伊斯坦布尔繁华街道上随处可见的阿达纳和乌尔法烤肉店而闻名的城市里,我们令人回味无穷的阿达纳烤肉,早已声名远播,享誉世界。",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "为了将这一自1979年延续至今的家族技艺,以最好的方式呈现给尊贵的客人,我们在阿夫吉拉尔、帕尔塞莱尔和贝利克杜祖亚库普卢地区提供服务。我们所有的产品均采用清真食材制作,不含任何化学品或添加剂。因此我们可以自豪地说,我们当之无愧地践行着'我们不会让客人吃我们自己不吃的东西'这一口号。作为CELO餐厅,我们不仅提供美味佳肴,更将传统土耳其美食的丰富与温情带到您的餐桌。款待宾客、带给他们难忘的用餐体验,是我们最大的快乐。",
+          text: "传承已故父亲图兰·迪尔巴兹·舒克鲁·阿科云开创的美味传统,自1979年起我们以CELO餐厅的名义营业至今。尤其在东部省份,人们会烹饪并津津有味地享用动物几乎每一个部位。在这座以伊斯坦布尔繁华街道上随处可见的阿达纳和乌尔法烤肉店而闻名的城市里,我们令人回味无穷的阿达纳烤肉,早已声名远播,享誉世界。为了将这一家族技艺,以最好的方式呈现给尊贵的客人,我们在阿夫吉拉尔、帕尔塞莱尔和贝利克杜祖亚库普卢地区提供服务。我们所有的产品均采用清真食材制作,不含任何化学品或添加剂。因此我们可以自豪地说,我们当之无愧地践行着'我们不会让客人吃我们自己不吃的东西'这一口号。作为CELO餐厅,我们不仅提供美味佳肴,更将传统土耳其美食的丰富与温情带到您的餐桌。款待宾客、带给他们难忘的用餐体验,是我们最大的快乐。",
         },
       ],
+      reviewCta: "期待您的评价",
       stats: [
         { value: "1979", label: "创立于" },
         { value: "3", label: "分店" },
@@ -1222,7 +1202,7 @@ export const translations = {
     contact: {
       label: "联系我们", title: "欢迎", titleItalic: "光临",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "每天", hoursDetail: "11:30 – 03:00", hoursMonday: "周一: 休息",
+      hours: "每天", hoursDetail: "11:30 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "地址", hoursLabel: "营业时间", phoneLabel: "电话", emailLabel: "邮箱",
       rating: "4.7 ★ (653条评价)",
@@ -1272,14 +1252,11 @@ export const translations = {
       text: "Il ristorante CELO porta avanti una tradizione di famiglia dal 1979. I nostri chef esperti preparano ogni piatto con cura, usando gli ingredienti più freschi in un'ampia varietà di kebab per soddisfare ogni gusto.",
       quotes: [
         {
-          name: "Çiğdem Akkoyun",
-          text: "Portando avanti la tradizione iniziata da nostro padre, il compianto Turan Dilbaz Şükrü Akkoyun, serviamo come Celo Restaurant dal 1979. Specialmente nelle province orientali, la gente cucina e gusta quasi ogni parte dell'animale. In questa città, famosa per le kebaberie di Adana e Urfa che si incontrano a ogni angolo delle affollate strade di Istanbul, il nostro kebab Adana, che risveglia il palato, è noto come un sapore la cui fama ha superato i confini nazionali per raggiungere il mondo.",
-        },
-        {
           name: "Coşkun Akkoyun",
-          text: "Per portare questa tradizione di famiglia, che prosegue dal 1979, ai nostri cari ospiti nel modo migliore, serviamo le zone di Avcılar, Parseller e Beylikdüzü Yakuplu. Tutti i nostri prodotti sono realizzati con ingredienti halal, senza alcun prodotto chimico o additivo. Per questo possiamo dire con orgoglio di essere all'altezza del nostro motto: 'Non facciamo mangiare ciò che noi stessi non mangeremmo.' Al Celo Restaurant non serviamo solo piatti deliziosi: portiamo in tavola la ricchezza e il calore della cucina turca tradizionale. Accogliere i nostri ospiti e regalare loro un'esperienza culinaria indimenticabile è la nostra più grande gioia.",
+          text: "Portando avanti la tradizione iniziata da nostro padre, il compianto Turan Dilbaz Şükrü Akkoyun, serviamo come Celo Restaurant dal 1979. Specialmente nelle province orientali, la gente cucina e gusta quasi ogni parte dell'animale. In questa città, famosa per le kebaberie di Adana e Urfa che si incontrano a ogni angolo delle affollate strade di Istanbul, il nostro kebab Adana, che risveglia il palato, è noto come un sapore la cui fama ha superato i confini nazionali per raggiungere il mondo. Per portare questa tradizione di famiglia ai nostri cari ospiti nel modo migliore, serviamo le zone di Avcılar, Parseller e Beylikdüzü Yakuplu. Tutti i nostri prodotti sono realizzati con ingredienti halal, senza alcun prodotto chimico o additivo. Per questo possiamo dire con orgoglio di essere all'altezza del nostro motto: 'Non facciamo mangiare ciò che noi stessi non mangeremmo.' Al Celo Restaurant non serviamo solo piatti deliziosi: portiamo in tavola la ricchezza e il calore della cucina turca tradizionale. Accogliere i nostri ospiti e regalare loro un'esperienza culinaria indimenticabile è la nostra più grande gioia.",
         },
       ],
+      reviewCta: "Aspettiamo la tua recensione",
       stats: [
         { value: "1979", label: "Dal" },
         { value: "3", label: "Sedi" },
@@ -1289,7 +1266,7 @@ export const translations = {
     contact: {
       label: "Contattaci", title: "Vieni a", titleItalic: "trovarci",
       address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
-      hours: "Ogni giorno", hoursDetail: "11:30 – 03:00", hoursMonday: "Lunedì: Chiuso",
+      hours: "Ogni giorno", hoursDetail: "11:30 – 03:00",
       phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
       addressLabel: "Indirizzo", hoursLabel: "Orari", phoneLabel: "Telefono", emailLabel: "Email",
       rating: "4.7 ★ (653 recensioni)",

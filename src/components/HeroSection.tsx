@@ -13,11 +13,11 @@ const HeroSection = () => {
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-copper">
           {t.hero.subtitle}
         </p>
-        <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-7xl lg:text-9xl">
-          <span className="text-copper-gradient">CELO</span>
-          <br />
-          <span className="text-foreground font-light italic">Restaurant</span>
-        </h1>
+        <img
+          src="/logo.png"
+          alt="CELO Restaurant"
+          className="mb-6 h-40 w-auto sm:h-48 md:h-56 lg:h-64"
+        />
         <p className="mb-8 max-w-md text-base sm:text-lg text-muted-foreground">
           {t.hero.tagline}
         </p>
