@@ -17,6 +17,7 @@ type CategoryKey =
 
 interface MenuItemView {
   name: string;
+  nameTranslation?: string;
   desc: string;
   price: string;
   available: boolean;
@@ -40,9 +41,6 @@ const CATEGORY_KEYS: CategoryKey[] = [
   "icecek",
 ];
 
-const STANDARD_SIDES =
-  "Salata · Bulgur Pilavı · Soslu Soğan · Çiğköfte · Peynir · Karamelize Soğan · Ezme";
-
 const MenuPage = () => {
   const { t, lang } = useLanguage();
   const [searchParams] = useSearchParams();
@@ -58,6 +56,7 @@ const MenuPage = () => {
       const list = raw[key] || [];
       result[key] = list.map((i) => ({
         name: i.name ?? "",
+        nameTranslation: (i as MenuItemView).nameTranslation,
         desc: i.desc ?? "",
         price: i.price ?? "",
         image: i.image,
@@ -265,6 +264,15 @@ const MenuPage = () => {
                               <div className="flex items-baseline justify-between gap-3">
                                 <h4 className="text-base font-semibold text-foreground sm:text-lg">
                                   {item.name}
+                                  {lang !== "tr" &&
+                                    item.nameTranslation &&
+                                    item.nameTranslation.trim().toLowerCase() !==
+                                      item.name.trim().toLowerCase() && (
+                                      <span className="font-normal text-muted-foreground">
+                                        {" "}
+                                        ({item.nameTranslation})
+                                      </span>
+                                    )}
                                 </h4>
                                 {item.price ? (
                                   <span className="shrink-0 text-base font-semibold text-copper sm:text-lg">
@@ -294,7 +302,7 @@ const MenuPage = () => {
                                   <span className="font-semibold text-foreground/70">
                                     {sidesLabel}:
                                   </span>{" "}
-                                  {STANDARD_SIDES}
+                                  {t.menuPage.standardSides}
                                 </p>
                               )}
                             </div>
