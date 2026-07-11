@@ -42,7 +42,7 @@ const HeroSection = () => {
           </a>
         </div>
         <a
-          href="https://search.google.com/local/writereview?ftid=0x14b55f4db400989f:0xb8c2b44a5cd1e62a"
+          href="https://www.google.com/maps/place/CELO+RESTAURANT/@40.9809957,28.6550411,18.85z/data=!4m6!3m5!1s0x14b55f4db400989f:0xb8c2b44a5cd1e62a!8m2!3d40.9802695!4d28.6564357!16s%2Fg%2F11y36lfn_9?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 flex h-11 items-center rounded-full border border-copper px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:bg-secondary"
