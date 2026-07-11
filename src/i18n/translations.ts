@@ -767,7 +767,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "Our",
+      title: "",
       titleItalic: "Menu",
       label: "Our Menu",
       listView: "List View",
@@ -887,8 +887,8 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "Bizim",
-      titleItalic: "Menümüz",
+      title: "",
+      titleItalic: "Menü",
       label: "Menümüz",
       listView: "Liste Görünümü",
       visualView: "Görsel Görünüm",
@@ -984,7 +984,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "قائمتنا", titleItalic: "", label: "قائمتنا",
+      title: "", titleItalic: "القائمة", label: "قائمتنا",
       listView: "عرض قائمة", visualView: "عرض مرئي", lastUpdated: "آخر تحديث",
       notAvailable: "غير متوفر اليوم", photoSoon: "الصورة قريباً", photoUpdating: "سيتم تحديث الصورة",
       categories: {
@@ -1049,7 +1049,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "Наше", titleItalic: "меню", label: "Наше меню",
+      title: "", titleItalic: "Меню", label: "Наше меню",
       listView: "Список", visualView: "Плитка", lastUpdated: "Обновлено",
       notAvailable: "Сегодня недоступно", photoSoon: "Фото скоро", photoUpdating: "Фото обновляется",
       categories: {
@@ -1114,7 +1114,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "私たちの", titleItalic: "メニュー", label: "メニュー",
+      title: "", titleItalic: "メニュー", label: "メニュー",
       listView: "リスト表示", visualView: "ビジュアル表示", lastUpdated: "最終更新",
       notAvailable: "本日ご用意なし", photoSoon: "写真は近日公開", photoUpdating: "写真は更新予定",
       categories: {
@@ -1179,7 +1179,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "我们的", titleItalic: "菜单", label: "菜单",
+      title: "", titleItalic: "菜单", label: "菜单",
       listView: "列表视图", visualView: "图片视图", lastUpdated: "最后更新",
       notAvailable: "今日无供应", photoSoon: "图片即将上传", photoUpdating: "图片将更新",
       categories: {
@@ -1244,7 +1244,7 @@ export const translations = {
       ],
     },
     menuPage: {
-      title: "Il nostro", titleItalic: "menu", label: "Il nostro menu",
+      title: "", titleItalic: "Menu", label: "Il nostro menu",
       listView: "Vista elenco", visualView: "Vista immagini", lastUpdated: "Ultimo aggiornamento",
       notAvailable: "Non disponibile oggi", photoSoon: "Foto in arrivo", photoUpdating: "Foto in aggiornamento",
       categories: {

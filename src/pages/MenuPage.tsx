@@ -166,9 +166,8 @@ const MenuPage = () => {
         <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
           {t.menuPage.label}
         </p>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          {t.menuPage.title}{" "}
-          <span className="italic font-light">{t.menuPage.titleItalic}</span>
+        <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
+          {t.menuPage.titleItalic}
         </h1>
       </section>
 
