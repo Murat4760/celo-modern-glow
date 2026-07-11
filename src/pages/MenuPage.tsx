@@ -163,10 +163,7 @@ const MenuPage = () => {
 
       {/* Banner */}
       <section className="px-5 pt-16 pb-10 text-center">
-        <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-copper">
-          {t.menuPage.label}
-        </p>
-        <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
+        <h1 className="text-6xl font-bold tracking-tight text-copper sm:text-7xl md:text-8xl">
           {t.menuPage.titleItalic}
         </h1>
       </section>
