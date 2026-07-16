@@ -35,7 +35,7 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar
     starters: [
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
-      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_ANTEP_KURU_DOLMA },
+      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "250 ₺", image: IMG_ANTEP_KURU_DOLMA },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
