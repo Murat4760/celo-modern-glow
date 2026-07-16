@@ -118,9 +118,8 @@ const MenuPage = () => {
     window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
   }, []);
 
-  const askPrice = lang === "tr" ? "fiyat sor" : "ask price";
-  const sidesLabel =
-    lang === "tr" ? "Standart yan ürünler" : "Standard sides";
+  const askPrice = t.menuPage.askPrice;
+  const sidesLabel = t.menuPage.sidesLabel;
 
   const renderImage = (item: MenuItemView, cat: CategoryKey) => {
     const portrait =

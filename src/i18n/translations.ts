@@ -1,4 +1,4 @@
-export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it";
+export type Language = "en" | "tr" | "ar" | "ru" | "ja" | "zh" | "it" | "ko";
 
 // Photo asset CDN URLs (stable, from src/assets/menu/*.asset.json)
 const IMG_BASLANGIC_01 = "/menu/gavurdagi-v4.png";
@@ -715,12 +715,106 @@ const DICT_IT: Record<string, string> = {
   "Şayran (330ml)": "Bibita gassata allo yogurt e menta",
 };
 
+const DICT_KO: Record<string, string> = {
+  "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "셰어용 믹스 그릴 플래터: 쾨프테, 케밥, 치킨 시시, 윙, 그릴 채소.",
+  "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3인용 셰어 믹스 그릴 플래터: 쾨프테, 케밥, 치킨 시시, 윙과 제철 그릴 채소를 한 접시에.",
+  "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "재료: 향신료로 양념한 다진 소고기 쾨프테를 얇은 라바쉬에 말아 숯불에 구운 남동부 스타일 베이티; 버터와 특제 토마토 소스를 곁들여 제공됩니다. 알레르기 유발 물질: 글루텐과 유제품 함유.",
+  "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.": "재료: 깍둑썰기한 소고기를 양파, 피망, 토마토와 함께 점토 타일(키레미트)에 구워 자체 육즙으로 익힌 특제 케밥입니다. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.": "재료: 그릴에 구운 소고기 패티에 양상추, 토마토, 피클, 특제 소스를 더하고 감자튀김을 곁들인 햄버거. 알레르기 유발 물질: 글루텐과 유제품 함유.",
+  "İçerik: Zırh kebabı, domatesli kebap, patlıcanlı kebap, et şiş, köfte, kanat, tavuk şiş, 3 adet içli köfte, 3 adet fındık lahmacun ve kaşarlı pideden oluşmaktadır. Alerjen: Gluten içerir, süt ürünü içermez.": "재료: 즈르흐 케밥, 토마토 케밥, 가지 케밥, 고기 시시, 쾨프테, 윙, 치킨 시시, 이츨리 쾨프테 3개, 미니 라흐마준 3개, 치즈 피데로 구성됩니다. 알레르기 유발 물질: 글루텐 함유, 유제품 무함유.",
+  "3 Kişilik CELO Spesiyal servis tabağı": "3'lü CELO 스페셜 서빙 플레이트",
+  "Gluten içermektedir.": "글루텐을 함유하고 있습니다.",
+  "Gluten içermemektedir.": "글루텐이 함유되어 있지 않습니다.",
+  "Gluten içerir.": "글루텐을 함유합니다.",
+  "Gluten ve süt ürünü içerir.": "글루텐과 유제품을 함유합니다.",
+  "Yoğurt içerir.": "요거트를 함유합니다.",
+  "Dana eti, gluten ve süt ürünü içerir.": "소고기, 글루텐, 유제품을 함유합니다.",
+  "Dana ve kuzu eti, maydanoz, domates, biber, sarımsak. Gluten içerir.": "소고기와 양고기, 파슬리, 토마토, 피망, 마늘. 글루텐을 함유합니다.",
+  "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "재료: 소고기, 양고기, 소금과 꼬리 지방. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.": "재료: 소고기, 양고기, 가지, 소금과 꼬리 지방. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "재료: 양고기, 꼬리 지방, 소금. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.": "재료: 양 간, 꼬리 지방, 소금. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Dana eti, yoğurt, patlıcan, sarımsak, tuz. Alerjen: Gluten yok, süt ürünü içerir.": "재료: 소고기, 요거트, 가지, 마늘, 소금. 알레르기 유발 물질: 글루텐 무함유, 유제품 함유.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içerir.": "재료: 소고기, 양고기, 꼬리 지방, 소금. 알레르기 유발 물질: 글루텐과 유제품 함유.",
+  "İçerik: Dana eti, kuzu eti, patates kızartması, tuz. Alerjen: Gluten içerir, süt ürünü yok.": "재료: 소고기, 양고기, 감자튀김, 소금. 알레르기 유발 물질: 글루텐 함유, 유제품 무함유.",
+  "İçerik: Dana eti. Alerjen: Gluten ve süt ürünü yok.": "재료: 소고기. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Kuzu eti. Alerjen: Gluten ve süt ürünü yok.": "재료: 양고기. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "İçerik: Tavuk eti. Alerjen: Gluten ve süt ürünü içermez.": "재료: 닭고기. 알레르기 유발 물질: 글루텐·유제품 무함유.",
+  "Yarım kilo köfte, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "쾨프테 500g, 윙 500g, 치킨 시시 500g, 미니 라흐마준 4개, 이츨리 쾨프테 4개, 아이란 1L, 특제 디저트, 차이와 푸짐한 곁들이 서비스.",
+  "Yarım kilo kebap, yarım kilo kanat, yarım kilo tavuk şiş, 4 adet fındık lahmacun, 4 adet içli köfte, 1 L ayran, özel tatlı, çay ve zengin ikramlıklar.": "케밥 500g, 윙 500g, 치킨 시시 500g, 미니 라흐마준 4개, 이츨리 쾨프테 4개, 아이란 1L, 특제 디저트, 차이와 푸짐한 곁들이 서비스.",
+  "Izgaralar": "그릴 요리",
+  "Aile Menüleri": "패밀리 메뉴",
+  "Sarma Beyti servis tabağı": "사르마 베이티 서빙 플레이트",
+  "Kiremitte Et servis tabağı": "키레미트테 에트 서빙 플레이트",
+  "İçli Köfte": "이츨리 쾨프테",
+  "Fındık Lahmacun": "미니 라흐마준",
+  "Salata": "샐러드",
+  "Soğan Salatası": "어니언 샐러드",
+  "Ezme": "에즈메(매운 디핑소스)",
+  "Çiğ Köfte": "취 쾨프테",
+  "Peynir": "치즈",
+  "Süper İkili (Fındık Lahmacun & İçli Köfte)": "미니 라흐마준 & 이츨리 쾨프테 콤보",
+  "Antep Kuru Dolma": "안텝식 말린 채소 돌마",
+  "Patates Tava": "감자튀김",
+  "Gavurdağı Salatası": "토마토 & 양파 샐러드",
+  "Mercimek Çorbası": "렌틸 수프",
+  "Ezogelin Çorbası": "붉은 렌틸 & 불구르 수프",
+  "Ayran Aşı Çorbası": "밀과 병아리콩을 넣은 요거트 수프",
+  "Zırh Kebabı": "다진 양고기 & 소고기 케밥",
+  "Patlıcan Kebabı": "가지 케밥",
+  "Çöp Şiş": "깍둑 양고기 꼬치",
+  "Ciğer Şiş": "양 간 꼬치구이",
+  "Ali Nazik": "훈제 가지 & 요거트를 곁들인 소고기",
+  "Yoğurtlu Kebap": "요거트를 곁들인 케밥",
+  "Izgara Köfte": "그릴 미트볼",
+  "Tavuk Şiş": "치킨 꼬치",
+  "Yaprak Kanat": "그릴 치킨 윙",
+  "Sarma Beyti": "말이형 베이티 케밥",
+  "Kiremitte Et": "점토판에 구운 소고기",
+  "Hamburger": "햄버거",
+  "3 Kişilik CELO Spesiyal": "믹스 그릴 플래터",
+  "Antrikot": "립아이 스테이크",
+  "Kuzu Pirzola": "양갈비",
+  "Köfteli Aile Menüsü": "쾨프테 패밀리 메뉴",
+  "Kebaplı Aile Menüsü": "케밥 패밀리 메뉴",
+  "Özel Antep Lahmacunu": "스페셜 안텝 라흐마준",
+  "Kaşarlı Pide": "치즈 피데",
+  "Sucuklu Kaşarlı Pide": "소시지 & 치즈 피데",
+  "Kuşbaşılı Kaşarlı Pide": "깍둑 소고기 & 치즈 피데",
+  "Karışık Pide": "믹스 피데",
+  "Tavuk Dürüm": "치킨 뒤륌",
+  "Zırh Dürüm": "즈르흐 케밥 뒤륌",
+  "Ciğer Şiş Dürüm": "그릴 간 뒤륌",
+  "Çöp Şiş Dürüm": "깍둑 양고기 뒤륌",
+  "Katmer": "달콤한 겹겹 페이스트리",
+  "Fırın Sütlaç": "오븐 라이스 푸딩",
+  "Havuç Dilim Baklava": "당근 슬라이스 바클라바",
+  "Tavuk Göğsü": "달콤한 치킨 브레스트 푸딩",
+  "Kabak Tatlısı (mevsiminde)": "제철 호박 조림",
+  "Profiterol": "프로피테롤",
+  "Dondurma": "아이스크림",
+  "Aşure": "아슈레(누아의 푸딩)",
+  "Pepsi (330ml)": "펩시 (330ml)",
+  "Pepsi Max (330ml)": "펩시 맥스 (330ml)",
+  "Yedigün": "예디균(터키 소다)",
+  "7 Up": "세븐업",
+  "Sarıyer Cola": "사르이예르 콜라",
+  "Sarıyer Gazoz": "사르이예르 가조즈",
+  "Ice Tea": "아이스티",
+  "Uludağ Gazoz (330ml)": "울루다으 가조즈 (330ml)",
+  "Adana Şalgamı": "아다나 순무 주스",
+  "Açık Ayran": "생 아이란",
+  "Kapalı Ayran (230ml)": "병 아이란 (230ml)",
+  "Şayran (330ml)": "샤이란 (330ml)",
+};
+
 const menuItemsEn = localizeMenu(DICT_EN);
 const menuItemsAr = localizeMenu(DICT_AR);
 const menuItemsRu = localizeMenu(DICT_RU);
 const menuItemsJa = localizeMenu(DICT_JA);
 const menuItemsZh = localizeMenu(DICT_ZH);
 const menuItemsIt = localizeMenu(DICT_IT);
+const menuItemsKo = localizeMenu(DICT_KO);
 
 export const translations = {
   en: {
@@ -787,6 +881,8 @@ export const translations = {
         icecek: "Beverages",
       },
       standardSides: "Salad · Bulgur Pilaf · Onions in Sauce · Çiğköfte · Cheese · Caramelized Onions · Ezme",
+      askPrice: "ask price",
+      sidesLabel: "Standard sides",
     },
     menuItems: menuItemsEn,
     about: {
@@ -907,6 +1003,8 @@ export const translations = {
         icecek: "İçecek",
       },
       standardSides: "Salata · Bulgur Pilavı · Soslu Soğan · Çiğköfte · Peynir · Karamelize Soğan · Ezme",
+      askPrice: "fiyat sor",
+      sidesLabel: "Standart yan ürünler",
     },
     menuItems: menuItems.tr,
     about: {
@@ -992,6 +1090,8 @@ export const translations = {
         grills: "المشويات وقوائم العائلة", firin: "المخبوزات", durum: "اللفائف", tatli: "الحلويات", icecek: "المشروبات",
       },
       standardSides: "سلطة · برغل بيلاف · بصل بالصلصة · تشي كوفته · جبن · بصل مكرمل · عزمة",
+      askPrice: "اسأل عن السعر",
+      sidesLabel: "الأطباق الجانبية القياسية",
     },
     menuItems: menuItemsAr,
     about: {
@@ -1057,6 +1157,8 @@ export const translations = {
         grills: "Гриль и семейные меню", firin: "Выпечка", durum: "Дюрюм", tatli: "Десерты", icecek: "Напитки",
       },
       standardSides: "Салат · Булгур с рисом · Лук в соусе · Чигкёфте · Сыр · Карамелизированный лук · Эзме",
+      askPrice: "спросите цену",
+      sidesLabel: "Стандартные гарниры",
     },
     menuItems: menuItemsRu,
     about: {
@@ -1122,6 +1224,8 @@ export const translations = {
         grills: "グリルとファミリーメニュー", firin: "ベーカリー", durum: "ラップ", tatli: "デザート", icecek: "飲み物",
       },
       standardSides: "サラダ · ブルグルピラフ · ソース和え玉ねぎ · チーキョフテ · チーズ · キャラメリゼ玉ねぎ · エズメ",
+      askPrice: "価格はお問い合わせください",
+      sidesLabel: "標準の付け合わせ",
     },
     menuItems: menuItemsJa,
     about: {
@@ -1187,6 +1291,8 @@ export const translations = {
         grills: "烧烤与家庭套餐", firin: "烘焙", durum: "卷饼", tatli: "甜点", icecek: "饮品",
       },
       standardSides: "沙拉 · 布格麦饭 · 酱汁洋葱 · 生肉丸 · 奶酪 · 焦糖洋葱 · 香辣酱",
+      askPrice: "询问价格",
+      sidesLabel: "标准配菜",
     },
     menuItems: menuItemsZh,
     about: {
@@ -1252,6 +1358,8 @@ export const translations = {
         grills: "Grigliate e menu famiglia", firin: "Forno", durum: "Dürüm", tatli: "Dolci", icecek: "Bevande",
       },
       standardSides: "Insalata · Pilaf di bulgur · Cipolle in salsa · Çiğköfte · Formaggio · Cipolle caramellate · Ezme",
+      askPrice: "chiedi il prezzo",
+      sidesLabel: "Contorni standard",
     },
     menuItems: menuItemsIt,
     about: {
@@ -1290,5 +1398,72 @@ export const translations = {
       ],
     },
     footer: { tagline: "Cucina anatolica moderna nel cuore di Beylikdüzü.", hoursLabel: "Orari", everyDay: "Ogni giorno", contactLabel: "Contatti", rights: "Tutti i diritti riservati." },
+  },
+  ko: {
+    nav: { menu: "스페셜", about: "우리 이야기", contact: "연락처" },
+    hero: {
+      subtitle: "모던 아나톨리아 요리",
+      slogan: "저희가 먹지 않는 것은 손님에게도 대접하지 않습니다",
+      tagline: "고대 아나톨리아 전통과 현대적 장인정신이 만나는 곳. 모든 불꽃에는 이야기가 있습니다.",
+      viewMenu: "메뉴 보기", ourStory: "우리 이야기",
+    },
+    status: { open: "영업 중", closed: "영업 종료", closesIn: "마감까지", opensIn: "오픈까지", hourShort: "시간", minShort: "분" },
+    chef: {
+      label: "엄선된 메뉴", title: "셰프의", titleItalic: "추천",
+      dishes: [
+        { name: "Zırh Kebabı", description: "구리 냄비에 밀봉해 6시간 동안 숯불에 천천히 구운 양고기. 수 세기를 이어온 아나톨리아 전통.", tag: "시그니처" },
+        { name: "3 Kişilik CELO Spesiyal", description: "그릴에 구운 쾨프테, 케밥, 치킨 시시, 윙을 한데 담은 푸짐한 셰어 플래터 — 온 테이블을 위한 CELO의 시그니처 구성.", tag: "셰어 플래터" },
+        { name: "Ali Nazik", description: "훈제한 가지 퓌레와 마늘 요거트 위에 숯불 구이 소고기를 올린 요리 — 가지안텝의 클래식, 테이블에서 마무리됩니다.", tag: "지역 클래식" },
+      ],
+    },
+    menuPage: {
+      title: "", titleItalic: "메뉴", label: "저희 메뉴",
+      listView: "목록 보기", visualView: "이미지 보기", lastUpdated: "마지막 업데이트",
+      notAvailable: "오늘은 준비되지 않습니다", photoSoon: "사진 준비 중", photoUpdating: "사진 업데이트 중",
+      categories: {
+        starters: "전채", soups: "수프", mains: "메인 요리",
+        grills: "그릴 & 패밀리 메뉴", firin: "화덕 요리", durum: "뒤륌(랩)", tatli: "디저트", icecek: "음료",
+      },
+      standardSides: "샐러드 · 불구르 필라프 · 소스에 절인 양파 · 취쾨프테 · 치즈 · 카라멜라이즈드 어니언 · 에즈메",
+      askPrice: "가격 문의",
+      sidesLabel: "기본 곁들이",
+    },
+    menuItems: menuItemsKo,
+    about: {
+      label: "우리 이야기", title: "불, 구리 그리고", titleItalic: "전통",
+      text: "CELO 레스토랑은 1979년부터 가족 대대로 이어온 맛의 전통을 지켜오고 있습니다. 숙련된 셰프들이 가장 신선한 재료로 다양한 케밥 요리를 정성껏 준비하여 모든 손님의 입맛을 만족시킵니다.",
+      quotes: [
+        {
+          name: "Coşkun Akkoyun",
+          text: "고인이 되신 아버지 투란 딜바즈 슈크루 아코윤께서 시작하신 전통을 이어받아, 저희는 1979년부터 첼로 레스토랑으로 손님을 맞이해 왔습니다. 특히 동부 지방에서는 사람들이 동물의 거의 모든 부위를 요리하고 즐깁니다. 이스탄불의 번화한 거리 곳곳에서 만날 수 있는 아다나와 우르파 케밥집으로 유명한 이 도시에서, 입맛을 사로잡는 저희 아다나 케밥은 국경을 넘어 세계로 그 명성이 전해진 맛으로 알려져 있습니다. 소중한 손님들께 이 가족의 전통을 최고의 방식으로 전하고자, 저희는 아브즐라르, 파르셀레르, 베일릭드쥬 야쿠플루 지역에서 영업하고 있습니다. 저희 모든 제품은 어떠한 화학 첨가물도 없이 할랄 재료로만 만들어집니다. 그렇기에 저희는 '저희가 먹지 않는 것은 손님에게도 대접하지 않습니다'라는 모토에 자부심을 가지고 부응한다고 말씀드릴 수 있습니다. 첼로 레스토랑은 맛있는 음식을 제공하는 것을 넘어, 전통 튀르키예 요리의 풍성함과 따뜻함을 테이블 위로 가져옵니다. 손님을 맞이하고 잊지 못할 식사 경험을 선사하는 것이 저희의 가장 큰 기쁨입니다.",
+        },
+      ],
+      reviewCta: "여러분의 리뷰를 기다립니다",
+      stats: [
+        { value: "1979", label: "설립" },
+        { value: "3", label: "지점" },
+        { value: "100%", label: "할랄" },
+      ],
+    },
+    contact: {
+      label: "문의하기", title: "찾아", titleItalic: "오세요",
+      address: "Kavaklı, Oğuzhan Cd. No:22, 34520 Beylikdüzü/İstanbul",
+      hours: "매일", hoursDetail: "오전 11:30 – 오전 3:00",
+      phone: "+90 530 171 34 52", email: "info@celorestaurant.com",
+      addressLabel: "주소", hoursLabel: "영업시간", phoneLabel: "전화", emailLabel: "이메일",
+      rating: "4.7 ★ (리뷰 653개)",
+    },
+    reviews: {
+      subtitle: "고객 리뷰", title: "손님들의", titleItalic: "이야기",
+      items: [
+        { name: "Gizem Kafadar", stars: 5, date: "2025년 11월", text: "환대로는 최고의 장소 중 하나입니다. 무료로 제공되는 메제, 맛, 빠른 서비스까지 실망하지 않으실 거예요. 33명 예약이었는데 음식이 10분 만에 나왔어요. 여기 알리 나지크는 최고입니다!" },
+        { name: "Agah Demirci", stars: 5, date: "2026년 1월", text: "먹은 모든 것이 전설적이었습니다… 이시켄베 수프는 일품이었고, 라흐마준은 이름값을 제대로 했으며, 서비스로 나온 취쾨프테도 맛있었습니다. 수틀라치는 환상적이었어요." },
+        { name: "Vezir Yalçın", stars: 5, date: "2025년 12월", text: "이렇게 맛있는 라흐마준과 케밥은 오랜만이었습니다. 치킨도 훌륭했어요. 직원들은 예의 바르고 세심하며 진심으로 친절합니다." },
+        { name: "James Heller", stars: 5, date: "2026년 1월", text: "리뷰를 잘 안 쓰는 편인데 이곳은 확실히 별 5개를 받을 자격이 있습니다. 처음부터 끝까지 놀라운 경험이었어요 — 맛, 서비스, 분위기까지." },
+        { name: "Feriha Şeyma Efe", stars: 5, date: "2026년 2월", text: "음식이 훌륭했습니다. 4인용 패밀리 메뉴를 시켰는데 다 못 먹어서 포장해 왔어요! 청결함, 플레이팅, 맛 모두 만점입니다." },
+        { name: "Dr. Mo Sammour", stars: 4, date: "2025년 11월", text: "분위기가 아주 좋습니다. 샐러드, 전채, 키베, 빵 등 환영 요리를 제공해요. 믹스 케밥 플래터는 맛있고 플레이팅도 훌륭했습니다." },
+      ],
+    },
+    footer: { tagline: "베일릭드쥬 중심에서 만나는 모던 아나톨리아 요리.", hoursLabel: "영업시간", everyDay: "매일", contactLabel: "연락처", rights: "모든 권리 보유." },
   },
 } as const;

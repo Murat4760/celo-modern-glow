@@ -12,6 +12,7 @@ const LANGUAGES: { code: Language; label: string; flag: string; native: string }
   { code: "ja", label: "JA", flag: "🇯🇵", native: "日本語" },
   { code: "zh", label: "ZH", flag: "🇨🇳", native: "中文" },
   { code: "it", label: "IT", flag: "🇮🇹", native: "Italiano" },
+  { code: "ko", label: "KO", flag: "🇰🇷", native: "한국어" },
 ];
 
 const LanguageSwitcher = () => {
