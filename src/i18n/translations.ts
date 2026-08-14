@@ -67,7 +67,7 @@ const menuItems = {
       {
         name: "Kiremitte Et",
         desc: "İçerik: Kuşbaşı dana etinin soğan, biber ve domatesle birlikte kiremit tabakta fırınlanıp kendi suyunda pişirilmesiyle hazırlanan özel kebap. Alerjen: Gluten ve süt ürünü içermez.",
-        price: "750 ₺",
+        price: "860 ₺",
         image: IMG_KIREMITTE_ET,
         alt: "Kiremitte Et servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
