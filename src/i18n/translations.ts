@@ -9,7 +9,6 @@ const IMG_ANA_YEMEK_01 = "/menu/celo-ana-yemek-01.jpg";
 const IMG_KEBAP_01 = "/menu/celo-kebap-01.jpg";
 const IMG_SARMA_BEYTI = "/menu/sarma-beyti-v3.jpg";
 const IMG_SUPER_IKILI = "/menu/super-ikili-v6.png";
-const IMG_ANTEP_KURU_DOLMA = "/menu/antep-kuru-dolma.jpg";
 const IMG_AYRAN_ASI = "/menu/ayran-asi-nobg.png";
 const IMG_KIREMITTE_ET = "/menu/kiremitte-et-v3.jpg";
 const IMG_TATLI_02 = "/menu/celo-tatli-02.jpg";
@@ -35,7 +34,7 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar
     starters: [
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
-      { name: "Antep Kuru Dolma", desc: "Gluten içermemektedir.", price: "250 ₺", image: IMG_ANTEP_KURU_DOLMA },
+      { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "", image: "skeleton-soon" },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
@@ -196,7 +195,8 @@ const DICT_EN: Record<string, string> = {
   "Peynir": "Cheese",
   // Dish name glosses (shown as "Türkçe Ad (gloss)" for non-Turkish locales)
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "Mini Lahmacun & Stuffed Köfte Combo",
-  "Antep Kuru Dolma": "Antep-Style Stuffed Dried Vegetables",
+  "Çıtır Karışık Porsiyon": "Crispy Mixed Platter",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "2 stuffed köfte, spiced fries and crispy onion rings. Contains gluten.",
   "Patates Tava": "Fried Potatoes",
   "Gavurdağı Salatası": "Tomato & Onion Salad",
   "Mercimek Çorbası": "Lentil Soup",
@@ -289,7 +289,8 @@ const DICT_AR: Record<string, string> = {
   "Çiğ Köfte": "تشي كوفته",
   "Peynir": "جبن",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "لحم بعجين صغير وكفتة محشية",
-  "Antep Kuru Dolma": "محشي عنتاب المجفف",
+  "Çıtır Karışık Porsiyon": "طبق مقرمش مشكل",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "قطعتان من الكفتة المحشية، بطاطس مقلية متبلة وحلقات بصل مقرمشة. يحتوي على الغلوتين.",
   "Patates Tava": "بطاطس مقلية",
   "Gavurdağı Salatası": "سلطة طماطم وبصل",
   "Mercimek Çorbası": "شوربة عدس",
@@ -382,7 +383,8 @@ const DICT_RU: Record<string, string> = {
   "Çiğ Köfte": "Чи кёфте",
   "Peynir": "Сыр",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "Мини-лахмаджун и ичли кёфте",
-  "Antep Kuru Dolma": "Антепская фаршированная сушёная закуска",
+  "Çıtır Karışık Porsiyon": "Хрустящее ассорти",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "2 шт. ичли кёфте, острый картофель фри и хрустящие луковые кольца. Содержит глютен.",
   "Patates Tava": "Жареный картофель",
   "Gavurdağı Salatası": "Салат из томатов и лука",
   "Mercimek Çorbası": "Чечевичный суп",
@@ -475,7 +477,8 @@ const DICT_JA: Record<string, string> = {
   "Çiğ Köfte": "チィキョフテ",
   "Peynir": "チーズ",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "ミニラフマジュン&イチリキョフテ",
-  "Antep Kuru Dolma": "アンテプ風ドライ野菜の詰め物",
+  "Çıtır Karışık Porsiyon": "クリスピーミックスプラター",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "イチリキョフテ2個、スパイシーフライドポテト、クリスピーオニオンリング。グルテンを含みます。",
   "Patates Tava": "フライドポテト",
   "Gavurdağı Salatası": "トマトと玉ねぎのサラダ",
   "Mercimek Çorbası": "レンズ豆スープ",
@@ -568,7 +571,8 @@ const DICT_ZH: Record<string, string> = {
   "Çiğ Köfte": "Çiğ Köfte 生肉丸",
   "Peynir": "奶酪",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "迷你拉赫马炯和夹心肉丸",
-  "Antep Kuru Dolma": "安泰普风味干菜卷",
+  "Çıtır Karışık Porsiyon": "香脆什锦拼盘",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "2个夹心肉丸、香辣薯条和香脆洋葱圈。含麸质。",
   "Patates Tava": "炸土豆",
   "Gavurdağı Salatası": "番茄洋葱沙拉",
   "Mercimek Çorbası": "扁豆汤",
@@ -661,7 +665,8 @@ const DICT_IT: Record<string, string> = {
   "Çiğ Köfte": "Çiğ Köfte",
   "Peynir": "Formaggio",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "Mini lahmacun e köfte ripieni",
-  "Antep Kuru Dolma": "Verdure secche ripiene alla Antep",
+  "Çıtır Karışık Porsiyon": "Piatto misto croccante",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "2 köfte ripieni, patatine fritte speziate e anelli di cipolla croccanti. Contiene glutine.",
   "Patates Tava": "Patate fritte",
   "Gavurdağı Salatası": "Insalata di pomodoro e cipolla",
   "Mercimek Çorbası": "Zuppa di lenticchie",
@@ -754,7 +759,8 @@ const DICT_KO: Record<string, string> = {
   "Çiğ Köfte": "취 쾨프테",
   "Peynir": "치즈",
   "Süper İkili (Fındık Lahmacun & İçli Köfte)": "미니 라흐마준 & 이츨리 쾨프테 콤보",
-  "Antep Kuru Dolma": "안텝식 말린 채소 돌마",
+  "Çıtır Karışık Porsiyon": "바삭한 모둠 플래터",
+  "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.": "이츨리 쾨프테 2개, 매콤한 감자튀김, 바삭한 어니언링. 글루텐 함유.",
   "Patates Tava": "감자튀김",
   "Gavurdağı Salatası": "토마토 & 양파 샐러드",
   "Mercimek Çorbası": "렌틸 수프",
