@@ -34,8 +34,8 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar
     starters: [
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
-      { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "250 ₺", image: "skeleton-soon" },
-      { name: "Tabla Lahmacunu", desc: "İnce hamur üzerine kıyma, biber, domates ve maydanozla hazırlanan büyük boy (tabla) lahmacun. Gluten içerir.", price: "100 ₺", image: "skeleton-soon" },
+      { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "250 ₺", image: "/menu/citir-karisik.jpg" },
+      { name: "Tabla Lahmacunu", desc: "İnce hamur üzerine kıyma, biber, domates ve maydanozla hazırlanan büyük boy (tabla) lahmacun. Gluten içerir.", price: "100 ₺", image: "/menu/tabla-lahmacun.jpg" },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
@@ -107,8 +107,8 @@ const menuItems = {
     // SECTION 7 — Tatlı
     tatli: [
       { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
-      { name: "Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "skeleton-soon" },
-      { name: "Hayrabolu", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "skeleton-soon" },
+      { name: "Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "/menu/sutlac.jpg" },
+      { name: "Hayrabolu", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "/menu/hayrabolu.jpg" },
     ],
     // SECTION 8 — İçecek
     icecek: [
