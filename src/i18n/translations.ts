@@ -34,8 +34,8 @@ const menuItems = {
     // SECTION 1 — Başlangıçlar
     starters: [
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
-      { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "", image: "skeleton-soon" },
-      { name: "Tabla Lahmacunu", desc: "İnce hamur üzerine kıyma, biber, domates ve maydanozla hazırlanan büyük boy (tabla) lahmacun. Gluten içerir.", price: "", image: "skeleton-soon" },
+      { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "250 ₺", image: "skeleton-soon" },
+      { name: "Tabla Lahmacunu", desc: "İnce hamur üzerine kıyma, biber, domates ve maydanozla hazırlanan büyük boy (tabla) lahmacun. Gluten içerir.", price: "100 ₺", image: "skeleton-soon" },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
@@ -43,7 +43,7 @@ const menuItems = {
     soups: [
       { name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
       { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_01 },
-      { name: "Antep Yuvalama", desc: "Yoğurt içerir.", price: "200 ₺", image: IMG_AYRAN_ASI },
+      { name: "Antep Yuvalama", desc: "Yoğurt içerir.", price: "250 ₺", image: IMG_AYRAN_ASI },
     ],
     // SECTION 3 — Ana Yemekler (Ali Nazik, Sarma Beyti ve Kiremitte Et dahil)
     mains: [
@@ -107,8 +107,8 @@ const menuItems = {
     // SECTION 7 — Tatlı
     tatli: [
       { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
-      { name: "Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "190 ₺", image: "skeleton-soon" },
-      { name: "Hayrabolu", desc: "Gluten ve süt ürünü içerir.", price: "", image: "skeleton-soon" },
+      { name: "Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "skeleton-soon" },
+      { name: "Hayrabolu", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "skeleton-soon" },
     ],
     // SECTION 8 — İçecek
     icecek: [
