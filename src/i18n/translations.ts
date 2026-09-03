@@ -59,7 +59,7 @@ const menuItems = {
       {
         name: "Sarma Beyti",
         desc: "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.",
-        price: "850 ₺",
+        price: "900 ₺",
         image: IMG_SARMA_BEYTI,
         alt: "Sarma Beyti servis tabağı",
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
