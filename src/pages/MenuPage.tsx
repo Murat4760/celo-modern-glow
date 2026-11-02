@@ -309,6 +309,9 @@ const MenuPage = () => {
                 </section>
               );
             })}
+          <p className="pt-10 text-center text-sm text-muted-foreground">
+            {t.menuPage.lastUpdated}: {t.menuPage.priceDate}
+          </p>
         </div>
       </section>
 
