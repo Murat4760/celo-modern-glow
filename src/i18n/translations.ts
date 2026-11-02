@@ -36,18 +36,22 @@ const menuItems = {
       { name: "Süper İkili (Fındık Lahmacun & İçli Köfte)", desc: "Gluten içermektedir.", price: "150 ₺", image: IMG_SUPER_IKILI },
       { name: "Çıtır Karışık Porsiyon", desc: "2 adet içli köfte, baharatlı patates kızartması ve çıtır soğan halkası. Gluten içerir.", price: "250 ₺", image: "/menu/citir-karisik.jpg" },
       { name: "Tabla Lahmacunu", desc: "İnce hamur üzerine kıyma, biber, domates ve maydanozla hazırlanan büyük boy (tabla) lahmacun. Gluten içerir.", price: "100 ₺", image: "/menu/tabla-lahmacun.jpg" },
+      { name: "Kaşarlı Mantar", desc: "Süt ürünü içermektedir.", price: "250 ₺", image: "/menu/kasarli-mantar.jpg" },
       { name: "Patates Tava", desc: "Gluten içermemektedir.", price: "150 ₺", image: IMG_BASLANGIC_04 },
       { name: "Gavurdağı Salatası", desc: "Gluten içermemektedir.", price: "200 ₺", image: IMG_BASLANGIC_01 },
     ],
     // SECTION 2 — Çorbalar
     soups: [
+      { name: "Antep Usulü Kelle Paça Çorbası", desc: "Gluten içermektedir.", price: "450 ₺", image: "/menu/kelle-paca.jpg" },
       { name: "Mercimek Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_04 },
       { name: "Ezogelin Çorbası", desc: "Gluten içermektedir.", price: "160 ₺", image: IMG_CORBA_01 },
       { name: "Antep Yuvalama", desc: "Yoğurt içerir.", price: "250 ₺", image: IMG_AYRAN_ASI },
     ],
     // SECTION 3 — Ana Yemekler (Ali Nazik, Sarma Beyti ve Kiremitte Et dahil)
     mains: [
-      { name: "Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: IMG_ZIRH_KEBABI, standardSides: true },
+      { name: "Acılı Adana Açma Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: "/menu/acili-adana-acma.jpg", standardSides: true },
+      { name: "Acısız Urfa Zırh Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: IMG_ZIRH_KEBABI, standardSides: true },
+      { name: "Sarımsaklı Açma Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "720 ₺", image: "/menu/sarimsakli-acma.jpg", standardSides: true },
       { name: "Patlıcan Kebabı", kcal: 410, desc: "İçerik: Dana eti, kuzu eti, patlıcan, tuz ve kuyruk eti. Alerjen: Gluten ve süt ürünü içermez.", price: "900 ₺", image: IMG_PATLICAN_KEBABI, standardSides: true },
       { name: "Çöp Şiş", kcal: 375, desc: "İçerik: Kuzu eti, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "850 ₺", image: IMG_COP_SIS, standardSides: true },
       { name: "Ciğer Şiş", kcal: 350, desc: "İçerik: Kuzu ciğeri, kuyruk eti, tuz. Alerjen: Gluten ve süt ürünü içermez.", price: "850 ₺", image: IMG_CIGER_SIS, standardSides: true },
@@ -73,6 +77,16 @@ const menuItems = {
         ikram: ["İçli Köfte", "Fındık Lahmacun", "Salata", "Soğan Salatası", "Ezme", "Çiğ Köfte", "Peynir"],
       },
       { name: "Hamburger", desc: "İçerik: Izgarada pişirilen dana köftesi, marul, domates, turşu ve özel sosla hazırlanan, yanında patates kızartması servis edilen hamburger. Alerjen: Gluten ve süt ürünü içerir.", price: "395 ₺", image: "/menu/hamburger.jpg" },
+      { name: "Tavuk Burger", desc: "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.", price: "295 ₺", image: "/menu/tavuk-burger.jpg" },
+      {
+        name: "2 Kişilik CELO Spesiyal",
+        kcal: 660,
+        desc: "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.",
+        price: "1950 ₺",
+        image: "/menu/celo-spesiyal-2.jpg",
+        alt: "2 Kişilik CELO Spesiyal servis tabağı",
+        standardSides: true,
+      },
       {
         name: "3 Kişilik CELO Spesiyal",
         desc: "İçerik: Zırh kebabı, domatesli kebap, patlıcanlı kebap, et şiş, köfte, kanat, tavuk şiş, 3 adet içli köfte, 3 adet fındık lahmacun ve kaşarlı pideden oluşmaktadır. Alerjen: Gluten içerir, süt ürünü içermez.",
@@ -108,6 +122,7 @@ const menuItems = {
     tatli: [
       { name: "Katmer", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/katmer.png" },
       { name: "Sütlaç", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "/menu/sutlac.jpg" },
+      { name: "Künefe", desc: "Gluten ve süt ürünü içerir.", price: "290 ₺", image: "/menu/kunefe.jpg" },
       { name: "Hayrabolu", desc: "Gluten ve süt ürünü içerir.", price: "150 ₺", image: "/menu/hayrabolu.jpg" },
     ],
     // SECTION 8 — İçecek
@@ -152,6 +167,16 @@ function localizeMenu(dict: MenuDict): typeof menuItems.tr {
 }
 
 const DICT_EN: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "Antep-Style Head & Trotter Soup",
+  "Kaşarlı Mantar": "Baked Mushrooms with Kaşar Cheese",
+  "Acılı Adana Açma Kebabı": "Spicy Adana Açma Kebab",
+  "Sarımsaklı Açma Kebabı": "Garlic Açma Kebab",
+  "Tavuk Burger": "Chicken Burger",
+  "2 Kişilik CELO Spesiyal": "Mixed Grill Platter for Two",
+  "Künefe": "Shredded Pastry Dessert with Cheese",
+  "Süt ürünü içermektedir.": "Contains dairy.",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "Ingredients: chicken, served with french fries. Allergens: contains gluten.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "Ingredients: beef, lamb, tail fat, salt; served with 2 stuffed bulgur meatballs, 2 mini lahmacun and cheese pide. Allergens: contains gluten and dairy.",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Mixed grill sharing platter: köfte, kebab, chicken shish, wings and grilled vegetables.",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Mixed grill sharing platter for 3: köfte, kebab, chicken shish, wings and seasonal grilled vegetables together.",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Ingredients: seasoned minced beef köfte wrapped in thin lavash and char-grilled — a Southeastern-style beyti, served with butter and a special tomato sauce. Allergens: contains gluten and dairy.",
@@ -200,7 +225,7 @@ const DICT_EN: Record<string, string> = {
   "Mercimek Çorbası": "Lentil Soup",
   "Ezogelin Çorbası": "Red Lentil & Bulgur Soup",
   "Antep Yuvalama": "Gaziantep Meatball & Chickpea Soup",
-  "Zırh Kebabı": "Minced Lamb & Beef Kebab",
+  "Acısız Urfa Zırh Kebabı": "Minced Lamb & Beef Kebab",
   "Patlıcan Kebabı": "Eggplant Kebab",
   "Çöp Şiş": "Diced Lamb Skewer",
   "Ciğer Şiş": "Grilled Lamb Liver Skewer",
@@ -244,6 +269,16 @@ const DICT_EN: Record<string, string> = {
 };
 
 const DICT_AR: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "شوربة رأس وكوارع على طريقة عنتاب",
+  "Kaşarlı Mantar": "فطر بالجبن",
+  "Acılı Adana Açma Kebabı": "كباب أضنة حار",
+  "Sarımsaklı Açma Kebabı": "كباب بالثوم",
+  "Tavuk Burger": "برجر دجاج",
+  "2 Kişilik CELO Spesiyal": "طبق مشاوٍ مشكّلة لشخصين",
+  "Künefe": "كنافة بالجبن",
+  "Süt ürünü içermektedir.": "يحتوي على منتجات ألبان.",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "المكونات: دجاج، يقدم مع البطاطس المقلية. مسببات الحساسية: يحتوي على غلوتين.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "المكونات: لحم بقري، لحم ضأن، دهن الألية، ملح؛ يقدم مع قطعتين من الكبة المحشوة وقطعتين من اللحم بعجين الصغير وبيدة بالجبن. مسببات الحساسية: يحتوي على غلوتين ومنتجات ألبان.",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "طبق مشاوٍ مشكّلة للمشاركة: كفتة، كباب، دجاج مشوي، أجنحة وخضار مشوية.",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "طبق مشاوٍ مشكّلة للمشاركة بين 3 أشخاص: كفتة، كباب، دجاج مشوي، أجنحة وخضار الموسم المشوية معًا.",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "المكونات: كفتة من لحم بقري مفروم متبل ملفوفة بخبز اللفاف الرقيق ومشوية على الفحم — بيتي على الطريقة الجنوب شرقية، تُقدَّم مع الزبدة وصلصة الطماطم الخاصة. مسببات الحساسية: يحتوي على غلوتين ومنتجات ألبان.",
@@ -291,7 +326,7 @@ const DICT_AR: Record<string, string> = {
   "Mercimek Çorbası": "شوربة عدس",
   "Ezogelin Çorbası": "شوربة عدس أحمر وبرغل",
   "Antep Yuvalama": "شوربة عنتاب بكرات اللحم والحمص",
-  "Zırh Kebabı": "كباب لحم ضأن وبقري مفروم",
+  "Acısız Urfa Zırh Kebabı": "كباب لحم ضأن وبقري مفروم",
   "Patlıcan Kebabı": "كباب الباذنجان",
   "Çöp Şiş": "أسياخ لحم الضأن المكعب",
   "Ciğer Şiş": "أسياخ كبد الضأن المشوي",
@@ -335,6 +370,16 @@ const DICT_AR: Record<string, string> = {
 };
 
 const DICT_RU: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "Суп из головы и ножек по-антепски",
+  "Kaşarlı Mantar": "Грибы, запечённые с сыром",
+  "Acılı Adana Açma Kebabı": "Острый кебаб Адана",
+  "Sarımsaklı Açma Kebabı": "Кебаб с чесноком",
+  "Tavuk Burger": "Куриный бургер",
+  "2 Kişilik CELO Spesiyal": "Ассорти-гриль на двоих",
+  "Künefe": "Кюнефе с сыром",
+  "Süt ürünü içermektedir.": "Содержит молочные продукты.",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "Состав: курица, подаётся с картофелем фри. Аллергены: содержит глютен.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "Состав: говядина, баранина, курдючный жир, соль; подаётся с 2 ичли кёфте, 2 мини-лахмаджунами и пиде с сыром. Аллергены: содержит глютен и молочные продукты.",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Ассорти-гриль на компанию: кёфте, кебаб, куриный шиш, крылышки и овощи-гриль.",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Ассорти-гриль на компанию из 3 человек: кёфте, кебаб, куриный шиш, крылышки и сезонные овощи-гриль вместе.",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Состав: приправленные котлеты из рубленой говядины, завёрнутые в тонкий лаваш и обжаренные на углях — бейти по-юго-восточному, подаётся со сливочным маслом и фирменным томатным соусом. Аллергены: содержит глютен и молочные продукты.",
@@ -382,7 +427,7 @@ const DICT_RU: Record<string, string> = {
   "Mercimek Çorbası": "Чечевичный суп",
   "Ezogelin Çorbası": "Суп из красной чечевицы и булгура",
   "Antep Yuvalama": "Суп из Антепа с фрикадельками и нутом",
-  "Zırh Kebabı": "Кебаб из рубленой баранины и говядины",
+  "Acısız Urfa Zırh Kebabı": "Кебаб из рубленой баранины и говядины",
   "Patlıcan Kebabı": "Кебаб с баклажаном",
   "Çöp Şiş": "Шиш из кусочков баранины",
   "Ciğer Şiş": "Шиш из бараньей печени",
@@ -426,6 +471,16 @@ const DICT_RU: Record<string, string> = {
 };
 
 const DICT_JA: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "アンテプ風 頭肉と足のスープ",
+  "Kaşarlı Mantar": "マッシュルームのチーズ焼き",
+  "Acılı Adana Açma Kebabı": "スパイシー・アダナケバブ",
+  "Sarımsaklı Açma Kebabı": "ガーリックケバブ",
+  "Tavuk Burger": "チキンバーガー",
+  "2 Kişilik CELO Spesiyal": "ミックスグリル盛り合わせ（2人前）",
+  "Künefe": "キュネフェ（チーズ入りデザート）",
+  "Süt ürünü içermektedir.": "乳製品を含みます。",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "材料：鶏肉、フライドポテト添え。アレルゲン：グルテンを含みます。",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "材料：牛肉、羊肉、尾脂、塩。イチリキョフテ2個、ミニラフマジュン2枚、チーズピデ添え。アレルゲン：グルテンと乳製品を含みます。",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "シェア用ミックスグリル：キョフテ、ケバブ、チキンシシ、手羽、焼き野菜。",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3人でシェアできるミックスグリル盛り合わせ：キョフテ、ケバブ、チキンシシ、手羽、季節の焼き野菜を一皿に。",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "材料：香辛料で味付けした牛ひき肉のキョフテを薄いラワシュで包み炭火焼きにした、南東部スタイルのベイティ。バターと特製トマトソースを添えて提供。アレルゲン：グルテンと乳製品を含みます。",
@@ -473,7 +528,7 @@ const DICT_JA: Record<string, string> = {
   "Mercimek Çorbası": "レンズ豆スープ",
   "Ezogelin Çorbası": "赤レンズ豆とブルグルのスープ",
   "Antep Yuvalama": "アンテプ風肉団子とひよこ豆のスープ",
-  "Zırh Kebabı": "合い挽き肉のケバブ",
+  "Acısız Urfa Zırh Kebabı": "合い挽き肉のケバブ",
   "Patlıcan Kebabı": "なすケバブ",
   "Çöp Şiş": "骨付き子羊肉のシシ",
   "Ciğer Şiş": "子羊レバーのシシ",
@@ -517,6 +572,16 @@ const DICT_JA: Record<string, string> = {
 };
 
 const DICT_ZH: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "安泰普风味头蹄汤",
+  "Kaşarlı Mantar": "芝士焗蘑菇",
+  "Acılı Adana Açma Kebabı": "辣味阿达纳烤肉",
+  "Sarımsaklı Açma Kebabı": "蒜香烤肉",
+  "Tavuk Burger": "鸡肉汉堡",
+  "2 Kişilik CELO Spesiyal": "双人混合烧烤拼盘",
+  "Künefe": "奶酪库纳法",
+  "Süt ürünü içermektedir.": "含乳制品。",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "配料：鸡肉，配炸薯条。过敏原：含麸质。",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "配料：牛肉、羊肉、羊尾油、盐；配2个夹心肉丸、2个迷你拉赫马炯和芝士皮德。过敏原：含麸质和乳制品。",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "分享混合烧烤拼盘：肉丸、烤肉、鸡肉串、鸡翅和烤蔬菜。",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3人份分享混合烧烤拼盘:肉丸、烤肉、鸡肉串、鸡翅和时令烤蔬菜汇聚一盘。",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "配料：用香料调味的牛肉末肉丸,用薄面饼(拉瓦什)包裹后炭烤而成的东南部风味贝伊蒂,配黄油和特制番茄酱一起享用。过敏原:含麸质和乳制品。",
@@ -564,7 +629,7 @@ const DICT_ZH: Record<string, string> = {
   "Mercimek Çorbası": "扁豆汤",
   "Ezogelin Çorbası": "红扁豆布格麦汤",
   "Antep Yuvalama": "安泰普肉丸鹰嘴豆汤",
-  "Zırh Kebabı": "牛羊肉末烤肉",
+  "Acısız Urfa Zırh Kebabı": "牛羊肉末烤肉",
   "Patlıcan Kebabı": "茄子烤肉",
   "Çöp Şiş": "羊肉丁烤串",
   "Ciğer Şiş": "烤羊肝串",
@@ -608,6 +673,16 @@ const DICT_ZH: Record<string, string> = {
 };
 
 const DICT_IT: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "Zuppa di testina e zampe alla Antep",
+  "Kaşarlı Mantar": "Funghi gratinati al formaggio",
+  "Acılı Adana Açma Kebabı": "Kebab Adana piccante",
+  "Sarımsaklı Açma Kebabı": "Kebab all'aglio",
+  "Tavuk Burger": "Burger di pollo",
+  "2 Kişilik CELO Spesiyal": "Grigliata mista per due",
+  "Künefe": "Künefe al formaggio",
+  "Süt ürünü içermektedir.": "Contiene latticini.",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "Ingredienti: pollo, servito con patatine fritte. Allergeni: contiene glutine.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "Ingredienti: manzo, agnello, grasso di coda, sale; servito con 2 polpette ripiene, 2 mini lahmacun e pide al formaggio. Allergeni: contiene glutine e latticini.",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "Grigliata mista da condividere: köfte, kebab, spiedini di pollo, ali e verdure grigliate.",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "Grigliata mista da condividere in 3: köfte, kebab, spiedini di pollo, ali e verdure grigliate di stagione insieme.",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "Ingredienti: polpette di manzo macinato speziato avvolte in lavash sottile e grigliate sulla brace — un beyti in stile sud-orientale, servito con burro e salsa di pomodoro speciale. Allergeni: contiene glutine e latticini.",
@@ -655,7 +730,7 @@ const DICT_IT: Record<string, string> = {
   "Mercimek Çorbası": "Zuppa di lenticchie",
   "Ezogelin Çorbası": "Zuppa di lenticchie rosse e bulgur",
   "Antep Yuvalama": "Zuppa di Antep con polpettine e ceci",
-  "Zırh Kebabı": "Kebab di agnello e manzo macinati",
+  "Acısız Urfa Zırh Kebabı": "Kebab di agnello e manzo macinati",
   "Patlıcan Kebabı": "Kebab alle melanzane",
   "Çöp Şiş": "Spiedini di agnello a cubetti",
   "Ciğer Şiş": "Spiedini di fegato d'agnello",
@@ -699,6 +774,16 @@ const DICT_IT: Record<string, string> = {
 };
 
 const DICT_KO: Record<string, string> = {
+  "Antep Usulü Kelle Paça Çorbası": "안텝식 머리·족 수프",
+  "Kaşarlı Mantar": "치즈 버섯 구이",
+  "Acılı Adana Açma Kebabı": "매운 아다나 케밥",
+  "Sarımsaklı Açma Kebabı": "마늘 케밥",
+  "Tavuk Burger": "치킨 버거",
+  "2 Kişilik CELO Spesiyal": "2인 믹스 그릴 플래터",
+  "Künefe": "치즈 퀴네페",
+  "Süt ürünü içermektedir.": "유제품을 함유합니다.",
+  "İçerik: Tavuk eti, yanında patates kızartması ile servis edilir. Alerjen: Gluten içerir.": "재료: 닭고기, 감자튀김과 함께 제공. 알레르겐: 글루텐을 함유합니다.",
+  "İçerik: Dana eti, kuzu eti, kuyruk eti, tuz; 2 adet içli köfte, 2 adet fındık lahmacun ve kaşarlı pide ile servis edilir. Alerjen: Gluten ve süt ürünü içerir.": "재료: 소고기, 양고기, 꼬리 지방, 소금; 이츨리 쾨프테 2개, 미니 라흐마준 2개, 치즈 피데와 함께 제공. 알레르겐: 글루텐과 유제품을 함유합니다.",
   "Paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve ızgara sebzeler.": "셰어용 믹스 그릴 플래터: 쾨프테, 케밥, 치킨 시시, 윙, 그릴 채소.",
   "3 kişilik paylaşımlık karışık ızgara tabağı: köfte, kebap, tavuk şiş, kanat ve mevsim ızgara sebzeleri bir arada.": "3인용 셰어 믹스 그릴 플래터: 쾨프테, 케밥, 치킨 시시, 윙과 제철 그릴 채소를 한 접시에.",
   "İçerik: Baharatlarla yoğrulan dana kıyma köftesinin ince lavaşa sarılıp közlenmesiyle hazırlanan Güneydoğu usulü beyti; tereyağı ve özel domates sosuyla servis edilir. Alerjen: Gluten içerir, süt ürünü içerir.": "재료: 향신료로 양념한 다진 소고기 쾨프테를 얇은 라바쉬에 말아 숯불에 구운 남동부 스타일 베이티; 버터와 특제 토마토 소스를 곁들여 제공됩니다. 알레르기 유발 물질: 글루텐과 유제품 함유.",
@@ -746,7 +831,7 @@ const DICT_KO: Record<string, string> = {
   "Mercimek Çorbası": "렌틸 수프",
   "Ezogelin Çorbası": "붉은 렌틸 & 불구르 수프",
   "Antep Yuvalama": "안텝 미트볼 병아리콩 수프",
-  "Zırh Kebabı": "다진 양고기 & 소고기 케밥",
+  "Acısız Urfa Zırh Kebabı": "다진 양고기 & 소고기 케밥",
   "Patlıcan Kebabı": "가지 케밥",
   "Çöp Şiş": "깍둑 양고기 꼬치",
   "Ciğer Şiş": "양 간 꼬치구이",
@@ -825,7 +910,7 @@ export const translations = {
       titleItalic: "Recommendations",
       dishes: [
         {
-          name: "Zırh Kebabı",
+          name: "Acısız Urfa Zırh Kebabı",
           description: "Slow-cooked lamb sealed in a copper pot, roasted over charcoal for 6 hours. A centuries-old Anatolian tradition.",
           tag: "Signature",
         },
@@ -947,7 +1032,7 @@ export const translations = {
       titleItalic: "Tavsiyeleri",
       dishes: [
         {
-          name: "Zırh Kebabı",
+          name: "Acısız Urfa Zırh Kebabı",
           description: "Bakır tencerede mühürlenen kuzu eti, 6 saat közde pişirilir. Yüzyıllık Anadolu geleneği.",
           tag: "İmza",
         },
@@ -1057,7 +1142,7 @@ export const translations = {
       title: "توصيات",
       titleItalic: "الشيف",
       dishes: [
-        { name: "Zırh Kebabı", description: "لحم ضأن مطهو ببطء في قدر نحاسي، مشوي على الفحم لمدة 6 ساعات. تقليد أناضولي عريق.", tag: "الطبق المميز" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "لحم ضأن مطهو ببطء في قدر نحاسي، مشوي على الفحم لمدة 6 ساعات. تقليد أناضولي عريق.", tag: "الطبق المميز" },
         { name: "3 Kişilik CELO Spesiyal", description: "طبق مشاوٍ غني للمشاركة يجمع الكفتة والكباب ودجاج الشيش والأجنحة — تشكيلة سيلو المميزة لكل الطاولة.", tag: "طبق للمشاركة" },
         { name: "Ali Nazik", description: "لحم بقري مشوي على بوريه الباذنجان المدخن واللبن بالثوم — طبق كلاسيكي من عنتاب.", tag: "طبق كلاسيكي" },
       ],
@@ -1124,7 +1209,7 @@ export const translations = {
     chef: {
       label: "Отборная подборка", title: "Рекомендации", titleItalic: "шефа",
       dishes: [
-        { name: "Zırh Kebabı", description: "Медленно томлёная ягнятина в медном котле, жаренная на углях 6 часов. Многовековая анатолийская традиция.", tag: "Фирменное" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "Медленно томлёная ягнятина в медном котле, жаренная на углях 6 часов. Многовековая анатолийская традиция.", tag: "Фирменное" },
         { name: "3 Kişilik CELO Spesiyal", description: "Щедрое ассорти-гриль на компанию: кёфте, кебаб, куриный шиш и крылышки — фирменный набор CELO на весь стол.", tag: "Для компании" },
         { name: "Ali Nazik", description: "Жареная говядина на пюре из копчёного баклажана с чесночным йогуртом — классика Газиантепа.", tag: "Классика региона" },
       ],
@@ -1191,7 +1276,7 @@ export const translations = {
     chef: {
       label: "厳選", title: "シェフの", titleItalic: "おすすめ",
       dishes: [
-        { name: "Zırh Kebabı", description: "銅鍋で封じ込めた仔羊肉を、炭火で6時間じっくりロースト。何世紀にもわたるアナトリアの伝統。", tag: "看板料理" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "銅鍋で封じ込めた仔羊肉を、炭火で6時間じっくりロースト。何世紀にもわたるアナトリアの伝統。", tag: "看板料理" },
         { name: "3 Kişilik CELO Spesiyal", description: "キョフテ、ケバブ、チキンシシ、手羽が一皿に揃う、みんなでシェアできるCELO自慢のグリル盛り合わせ。", tag: "シェアプレート" },
         { name: "Ali Nazik", description: "燻製なすのピューレとにんにくヨーグルトの上にグリルした牛肉をのせた、ガズィアンテプの定番料理。", tag: "郷土の定番" },
       ],
@@ -1258,7 +1343,7 @@ export const translations = {
     chef: {
       label: "精选", title: "主厨", titleItalic: "推荐",
       dishes: [
-        { name: "Zırh Kebabı", description: "羔羊肉在铜锅中慢炖,再用炭火烤6小时。传承数百年的安纳托利亚传统。", tag: "招牌" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "羔羊肉在铜锅中慢炖,再用炭火烤6小时。传承数百年的安纳托利亚传统。", tag: "招牌" },
         { name: "3 Kişilik CELO Spesiyal", description: "肉丸、烤肉、鸡肉串和鸡翅汇聚一盘,足够全桌分享的CELO招牌烧烤拼盘。", tag: "分享拼盘" },
         { name: "Ali Nazik", description: "炭烤牛肉铺在烟熏茄泥和蒜香酸奶之上——加济安泰普的经典风味。", tag: "地区经典" },
       ],
@@ -1325,7 +1410,7 @@ export const translations = {
     chef: {
       label: "Selezione curata", title: "Consigli", titleItalic: "dello Chef",
       dishes: [
-        { name: "Zırh Kebabı", description: "Agnello cotto lentamente sigillato in un tegame di rame, arrostito sulla brace per 6 ore. Un'antica tradizione anatolica.", tag: "Signature" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "Agnello cotto lentamente sigillato in un tegame di rame, arrostito sulla brace per 6 ore. Un'antica tradizione anatolica.", tag: "Signature" },
         { name: "3 Kişilik CELO Spesiyal", description: "Una ricca grigliata da condividere con köfte, kebab, spiedini di pollo e ali — la selezione speciale di CELO per tutta la tavolata.", tag: "Da condividere" },
         { name: "Ali Nazik", description: "Manzo grigliato adagiato su purea di melanzane affumicate e yogurt all'aglio — un classico di Gaziantep.", tag: "Classico regionale" },
       ],
@@ -1392,7 +1477,7 @@ export const translations = {
     chef: {
       label: "엄선된 메뉴", title: "셰프의", titleItalic: "추천",
       dishes: [
-        { name: "Zırh Kebabı", description: "구리 냄비에 밀봉해 6시간 동안 숯불에 천천히 구운 양고기. 수 세기를 이어온 아나톨리아 전통.", tag: "시그니처" },
+        { name: "Acısız Urfa Zırh Kebabı", description: "구리 냄비에 밀봉해 6시간 동안 숯불에 천천히 구운 양고기. 수 세기를 이어온 아나톨리아 전통.", tag: "시그니처" },
         { name: "3 Kişilik CELO Spesiyal", description: "그릴에 구운 쾨프테, 케밥, 치킨 시시, 윙을 한데 담은 푸짐한 셰어 플래터 — 온 테이블을 위한 CELO의 시그니처 구성.", tag: "셰어 플래터" },
         { name: "Ali Nazik", description: "훈제한 가지 퓌레와 마늘 요거트 위에 숯불 구이 소고기를 올린 요리 — 가지안텝의 클래식, 테이블에서 마무리됩니다.", tag: "지역 클래식" },
       ],
