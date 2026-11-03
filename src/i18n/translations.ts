@@ -14,7 +14,7 @@ const IMG_KIREMITTE_ET = "/menu/kiremitte-et-v3.jpg";
 const IMG_TATLI_02 = "/menu/celo-tatli-02.jpg";
 const IMG_CIGER_SIS = "/menu/ciger-sis.jpg";
 const IMG_ALI_NAZIK = "/menu/ali-nazik.jpg";
-const IMG_ZIRH_KEBABI = "/menu/zirh-kebabi.jpg";
+const IMG_ZIRH_KEBABI = "/menu/zirh-kebabi-v2.jpg";
 const IMG_TAVUK_SIS = "/menu/tavuk-sis.jpg";
 const IMG_YAPRAK_KANAT = "/menu/yaprak-kanat.jpg";
 const IMG_IZGARA_KOFTE = "/menu/izgara-kofte.jpg";
@@ -110,6 +110,7 @@ const menuItems = {
     // SECTION 6 — Dürüm
     durum: [
       { name: "Tavuk Dürüm", kcal: 150, desc: "Gluten içerir.", price: "440 ₺", image: "" },
+      { name: "Tavuk Şiş Dürüm", desc: "Gluten içerir.", price: "300 ₺", image: "" },
       { name: "Zırh Dürüm", kcal: 200, desc: "Gluten içerir.", price: "440 ₺", image: "" },
       { name: "Ciğer Şiş Dürüm", kcal: 175, desc: "Gluten içerir.", price: "540 ₺", image: "" },
       { name: "Çöp Şiş Dürüm", kcal: 185, desc: "Gluten içerir.", price: "540 ₺", image: "" },
@@ -241,6 +242,7 @@ const DICT_EN: Record<string, string> = {
   "Kaşarlı Pide": "Cheese Pide",
   "Kuşbaşılı Kaşarlı Pide": "Diced Beef & Cheese Pide",
   "Tavuk Dürüm": "Chicken Wrap",
+  "Tavuk Şiş Dürüm": "Chicken Shish Wrap",
   "Zırh Dürüm": "Zırh Kebab Wrap",
   "Ciğer Şiş Dürüm": "Grilled Liver Wrap",
   "Çöp Şiş Dürüm": "Diced Lamb Skewer Wrap",
@@ -339,6 +341,7 @@ const DICT_AR: Record<string, string> = {
   "Kaşarlı Pide": "بيدة بالجبن",
   "Kuşbaşılı Kaşarlı Pide": "بيدة باللحم المكعب والجبن",
   "Tavuk Dürüm": "لفافة دجاج",
+  "Tavuk Şiş Dürüm": "لفافة شيش دجاج",
   "Zırh Dürüm": "لفافة كباب زيرح",
   "Ciğer Şiş Dürüm": "لفافة كبد مشوي",
   "Çöp Şiş Dürüm": "لفافة أسياخ لحم مكعب",
@@ -437,6 +440,7 @@ const DICT_RU: Record<string, string> = {
   "Kaşarlı Pide": "Пиде с сыром",
   "Kuşbaşılı Kaşarlı Pide": "Пиде с кусочками говядины и сыром",
   "Tavuk Dürüm": "Дюрюм с курицей",
+  "Tavuk Şiş Dürüm": "Дюрюм с куриным шишем",
   "Zırh Dürüm": "Дюрюм с кебабом Зырх",
   "Ciğer Şiş Dürüm": "Дюрюм с шашлыком из печени",
   "Çöp Şiş Dürüm": "Дюрюм с шишем из баранины",
@@ -535,6 +539,7 @@ const DICT_JA: Record<string, string> = {
   "Kaşarlı Pide": "チーズ・ピデ",
   "Kuşbaşılı Kaşarlı Pide": "角切り牛肉&チーズ・ピデ",
   "Tavuk Dürüm": "チキン・デュリュム",
+  "Tavuk Şiş Dürüm": "チキンシシ・デュリュム",
   "Zırh Dürüm": "ズルフ・デュリュム",
   "Ciğer Şiş Dürüm": "レバーシシ・デュリュム",
   "Çöp Şiş Dürüm": "チョプシシ・デュリュム",
@@ -633,6 +638,7 @@ const DICT_ZH: Record<string, string> = {
   "Kaşarlı Pide": "芝士皮德",
   "Kuşbaşılı Kaşarlı Pide": "牛肉丁芝士皮德",
   "Tavuk Dürüm": "鸡肉卷",
+  "Tavuk Şiş Dürüm": "鸡肉串卷",
   "Zırh Dürüm": "兹尔赫烤肉卷",
   "Ciğer Şiş Dürüm": "烤羊肝卷",
   "Çöp Şiş Dürüm": "羊肉丁烤串卷",
@@ -731,6 +737,7 @@ const DICT_IT: Record<string, string> = {
   "Kaşarlı Pide": "Pide al formaggio",
   "Kuşbaşılı Kaşarlı Pide": "Pide con manzo a cubetti e formaggio",
   "Tavuk Dürüm": "Involtino di pollo",
+  "Tavuk Şiş Dürüm": "Involtino con spiedino di pollo",
   "Zırh Dürüm": "Involtino Zırh",
   "Ciğer Şiş Dürüm": "Involtino di fegato grigliato",
   "Çöp Şiş Dürüm": "Involtino di spiedini di agnello",
@@ -829,6 +836,7 @@ const DICT_KO: Record<string, string> = {
   "Kaşarlı Pide": "치즈 피데",
   "Kuşbaşılı Kaşarlı Pide": "깍둑 소고기 & 치즈 피데",
   "Tavuk Dürüm": "치킨 뒤륌",
+  "Tavuk Şiş Dürüm": "치킨 시시 뒤륌",
   "Zırh Dürüm": "즈르흐 케밥 뒤륌",
   "Ciğer Şiş Dürüm": "그릴 간 뒤륌",
   "Çöp Şiş Dürüm": "깍둑 양고기 뒤륌",
